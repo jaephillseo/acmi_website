@@ -1,0 +1,19 @@
+/* .swiper-button-disabled {
+  opacity: 0 !important;
+} */
+/* .swiper-button-next,
+.swiper-button-prev {
+  opacity: 0;
+} */
+
+.custom-swiper-container .swiper-pagination {
+  position:absolute;
+  bottom: -40px;
+  left:50%;
+  transform: translateX(-50%);
+  width:auto;
+}
+
+.custom-swiper-container .swiper-container {
+  padding-bottom: 50px;
+}

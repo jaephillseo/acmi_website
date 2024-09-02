@@ -1,0 +1,17 @@
+.typed-container {
+    height: 120px; /* Reserve space for Typed.js text */
+    overflow: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    .typed-container {
+      height: 80px; /* Adjust for smaller screens */
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .typed-container {
+      height: 60px; /* Adjust for smaller screens */
+    }
+  }
+  

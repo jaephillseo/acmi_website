@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 17, 17, 17;
+  --background-start-rgb: 245, 245, 245;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  background-image: radial-gradient(ellipse, #e6eaea 2px, transparent 2px),
+    radial-gradient(ellipse, #e6eaea 2px, transparent 2px);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px, 50px 50px, cover;
+  background-color: #fafafa;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@media (max-width: 550px) {
+  body {
+    background-image: radial-gradient(ellipse, #e6eaea 1px, transparent 1px),
+      radial-gradient(ellipse, #e6eaea 1px, transparent 1px);
+    background-position: 0 0, 25px 25px;
+    background-size: 50px 50px, 50px 50px, cover;
+    background-color: #fafafa;
+    position: relative;
+    overflow-x: hidden;
+  }
+}
+
+.myHero {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 25;
+}
+
+.myLogo {
+  width:95px;
+  height: 50px;
+}
+
+@media (max-width: 550px) {
+  .myLogo {
+    width:80px;
+    height: auto;
+  }
+}
+
+.autoscroller {
+  display: flex;
+  animation: swipe 20000ms linear infinite backwards;
+}
+
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-100%);
+  }
+}
+
+.custom-card-shadow {
+  box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .hide-in-landscape {
+    display: none;
+  }
+  .show-in-landscape {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .show-in-landscape > div {
+    width: calc(33.33% - 1rem);
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,77 @@
+.btn-neumorphic {
+    border-radius: 12px; /* Slightly larger radius for a smoother curve */
+    border: none;
+    color: #333; /* Dark text color */
+    padding: 12px 24px; /* Slightly more padding for a better touch area */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px; /* Slightly larger font size */
+    font-weight: 600; /* Medium font weight for better legibility */
+    margin: 6px 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* background-color: #f0f0f3; Added subtle background color for distinction */
+    box-shadow: 12px 12px 24px #b8b8b8, /* Adjusted shadow for depth */
+                -12px -12px 24px #ffffff;
+}
+
+.btn-neumorphic:hover {
+    box-shadow: 6px 6px 12px #b8b8b8, 
+                -6px -6px 12px #ffffff;
+    background-color: rgb(20, 105, 130);
+    /* background-color: #e6e6ea; */
+}
+
+.btn-neumorphic:active {
+    box-shadow: inset 6px 6px 12px #b8b8b8, 
+                inset -6px -6px 12px #ffffff;
+    color: #111; /* Darker text color for a "pressed" effect */
+    /* background-color: #dedede; */
+}
+
+
+/* Small devices (mobile phones, portrait and landscape) */
+@media screen and (max-width: 640px) {
+    .btn-neumorphic {
+        padding: 10px 20px; /* Smaller padding */
+        font-size: 16px; /* Smaller font size */
+        border-radius: 10px; /* Smaller border radius */
+    }
+}
+
+/* Medium devices (tablets, portrait) */
+@media screen and (max-width: 768px) {
+    .btn-neumorphic {
+        padding: 8px 20px; /* Smaller padding */
+        font-size: 16px; /* Smaller font size */
+        border-radius: 10px; /* Smaller border radius */
+    }
+}
+
+/* Large devices (tablets, landscape) */
+@media screen and (max-width: 1024px) {
+    .btn-neumorphic {
+        padding: 12px 24px; /* Default padding */
+        font-size: 18px; /* Default font size */
+        border-radius: 12px; /* Default border radius */
+    }
+}
+
+/* Extra-large devices (laptops/desktops) */
+@media screen and (min-width: 1280px) {
+    .btn-neumorphic {
+        padding: 14px 28px; /* Larger padding */
+        font-size: 20px; /* Larger font size */
+        border-radius: 14px; /* Larger border radius */
+    }
+}
+
+/* Extra-extra-large devices (large desktops) */
+@media screen and (min-width: 1536px) {
+    .btn-neumorphic {
+        padding: 14px 28px; /* Larger padding */
+        font-size: 20px; /* Larger font size */
+        border-radius: 14px; /* Larger border radius */
+    }
+}

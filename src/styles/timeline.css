@@ -1,0 +1,3 @@
+.timeline li:last-child hr {
+    display: none;
+  }
