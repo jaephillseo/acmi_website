@@ -1,9 +1,9 @@
-'use client';
 
-import React, { useEffect, useRef } from 'react'
+'use client'
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Typed from 'typed.js'; 
-import '../styles/carouselhero.css'
+import '../styles/carouselhero.css';
 // Swiper Components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -14,70 +14,65 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const CarouselHero = ({ contentImage }: { contentImage: string[] }) => {
-
   const typedTarget = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    const typed = new Typed(typedTarget.current, {
-      strings: ["Dedicated to Excellence, Sustainability, and Innovation: Pioneering the Future of Footwear Components Worldwide"],
-      typeSpeed: 35,
-      backSpeed: 50,
-      loop: false,
-      showCursor: false,
-    });
+    if (typedTarget.current) {
+      const typed = new Typed(typedTarget.current, {
+        strings: [
+          "Precision in Every Mold",
+          "Innovation Driving Excellence",
+          "Crafting the Future of Footwear"
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+      });
 
-    return () => {
-      typed.destroy();
-    };
+      return () => {
+        typed.destroy();
+      };
+    }
   }, []);
 
   return (
-    <>
-      <div className='min-w-full h-fit relative'>
-        <div className='absolute z-30 w-full h-full flex justify-center text-center'>
-          <div className="hero min-w-full overflow-hidden">
-            <div className="hero-overlay bg-opacity-50">
-            </div>
-            <div className="hero-content text-center text-neutral-content px-4 md:px-8 lg:px-12 sm:pt-20">
-              <div className="max-w-prose flex flex-col items-center space-y-3">
-                <h1 className="mb-0 md:mb-5 lg:mb-8 text-3xl md:text-5xl lg:text-8xl font-bold">Quality Footwear Components</h1>
-                <h2 className="mb-0 md:mb-3 lg:mb-5 text-lg md:text-3xl lg:text-5xl font-bold">Your Global Partner in Excellence</h2>
-                <div className="inline-flex items-center justify-center w-full">
-                  <hr className="w-32 lg:w-64 h-1 my-1 md:my-4 bg-yellow-300 border-0 rounded" />
-                </div>
-                <div className="typed-container">
-                  <p ref={typedTarget} className="text-sm md:mt-3 lg:mt-5 md:text-xl lg:text-2xl italic"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Swiper
-          spaceBetween={30}
-          centeredSlides={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay]}
-          loop={true}
-          className='md:mt-0 w-full h-[55vh] md:h-[55vh] lg:h-full'
-        >
-          {contentImage.map((item: string, index: number) => (
-            <SwiperSlide key={index}>
-              <Image src={item}
-                alt={item}
-                fill={true}
-                key={index}
-                // priority={index === 0}
-              />
-              <img src={item} alt={item} className='fullImage ' style={{ objectFit: 'cover' }} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <div className='relative w-full h-screen'>
+      <Swiper
+        spaceBetween={0}
+        centeredSlides={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
+        loop={true}
+        className='absolute inset-0 w-full h-full z-10'
+      >
+        {contentImage.map((item: string, index: number) => (
+          <SwiperSlide key={index} className='relative w-full h-full'>
+            <Image 
+              src={item}
+              alt={`Slide ${index + 1}`}
+              layout='fill'
+              objectFit='cover'
+              quality={80}
+              className='swiper-slide-image'
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className='absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50 z-20'></div>
+      <div className='absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 md:px-8 lg:px-12 z-30'>
+        <h7 className="text-4xl md:text-6xl lg:text-8xl font-extrabold mb-4">Anugrah Cipta Mould Indonesia</h7>
+        <h className="text-xl md:text-3xl lg:text-4xl font-semibold mb-4">Leading the World Mold Manufacturing</h>
+        {/* <p ref={typedTarget} className="text-lg md:text-2xl lg:text-3xl font-light italic"></p> */}
       </div>
-    </>
+      {/* <div className='absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 md:px-8 lg:px-12 z-30'>
+        <p ref={typedTarget} className="text-lg md:text-2xl lg:text-3xl font-light italic z-30 pt-80"></p>
+      </div> */}
+      
+    </div>
   );
-}
+};
 
-export default CarouselHero
+export default CarouselHero;

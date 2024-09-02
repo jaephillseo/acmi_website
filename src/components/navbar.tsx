@@ -45,38 +45,25 @@ const NavBar = () => {
 
   return (
     <div className={header ? "sticky min-w-full top-0 z-50 start-0" : "absolute min-w-full top-0 z-50 start-0"}>
-      <div className="navbar backdrop-filter backdrop-blur-lg backdrop-brightness-125 bg-opacity-90">
-        <div className="">
+      <div className="navbar backdrop-filter  bg-black backdrop-brightness-110 bg-opacity-60 h-24 lg:h-28 px-6 lg:px-12">
+        <div className="pl-4 flex items-center">
           <Link href='/'>
             <Image
-              src={"/images/logo/hsk_logo.png"}
-              alt="HSK Logo"
-              width={95}
-              height={50}
-              className="myLogo"
+              src={"/images/logo/ACMI-logo.png"}
+              alt="ACMI Logo"
+              width={200}
+              height={200}
+              className="myLogo max-w-none"
+              style={{width: '100px', height: '100px'}}
             />
           </Link>
         </div>
         {/* On Large */}
         <div className="navbar-end flex-1 justify-end">
-          <ul className="menu menu-horizontal font-semibold hidden lg:flex text-xl">
+          <ul className="menu menu-horizontal font-semibold hidden lg:flex text-xl text-base-200">
             <li><Link href='/'>Home</Link></li>
             <li><Link href='/about'>About Us</Link></li>
-            <li className="dropdown">
-              <div tabIndex={0} className="cursor-pointer" onClick={toggleDropdown}>
-                Our Facilities
-                <svg className="ml-1 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </div>
-              {isDropdownOpen && (
-                <ul tabIndex={0} className={`dropdown-content text-lg menu p-2 shadow bg-base-300 rounded-box w-52 ${isDropdownOpen ? 'dropdown-content-enter': 'hidden'}`}>
-                  <li><Link href="/facilities?branch=tangerang">HSK Tangerang</Link></li>
-                  <li><Link href="/facilities?branch=jepara">HSK Jepara</Link></li>
-                  <li><Link href="/facilities?branch=rembang">HSK Rembang</Link></li>
-                </ul>
-              )}
-            </li>
+            <li><Link href='/Facilities'>Facilities</Link></li>
             <li><Link href='/sustainability'>Sustainability</Link></li>
             <li><Link href='/contact-us'>Contact Us</Link></li>
           </ul>

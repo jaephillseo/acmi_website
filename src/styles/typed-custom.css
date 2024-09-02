@@ -15,3 +15,7 @@
     }
   }
   
+.typed-cursor{
+  font-size: inherit;
+  vertical-align:baseline;
+}

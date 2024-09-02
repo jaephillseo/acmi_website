@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import Head from 'next/head';
-import { Montserrat } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 import NavBar from '@/components/navbar';
 import Footer from '@/components/footer';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const font = Montserrat({ subsets: ['latin'] })
+const font = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'PT Handal Sukses Karya'

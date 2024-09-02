@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@700&display=swap');
 
 :root {
   --foreground-rgb: 17, 17, 17;
@@ -9,22 +10,22 @@
 }
 
 body {
-  background-image: radial-gradient(ellipse, #e6eaea 2px, transparent 2px),
-    radial-gradient(ellipse, #e6eaea 2px, transparent 2px);
+  background-image: radial-gradient(ellipse, #f7f9fc 2px, transparent 2px),
+    radial-gradient(ellipse, #f7f9fc 2px, transparent 2px);
   background-position: 0 0, 25px 25px;
   background-size: 50px 50px, 50px 50px, cover;
-  background-color: #fafafa;
+  background-color: #ffffff;
   position: relative;
   overflow-x: hidden;
 }
 
 @media (max-width: 550px) {
   body {
-    background-image: radial-gradient(ellipse, #e6eaea 1px, transparent 1px),
-      radial-gradient(ellipse, #e6eaea 1px, transparent 1px);
+    background-image: radial-gradient(ellipse, #f7f9fc 1px, transparent 1px),
+      radial-gradient(ellipse, #f7f9fc 1px, transparent 1px);
     background-position: 0 0, 25px 25px;
     background-size: 50px 50px, 50px 50px, cover;
-    background-color: #fafafa;
+    background-color: #ffffff;
     position: relative;
     overflow-x: hidden;
   }
@@ -81,4 +82,14 @@ body {
     width: calc(33.33% - 1rem);
     margin-bottom: 1rem;
   }
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Poppins', sans-serif;
+  color: #1F3A93
+}
+
+p {
+  font-family:'Poppins', sans-serif;
+  color: #333333
 }
