@@ -63,8 +63,9 @@ const CarouselHero = ({ contentImage }: { contentImage: string[] }) => {
       </Swiper>
       <div className='absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-50 z-20'></div>
       <div className='absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 md:px-8 lg:px-12 z-30'>
-        <h7 className="text-4xl md:text-6xl lg:text-8xl font-extrabold mb-4">Anugrah Cipta Mould Indonesia</h7>
-        <h className="text-xl md:text-3xl lg:text-4xl font-semibold mb-4">Leading the World Mold Manufacturing</h>
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-extrabold mb-4 text-white">Anugrah Cipta Mould Indonesia</h1>
+        <h2 className="text-xl md:text-3xl lg:text-4xl font-semibold mb-4 text-white">Leading the World Mold Manufacturing</h2>
+        <h3 className="text-lg md:text-xl lg:text-2xl font-semibold mb-4 text-white"> Since 1980 </h3>
         {/* <p ref={typedTarget} className="text-lg md:text-2xl lg:text-3xl font-light italic"></p> */}
       </div>
       {/* <div className='absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 md:px-8 lg:px-12 z-30'>

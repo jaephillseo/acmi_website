@@ -138,24 +138,37 @@ const Home = () => {
             </Link>
           </div>
 
-          {/* Core Services Section */}
-          <SectionHeader text="Our Services" />
+          {/* SLM Center */}
+          <SectionHeader text="The First SLM Center in Indonesia" />
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-left mt-4">
+            Innovating Mold Making Solutions
+          </h2>
           <p className="text-sm md:text-base lg:text-lg mt-4 mb-10 text-left">
-            Discover our comprehensive range of services, from design to final production, ensuring excellence every step of the way.
+            We are at the forefront of technology, delivering high-quality molds for the footwear industry. Learn more about our journey, mission, and the values that drive us.
           </p>
           <div className="flex justify-center mt-4">
-            <Link href="/services" className="btn btn-secondary">
-              Explore Our Services
+            <Link href="/about" className="btn btn-primary">
+              Learn More About Us
             </Link>
           </div>
 
           {/* Contact Us Section */}
-          <SectionHeader text="Contact Us" />
+          <SectionHeader text="Technology and Machineries" />
           <p className="text-sm md:text-base lg:text-lg mt-4 mb-10 text-left">
             Ready to collaborate? Let's start a conversation and explore possibilities together.
           </p>
           <div className="flex justify-center mt-4 mb-6">
-            <Link href="/contact-us" className="btn btn-accent">
+            <Link href="/contact-us" className="btn btn-primary">
+              Get in Touch
+            </Link>
+          </div>
+          {/* Contact Us Section */}
+          <SectionHeader text="Showcase" />
+          <p className="text-sm md:text-base lg:text-lg mt-4 mb-10 text-left">
+            Showcasing our products
+          </p>
+          <div className="flex justify-center mt-4 mb-6">
+            <Link href="/contact-us" className="btn btn-primary">
               Get in Touch
             </Link>
           </div>

@@ -46,7 +46,7 @@ const NavBar = () => {
         <div className="flex items-center">
           <Link href='/'>
             <Image
-              src="/images/logo/ACMI_edit.png"
+              src="/images/logo/ACMI_logo2.png"
               alt="ACMI Logo"
               width={150}
               height={150}

@@ -9,7 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 const font = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'PT Handal Sukses Karya'
+  title: 'Anugrah Cipta Mould Indonesia'
 }
 
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
