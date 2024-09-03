@@ -2,12 +2,11 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 const NavBar = () => {
   const [header, setHeader] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
 
   useEffect(() => {
     const scrollHeader = () => {
@@ -18,9 +17,7 @@ const NavBar = () => {
       }
     };
 
-    window.addEventListener('scroll', scrollHeader);
-
-    const handleScroll = (event: Event) => {
+    const handleScroll = () => {
       if (isDropdownOpen) {
         setIsDropdownOpen(false);
       }
@@ -32,11 +29,11 @@ const NavBar = () => {
     return () => {
       window.removeEventListener('scroll', scrollHeader);
       window.removeEventListener('scroll', handleScroll);
-    }
+    };
   }, [isDropdownOpen]);
 
   const toggleDropdown = () => {
-    setIsDropdownOpen(prevState => !prevState);
+    setIsDropdownOpen((prevState) => !prevState);
   };
 
   const closeDropdown = () => {
@@ -44,48 +41,50 @@ const NavBar = () => {
   };
 
   return (
-    <div className={header ? "sticky min-w-full top-0 z-50 start-0" : "absolute min-w-full top-0 z-50 start-0"}>
-      <div className="navbar backdrop-filter  bg-black backdrop-brightness-110 bg-opacity-60 h-24 lg:h-28 px-6 lg:px-12">
-        <div className="pl-4 flex items-center">
+    <div className={`min-w-full top-0 z-50 ${header ? 'sticky bg-gray-900 shadow-lg' : 'absolute bg-transparent'} transition-all duration-300`}>
+      <div className="navbar h-20 lg:h-24 px-4 lg:px-10">
+        <div className="flex items-center">
           <Link href='/'>
             <Image
-              src={"/images/logo/ACMI-logo.png"}
+              src="/images/logo/ACMI-logo.png"
               alt="ACMI Logo"
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               className="myLogo max-w-none"
-              style={{width: '100px', height: '100px'}}
+              style={{ width: '75px', height: '75px' }}
             />
           </Link>
         </div>
-        {/* On Large */}
+
+        {/* Large Screen Menu */}
         <div className="navbar-end flex-1 justify-end">
-          <ul className="menu menu-horizontal font-semibold hidden lg:flex text-xl text-base-200">
-            <li><Link href='/'>Home</Link></li>
-            <li><Link href='/about'>About Us</Link></li>
-            <li><Link href='/Facilities'>Facilities</Link></li>
-            <li><Link href='/sustainability'>Sustainability</Link></li>
-            <li><Link href='/contact-us'>Contact Us</Link></li>
+          <ul className="menu menu-horizontal font-semibold hidden lg:flex text-lg text-gray-100 space-x-6">
+            <li className="hover:text-gray-400"><Link href='/'>Home</Link></li>
+            <li className="hover:text-gray-400"><Link href='/about'>About Us</Link></li>
+            <li className="hover:text-gray-400"><Link href='/Facilities'>Facilities</Link></li>
+            <li className="hover:text-gray-400"><Link href='/sustainability'>Sustainability</Link></li>
+            <li className="hover:text-gray-400"><Link href='/contact-us'>Contact Us</Link></li>
           </ul>
-          {/* On Small */}
+
+          {/* Small Screen Menu */}
           <div className="dropdown dropdown-end lg:hidden">
-            <div tabIndex={0} className="btn btn-ghost" onClick={toggleDropdown}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.75} stroke="currentColor" className="w-10 h-10">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+            <button tabIndex={0} className="btn btn-ghost" onClick={toggleDropdown}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-gray-100">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
-            </div>
-            <ul tabIndex={0} className={`menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 ${isDropdownOpen ? 'dropdown-content-enter': 'hidden'}`}>
-              <li onClick={closeDropdown}><Link href='/'>Home</Link></li>
-              <li onClick={closeDropdown}><Link href='/about'>About Us</Link></li>
-              <li onClick={closeDropdown}><Link href='/facilities?branch=tangerang'>Our Facilities</Link></li>
-              <li onClick={closeDropdown}><Link href='/sustainability'>Sustainability</Link></li>
-              <li onClick={closeDropdown}><Link href='/contact-us'>Contact Us</Link></li>
+            </button>
+            <ul tabIndex={0} className={`menu menu-compact dropdown-content mt-3 p-2 shadow-lg bg-gray-800 rounded-box w-48 ${isDropdownOpen ? '' : 'hidden'}`}>
+              <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/'>Home</Link></li>
+              <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/about'>About Us</Link></li>
+              <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/facilities?branch=tangerang'>Facilities</Link></li>
+              <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/sustainability'>Sustainability</Link></li>
+              <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/contact-us'>Contact Us</Link></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
