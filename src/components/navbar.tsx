@@ -46,12 +46,12 @@ const NavBar = () => {
         <div className="flex items-center">
           <Link href='/'>
             <Image
-              src="/images/logo/ACMI-logo.png"
+              src="/images/logo/ACMI_edit.png"
               alt="ACMI Logo"
               width={150}
               height={150}
               className="myLogo max-w-none"
-              style={{ width: '75px', height: '75px' }}
+              style={{ width: '170px', height: '75px' }}
             />
           </Link>
         </div>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-theme="light">
-      <link rel="icon" href="/images/favicon.ico" />
+      <link rel="icon" href="/images/acmi_favicon.ico" />
       <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
       <body className={font.className}>
         <NavBar />
