@@ -74,12 +74,11 @@ const Home = () => {
             <div className="text-left text-base md:text-lg lg:text-xl mt-0 lg:mt-0">
               <div className="px-4">
                 <p>
-                  PT Handal Sukses Karya thrives on collaborative spirit. Our
-                  approach extends beyond the typical corporate boundaries,
-                  embracing all who take an interest in our offerings,
-                  knowledge, or collaboration opportunities. We're committed to
-                  collective progress and value open dialogue, where every query
-                  or suggestion is a stepping stone to excellence.{" "}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et elit orci. Quisque ut urna at dui tristique cursus sed ut lorem. 
+                    Fusce tellus ligula, volutpat tincidunt mollis id, semper vitae neque. Quisque hendrerit varius lacus eu commodo. Proin gravida et nulla vitae pretium. 
+                    Vivamus eget nulla ut lacus varius lobortis vitae nec massa. Sed mattis sit amet odio sit amet molestie. Nulla facilisi. 
+                    Suspendisse vitae scelerisque est, in ultrices purus. Nam sed lacus sit amet eros rutrum tempus.
+                    Pellentesque scelerisque, metus quis convallis fringilla, libero orci fermentum urna, eu elementum sem nulla eu enim.
                   <b>
                     Let's start a conversation and explore possibilities
                     together
