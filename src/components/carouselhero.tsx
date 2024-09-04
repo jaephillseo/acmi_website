@@ -6,7 +6,7 @@ import Typed from 'typed.js';
 import '../styles/carouselhero.css';
 // Swiper Components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -77,3 +77,4 @@ const CarouselHero = ({ contentImage }: { contentImage: string[] }) => {
 };
 
 export default CarouselHero;
+

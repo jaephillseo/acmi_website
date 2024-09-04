@@ -1,116 +1,19 @@
 
-// import React from "react";
-// import Link from "next/link";
-// import Image from "next/image";
-// import Card from "@/components/card";
-// import CarouselCard from "@/components/carouselcard";
-// import CarouselHero from "@/components/carouselhero";
-// import ImageOverlay from "@/components/imageoverlay";
-// import AutoScroller from "@/components/autoscroll";
-// import CarouselImage from "@/components/carouselimage";
-// import "../styles/buttons.css";
 
-// import {
-//   locationsData,
-//   servicesData,
-//   partnersData,
-//   approvedBrands,
-//   materialPartners,
-// } from "../../constants/homeConstants";
-// import SectionHeader from "@/components/sectionheader";
-
-// const Home = () => {
-//   const carouselImages: string[] = [
-//     "/images/factory-photo/DJI_0015e.jpg",
-//     "/images/factory-photo/DJI_0011e.jpg",
-//   ];
-
-//   return (
-//     <>
-//       <CarouselHero contentImage={carouselImages} />
-//       <SectionHeader text="About Us" />
-//       <div className="flex flex-col items-center justify-center text-gray-300 mt-4 md:mt-6 lg:mt-12">
-//         <div className="max-w-5xl px-5 text-center">
-//           <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold text-left">
-//             Lorem ipsum dolor sit amet.
-//           </h2>
-
-//           <p className="text-base md:text-lg lg:text-xl mt-4 mb-10 text-left">
-//             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et elit orci. Quisque ut urna at dui tristique cursus sed ut lorem. Fusce tellus ligula, volutpat tincidunt mollis id, semper vitae neque.
-//           </p>
-//           <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold text-white mt-2 text-left">
-//             Lorem ipsum dolor sit amet.
-//           </h2>
-
-//           <p className="text-base md:text-lg lg:text-xl mt-4 mb-10 text-left">
-//             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et elit orci. Quisque ut urna at dui tristique cursus sed ut lorem. Fusce tellus ligula, volutpat tincidunt mollis id, semper vitae neque.
-//           </p>
-
-//           <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold text-white mt-2 text-left">
-//             Lorem ipsum dolor sit amet.
-//           </h2>
-
-//           <p className="text-base md:text-lg lg:text-xl mt-4 text-left">
-//           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et elit orci. Quisque ut urna at dui tristique cursus sed ut lorem. 
-//           Fusce tellus ligula, volutpat tincidunt mollis id, semper vitae neque. Quisque hendrerit varius lacus eu commodo. Proin gravida et nulla vitae pretium. 
-//           Vivamus eget nulla ut lacus varius lobortis vitae nec massa. Sed mattis sit amet odio sit amet molestie. Nulla facilisi. 
-//           Suspendisse vitae scelerisque est, in ultrices purus. Nam sed lacus sit amet eros rutrum tempus.
-//           Pellentesque scelerisque, metus quis convallis fringilla, libero orci fermentum urna, eu elementum sem nulla eu enim.
-//           </p>
-//           <div className="flex justify-center mt-8">
-//             <Link href="/about" className="btn-neumorphic mt-4 bg-custom-blue">
-//               <span className="text-base md:text-lg lg:text-xl font-bold text-white">
-//                 Lorem ipsum dolor sit amet.
-//               </span>
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-      
-//     <SectionHeader text="Contact Us" />
-//       <div className="flex text-justify justify-center text-gray-300 my-10">
-//         <div className="max-w-5xl px-5">
-//           <div className="flex flex-row lg:flex-row flex-wrap lg:flex-nowrap items-center justify-center">
-//             <div className="text-left text-base md:text-lg lg:text-xl mt-0 lg:mt-0">
-//               <div className="px-4">
-//                 <p>
-//                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et elit orci. Quisque ut urna at dui tristique cursus sed ut lorem. 
-//                     Fusce tellus ligula, volutpat tincidunt mollis id, semper vitae neque. Quisque hendrerit varius lacus eu commodo. Proin gravida et nulla vitae pretium. 
-//                     Vivamus eget nulla ut lacus varius lobortis vitae nec massa. Sed mattis sit amet odio sit amet molestie. Nulla facilisi. 
-//                     Suspendisse vitae scelerisque est, in ultrices purus. Nam sed lacus sit amet eros rutrum tempus.
-//                     Pellentesque scelerisque, metus quis convallis fringilla, libero orci fermentum urna, eu elementum sem nulla eu enim.
-//                   <b>
-//                     Let's start a conversation and explore possibilities
-//                     together
-//                   </b>
-//                   .
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//           <div className="flex justify-center mt-10 mb-20">
-//             <Link
-//               href="/contact-us"
-//               className="mt-4 btn-neumorphic bg-custom-blue"
-//             >
-//               <p className="font-semibold text-white text-base md:text-lg lg:text-xl">
-//                 Collaborate With Us
-//               </p>
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Home;
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import CarouselHero from "@/components/carouselhero";
-import "../styles/buttons.css";
+'use client'
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import CarouselHero from '@/components/carouselhero';
+import '../styles/buttons.css';
 import SectionHeader from '@/components/sectionheader';
+// Swiper Components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper';
+import 'swiper/css';
+import { techCardData } from '@/data/techCardData';
+import { CalendarIcon, CubeIcon, GlobeAltIcon, UserGroupIcon } from '@heroicons/react/solid';
+
 
 const Home = () => {
   const carouselImages: string[] = [
@@ -118,60 +21,144 @@ const Home = () => {
     "/images/factory-photo/DJI_0011e.jpg",
   ];
 
+  const showcaseImages: string[] = [
+    "/images/factory-materials/biocompound.jpg",
+    "/images/factory-materials/eva_pellet.jpg",
+    "/images/factory-materials/oyster.jpg",
+
+  ];
+
+  const partnerLogos: string[] = [
+    "/images/factory-photo/DJI_0015e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
+
+  ];
+
   return (
     <>
       {/* Hero Section */}
       <CarouselHero contentImage={carouselImages} />
-      <div className="flex flex-col items-center justify-center text-gray-300 mt-4 md:mt-6 lg:mt-12">
-        <div className="max-w-5xl px-5 text-center mb-6">
-          {/* About Us Section */}
-          <SectionHeader text="About Us" />
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-left mt-4">
-            Innovating Mold Making Solutions
-          </h2>
-          <p className="text-sm md:text-base lg:text-lg mt-4 mb-10 text-left">
-            We are at the forefront of technology, delivering high-quality molds for the footwear industry. Learn more about our journey, mission, and the values that drive us.
-          </p>
-          <div className="flex justify-center mt-4">
-            <Link href="/about" className="btn btn-primary">
-              Learn More About Us
-            </Link>
+
+      <div className="flex flex-col items-center justify-center text-gray-700 mt-10 md:mt-14 lg:mt-20 px-5">
+
+        {/* About Us Section */}
+        <SectionHeader text="About Us" />
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-left mt-4 mb-6">
+          Innovating Mold Making Solutions
+        </h2>
+        <p className="text-sm md:text-base lg:text-lg mb-10 text-left">
+          We are at the forefront of technology, delivering high-quality molds for the footwear industry. Learn more about our journey, mission, and the values that drive us.
+        </p>
+        <div className="flex justify-center mb-12">
+          <Link href="/about" className="btn btn-primary">
+            Learn More About Us
+          </Link>
+        </div>
+
+        {/* 4-column Stats Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="text-center">
+            <CalendarIcon className="w-12 h-12 mx-auto text-blue-500 mb-2"/>
+            <h3 className="text-xl font-bold">Started Since</h3>
+            <p className="text-lg">1980</p>
+          </div>
+          <div className="text-center">
+          <CubeIcon className="w-12 h-12 mx-auto text-blue-500 mb-2"/>
+            <h3 className="text-xl font-bold">Yearly Mold Production Capacity</h3>
+            <p className="text-lg">500,000 Units</p>
           </div>
 
-          {/* SLM Center */}
-          <SectionHeader text="The First SLM Center in Indonesia" />
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-left mt-4">
-            Innovating Mold Making Solutions
-          </h2>
-          <p className="text-sm md:text-base lg:text-lg mt-4 mb-10 text-left">
-            We are at the forefront of technology, delivering high-quality molds for the footwear industry. Learn more about our journey, mission, and the values that drive us.
-          </p>
-          <div className="flex justify-center mt-4">
-            <Link href="/about" className="btn btn-primary">
-              Learn More About Us
-            </Link>
+          <div className="text-center">
+          <GlobeAltIcon className="w-12 h-12 mx-auto text-blue-500 mb-2"/>
+            <h3 className="text-xl font-bold">Countries Served</h3>
+            <p className="text-lg">20+ Countries</p>
           </div>
+          <div className="text-center">
+          <UserGroupIcon className="w-12 h-12 mx-auto text-blue-500 mb-2"/>
+            <h3 className="text-xl font-bold">Employees</h3>
+            <p className="text-lg">300+ Employees</p>
+          </div>
+        </div>
 
-          {/* Contact Us Section */}
-          <SectionHeader text="Technology and Machineries" />
-          <p className="text-sm md:text-base lg:text-lg mt-4 mb-10 text-left">
-            Ready to collaborate? Let's start a conversation and explore possibilities together.
-          </p>
-          <div className="flex justify-center mt-4 mb-6">
-            <Link href="/contact-us" className="btn btn-primary">
-              Get in Touch
-            </Link>
+        {/* SLM Center Section */}
+        <SectionHeader text="SLM Technology" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          {/* Left: Scrollable Image */}
+          <div className=" w-full flex justify-center items-center mt-5">
+            <Image
+              src="/images/slm1.png"
+              alt="SLM Machine"
+              width={600}
+              height={900}
+              className="rounded-lg shadow-lg object-contain"
+            />
           </div>
-          {/* Contact Us Section */}
-          <SectionHeader text="Showcase" />
-          <p className="text-sm md:text-base lg:text-lg mt-4 mb-10 text-left">
-            Showcasing our products
-          </p>
-          <div className="flex justify-center mt-4 mb-6">
-            <Link href="/contact-us" className="btn btn-primary">
-              Get in Touch
-            </Link>
+          {/* Right: Text Box */}
+          <div className="flex flex-col justify-center">
+            <h3 className="text-2xl font-bold mb-4">Innovation in Mold Making</h3>
+            <p className="text-sm md:text-base lg:text-lg">
+              We inaugarated the first SLM technology in Indonesia. 
+            </p>
           </div>
+        </div>
+
+        
+
+        <SectionHeader text="Technology and Machineries" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 mt-5">
+          {techCardData.map((card, index) => (
+            <div key={index} className="card bg-base-100 shadow-lg hover:shadow-xl transition duration-300">
+              <figure className="h-48 overflow-hidden">
+                <Image
+                  src={card.imgSrc}
+                  alt={card.title}
+                  width={400}
+                  height={250}
+                  className="w-full object-cover"
+                />
+              </figure>
+              <div className="card-body p-4">
+                <h3 className="text-lg font-bold mb-2">{card.title}</h3>
+                <p className="text-sm">{card.description}</p>
+                <div className="card-actions justify-end mt-4">
+                  <Link href={card.link} className="btn btn-outline btn-primary">View More</Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <SectionHeader text="Partners" />
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 justify-items-center">
+            {partnerLogos.map((image,index) => (
+              <div key={index} className="w-40 h-40 p-4 flex items-center justify-center">
+                <Image
+                  src={image}
+                  alt={`Showcase $(index +1})`}
+                  width={600}
+                  height={600}
+                  className="object-contain"
+                  />
+                  </div>
+            ))}
+            
+          </div>
+        {/* Contact Us Section */}
+        <SectionHeader text="------------------" />
+        <p className="text-sm md:text-base lg:text-lg mt-4 mb-10 text-left">
+          Ready to collaborate? Let's start a conversation and explore possibilities together.
+        </p>
+        <div className="flex justify-center mt-4 mb-6">
+          <Link href="/contact-us" className="btn btn-primary">
+            Get in Touch
+          </Link>
         </div>
       </div>
     </>

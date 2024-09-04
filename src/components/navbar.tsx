@@ -61,8 +61,6 @@ const NavBar = () => {
           <ul className="menu menu-horizontal font-semibold hidden lg:flex text-lg text-gray-100 space-x-6">
             <li className="hover:text-gray-400"><Link href='/'>Home</Link></li>
             <li className="hover:text-gray-400"><Link href='/about'>About Us</Link></li>
-            <li className="hover:text-gray-400"><Link href='/Facilities'>Facilities</Link></li>
-            <li className="hover:text-gray-400"><Link href='/sustainability'>Sustainability</Link></li>
             <li className="hover:text-gray-400"><Link href='/contact-us'>Contact Us</Link></li>
           </ul>
 
@@ -76,8 +74,6 @@ const NavBar = () => {
             <ul tabIndex={0} className={`menu menu-compact dropdown-content mt-3 p-2 shadow-lg bg-gray-800 rounded-box w-48 ${isDropdownOpen ? '' : 'hidden'}`}>
               <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/'>Home</Link></li>
               <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/about'>About Us</Link></li>
-              <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/facilities?branch=tangerang'>Facilities</Link></li>
-              <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/sustainability'>Sustainability</Link></li>
               <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/contact-us'>Contact Us</Link></li>
             </ul>
           </div>

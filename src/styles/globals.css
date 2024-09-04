@@ -5,16 +5,15 @@
 
 :root {
   --foreground-rgb: 17, 17, 17;
-  --background-start-rgb: 245, 245, 245;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 235, 245, 255; /* Soft light blue */
+  --background-end-rgb: 255, 255, 255; /* White */
 }
-
-body {
-  background-image: radial-gradient(ellipse, #f7f9fc 2px, transparent 2px),
-    radial-gradient(ellipse, #f7f9fc 2px, transparent 2px);
+/* body {
+  background-image: radial-gradient(ellipse, #e6f1f8 2px, transparent 2px),
+    radial-gradient(ellipse, #e6f1f8 2px, transparent 2px);
   background-position: 0 0, 25px 25px;
   background-size: 50px 50px, 50px 50px, cover;
-  background-color: #ffffff;
+  background-color: #e6f1f8;
   position: relative;
   overflow-x: hidden;
 }
@@ -29,7 +28,14 @@ body {
     position: relative;
     overflow-x: hidden;
   }
+} */
+
+body {
+  background-color: #f7f6f2;
+  background-size: cover;
+  background-repeat: repeat;
 }
+
 
 .myHero {
   position: relative;
@@ -92,4 +98,32 @@ h1, h2, h3, h4, h5, h6{
 p {
   font-family:'Poppins', sans-serif;
   color: #333333
+}
+@keyframes fadeInUp{
+  from {
+    opacity: 0;
+    transform: translate3d(0,40px,0);
+
+  }
+  to {
+    opacity:1;
+    transform: translate3d(0,0,0);
+  }
+
+}
+.animate-fadeInUp{
+  animation: fadeInUp is ease-out;
+}
+
+.animation-delay-1 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-2 {
+  animation-delay:1s;
+}
+
+
+text_shadow {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
