@@ -26,3 +26,4 @@ const TimelineItem = ({ items }: { items: timelineInterface[] }) => {
   };
   
   export default TimelineItem;
+

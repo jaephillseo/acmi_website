@@ -49,6 +49,11 @@ const Home = () => {
     "/images/factory-photo/DJI_0011e.jpg",
     "/images/factory-photo/DJI_0011e.jpg",
     "/images/factory-photo/DJI_0011e.jpg",
+    "/images/factory-photo/DJI_0015e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
+    "/images/factory-photo/DJI_0011e.jpg",
     "/images/factory-photo/DJI_0011e.jpg",
     "/images/factory-photo/DJI_0011e.jpg",
 
@@ -56,27 +61,25 @@ const Home = () => {
   const coreValues: CoreValue[] = [
     {
       title: "Innovation",
-      color: "#f97316", // Orange
+      color: "#ff7f50", 
       description: "We are constantly pushing the boundaries of mold-making technology.",
     },
     {
       title: "Collaboration",
-      color: "#f43f5e", // Red
+      color: "#6a5acd",
       description: "Our success is driven by working together with our partners and customers.",
     },
     {
       title: "Sustainability",
-      color: "#2563eb", // Blue
+      color: "#3cb371", 
       description: "We strive for environmentally friendly manufacturing practices.",
     },
     {
       title: "Quality",
-      color: "#4ade80", // Green
+      color: "#ffb6c1", 
       description: "Ensuring the highest quality in every mold we produce.",
     },
   ];
-
-
 
 
   return (
@@ -104,23 +107,23 @@ const Home = () => {
           <div className="text-center">
             <CalendarIcon className="w-12 h-12 mx-auto text-blue-500 mb-2" />
             <h3 className="text-xl font-bold">Started Since</h3>
-            <p className="text-lg">1980</p>
+            <p className="text-lg">1995</p>
           </div>
           <div className="text-center">
             <CubeIcon className="w-12 h-12 mx-auto text-blue-500 mb-2" />
             <h3 className="text-xl font-bold">Yearly Mold Production Capacity</h3>
-            <p className="text-lg">500,000 Units</p>
+            <p className="text-lg">20,000 Sets</p>
           </div>
 
           <div className="text-center">
             <GlobeAltIcon className="w-12 h-12 mx-auto text-blue-500 mb-2" />
             <h3 className="text-xl font-bold">Countries Served</h3>
-            <p className="text-lg">20+ Countries</p>
+            <p className="text-lg">15+ Countries</p>
           </div>
           <div className="text-center">
             <UserGroupIcon className="w-12 h-12 mx-auto text-blue-500 mb-2" />
             <h3 className="text-xl font-bold">Employees</h3>
-            <p className="text-lg">300+ Employees</p>
+            <p className="text-lg">500+ Employees</p>
           </div>
         </div>
 
@@ -229,7 +232,7 @@ const Home = () => {
 
         </div>
         {/* Contact Us Section */}
-        <SectionHeader text="------------------" />
+        {/* <SectionHeader text="------------------" />
         <p className="text-sm md:text-base lg:text-lg mt-4 mb-10 text-left">
           Ready to collaborate? Let's start a conversation and explore possibilities together.
         </p>
@@ -237,7 +240,7 @@ const Home = () => {
           <Link href="/contact-us" className="btn btn-primary">
             Get in Touch
           </Link>
-        </div>
+        </div> */}
       </div>
     </>
 
