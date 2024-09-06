@@ -127,3 +127,134 @@ p {
 text_shadow {
   text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
+
+.core-values-section {
+  position: relative;
+  background-color: #f3f4f6;
+  padding: 6rem 2rem;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+}
+
+.core-values-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .core-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .core-values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.core-value-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.core-value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.core-value-icon {
+  font-size: 3rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.core-value-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.core-value-description {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+/* Container for the pie chart */
+.pie-chart-container {
+  position: relative;
+  width: 600px; /* Set the size */
+  height: 600px;
+  margin: 0 auto;
+  border-radius: 50%; /* Make it a circle */
+  background: conic-gradient(
+    #f43f5e 0deg 90deg, /* Red */
+    #2563eb 90deg 180deg, /* Blue */
+    #4ade80 180deg 270deg, /* Green */
+    #f97316 270deg 360deg /* Orange */
+  );
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Each pie slice item */
+.pie-chart-item {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  
+  transform-origin: 100% 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: white;
+}
+
+/* Text styling */
+.pie-content span {
+  font-size: 20px; /* Adjust text size */
+  font-weight: bold;
+}
+
+/* Container for the entire component */
+.core-values-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Header text and description for the active value */
+.core-value-header {
+  margin-bottom: 20px;
+}
+
+
+/* Each pie slice item */
+.pie-chart-item {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  transform-origin: 100% 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Content inside each pie slice (text) */
+.pie-content {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* .pie-chart-item:nth-child(3) .pie-content span {
+  transform:rotate(90deg);
+} */
