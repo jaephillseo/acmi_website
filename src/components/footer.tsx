@@ -4,7 +4,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-      <footer className="bg-gray-800">
+      <footer className="bg-gray-900">
         <div className="mx-auto w-full max-w-5xl">
           <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
             <div>
@@ -42,7 +42,7 @@ const Footer = () => {
                   <p className="hover:underline">Phone: +62 621-2915-9080</p>
                 </li>
                 <li className="mb-4">
-                  <p className="hover:underline">Email: support@hsk.co.id</p>
+                  <p className="hover:underline">Email: support@acmi.co.id</p>
                 </li>
                 <li className="mb-4">
                   <p className="hover:underline">Jl. Millennium Raya 3B, Blok H1, Millennium Industrial Estate</p>
@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
           <div className="px-4 py-6  md:flex md:items-center md:justify-center">
             <span className="text-sm text-gray-300 sm:text-center">
-              ©2023 PT Handal Sukses Karya. All Rights Reserved.
+              ©2024 PT Anugrah Cipta Mould Indonesia. All Rights Reserved.
             </span>
           </div>
         </div>

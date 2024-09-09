@@ -58,28 +58,6 @@ const Home = () => {
     "/images/factory-photo/DJI_0011e.jpg",
 
   ];
-  const coreValues: CoreValue[] = [
-    {
-      title: "Innovation",
-      color: "#ff7f50", 
-      description: "We are constantly pushing the boundaries of mold-making technology.",
-    },
-    {
-      title: "Collaboration",
-      color: "#6a5acd",
-      description: "Our success is driven by working together with our partners and customers.",
-    },
-    {
-      title: "Sustainability",
-      color: "#3cb371", 
-      description: "We strive for environmentally friendly manufacturing practices.",
-    },
-    {
-      title: "Quality",
-      color: "#ffb6c1", 
-      description: "Ensuring the highest quality in every mold we produce.",
-    },
-  ];
 
 
   return (
@@ -128,43 +106,6 @@ const Home = () => {
         </div>
 
 
-        <SectionHeader text="Our Core Values" />
-        <h2 className="text-2xl md:text-3xl lg:text-4xl text-left mt-4 mb-6">
-          Our core values
-        </h2>
-        <div className="pie-chart-container">
-          {/* Section 1 */}
-          <div className="pie-chart-item" style={{ transform: 'rotate(0deg)' }}>
-            <div className="pie-content">
-              <i className="pie-icon fas fa-lightbulb"></i>
-              <span>Innovation</span>
-            </div>
-          </div>
-
-          {/* Section 2 */}
-          <div className="pie-chart-item" style={{ transform: 'rotate(90deg)' }}>
-            <div className="pie-content">
-              <i className="pie-icon fas fa-hands-helping"></i>
-              <span>Collaboration</span>
-            </div>
-          </div>
-
-          {/* Section 3 */}
-          <div className="pie-chart-item" style={{ transform: 'rotate(180deg)' }}>
-            <div className="pie-content">
-              <i className="pie-icon fas fa-globe"></i>
-              <span>Sustainability</span>
-            </div>
-          </div>
-
-          {/* Section 4 */}
-          <div className="pie-chart-item" style={{ transform: 'rotate(270deg)' }}>
-            <div className="pie-content">
-              <i className="pie-icon fas fa-star"></i>
-              <span>Quality</span>
-            </div>
-          </div>
-        </div>
 
         {/* SLM Center Section */}
         
