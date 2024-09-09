@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import "../../styles/typed-custom.css";
 import "../../styles/card.css";
 
-const AboutUs = () => {
+const AboutSlm = () => {
 
   return (
     <>
@@ -21,31 +21,14 @@ const AboutUs = () => {
           backgroundPosition: 'center'
         }}
       >
-        <div className="absolute inset-0 z-10">
-          {/* <div className="w-full h-full flex justify-center items-center animate-pulse">
-            <svg
-              className="w-20 h-20 text-yellow-500 opacity-50"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M12 2a1 1 0 011 1v18a1 1 0 01-2 0V3a1 1 0 011-1zM4.928 7.07a1 1 0 011.415 0l12.727 12.728a1 1 0 01-1.414 1.414L4.929 8.485a1 1 0 010-1.414z"
-                fill="currentColor"
-              />
-            </svg>
-          </div> */}
-        </div>
         <div className="hero-overlay bg-opacity-60 z-20"></div>
         <div className="hero-content text-left text-neutral-content z-30">
           <div className="max-w-md">
             <h1 className="mb-5 text-3xl text-base-300 md:text-5xl lg:text-7xl font-bold tracking-wider">
-              About Us
+              SLM
             </h1>
             <p className="text-base-300 text-lg md:text-2xl lg:text-3xl font-light tracking-wide">
-              Discover our journey and our values
+              
             </p>
           </div>
         </div>
@@ -149,20 +132,9 @@ const AboutUs = () => {
           />
         </motion.div>
       </div>
-      <div className="flex text-justify justify-center bg-auto my-12 lg:my-24">
-        <div className="max w-5xl px-5">
-          <div className="flex justify-center text-center">
-            <div>
-              <h2 className="text-3xl lg:text-5xl font-bold text-center underline underline-offset-4 decoration-custom-blue decoration-2 mb-5">Key Milestones</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis. 
-                Duis ultricies pulvinar urna, sed tristique massa pulvinar sit amet. Ut sem enim, ornare in tortor et, varius euismod sapien. 
-                Suspendisse ornare, velit non dapibus ornare, lectus nibh blandit mi, fringilla porttitor tellus tortor eu felis.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </>
   );
 };
 
-export default AboutUs;
+export default AboutSlm;

@@ -61,6 +61,22 @@ const NavBar = () => {
           <ul className="menu menu-horizontal font-semibold hidden lg:flex text-lg text-gray-100 space-x-6">
             <li className="hover:text-gray-400"><Link href='/'>Home</Link></li>
             <li className="hover:text-gray-400"><Link href='/about'>About Us</Link></li>
+            <li className="hover:text-gray-400"><Link href='/about'>Casting Mold</Link></li>
+            <li className="hover:text-gray-400"><Link href='/slm'>SLM</Link></li>
+            <li className="hover:text-gray-400"><Link href='/sla'>SLA</Link></li>
+            <li className="dropdown dropdown-hover relative">
+              <a tabIndex={0} className="hover:text-gray-400">
+                Products
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-4 h-4 inline-block ml-1">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+              <ul className="dropdown-content absolute left-0 mt-3 p-2 shadow-lg bg-gray-800 rounded-box w-48 space-y-2">
+                <li className="hover:bg-gray-700"><Link href='/casting-mold'>Casting Mold</Link></li>
+                <li className="hover:bg-gray-700"><Link href='/slm'>SLM</Link></li>
+                <li className="hover:bg-gray-700"><Link href='/sla'>SLA</Link></li>
+              </ul>
+            </li>
             <li className="hover:text-gray-400"><Link href='/contact-us'>Contact Us</Link></li>
           </ul>
 
@@ -74,6 +90,19 @@ const NavBar = () => {
             <ul tabIndex={0} className={`menu menu-compact dropdown-content mt-3 p-2 shadow-lg bg-gray-800 rounded-box w-48 ${isDropdownOpen ? '' : 'hidden'}`}>
               <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/'>Home</Link></li>
               <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/about'>About Us</Link></li>
+              <li className="dropdown dropdown-hover relative">
+                <a tabIndex={0} className="hover:bg-gray-700">
+                  Technology
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-4 h-4 inline-block ml-1">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                <ul className="dropdown-content absolute left-0 mt-3 p-2 shadow-lg bg-gray-800 rounded-box w-48 space-y-2">
+                  <li className="hover:bg-gray-700"><Link href='/casting-mold'>Casting Mold</Link></li>
+                  <li className="hover:bg-gray-700"><Link href='/slm'>SLM</Link></li>
+                  <li className="hover:bg-gray-700"><Link href='/sla'>SLA</Link></li>
+                </ul>
+              </li>
               <li onClick={closeDropdown} className="hover:bg-gray-700"><Link href='/contact-us'>Contact Us</Link></li>
             </ul>
           </div>

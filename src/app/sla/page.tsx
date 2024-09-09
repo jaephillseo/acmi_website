@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import "../../styles/typed-custom.css";
 import "../../styles/card.css";
 
-const AboutUs = () => {
+const AboutSla = () => {
 
   return (
     <>
@@ -42,7 +42,7 @@ const AboutUs = () => {
         <div className="hero-content text-left text-neutral-content z-30">
           <div className="max-w-md">
             <h1 className="mb-5 text-3xl text-base-300 md:text-5xl lg:text-7xl font-bold tracking-wider">
-              About Us
+              SLA
             </h1>
             <p className="text-base-300 text-lg md:text-2xl lg:text-3xl font-light tracking-wide">
               Discover our journey and our values
@@ -149,20 +149,9 @@ const AboutUs = () => {
           />
         </motion.div>
       </div>
-      <div className="flex text-justify justify-center bg-auto my-12 lg:my-24">
-        <div className="max w-5xl px-5">
-          <div className="flex justify-center text-center">
-            <div>
-              <h2 className="text-3xl lg:text-5xl font-bold text-center underline underline-offset-4 decoration-custom-blue decoration-2 mb-5">Key Milestones</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis. 
-                Duis ultricies pulvinar urna, sed tristique massa pulvinar sit amet. Ut sem enim, ornare in tortor et, varius euismod sapien. 
-                Suspendisse ornare, velit non dapibus ornare, lectus nibh blandit mi, fringilla porttitor tellus tortor eu felis.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </>
   );
 };
 
-export default AboutUs;
+export default AboutSla;
