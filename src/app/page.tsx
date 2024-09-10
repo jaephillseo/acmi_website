@@ -64,97 +64,93 @@ const Home = () => {
     <>
       {/* Hero Section */}
       <CarouselHero contentImage={carouselImages} />
-      <div className="flex flex-col items-center justify-center text-gray-700 mt-10 md:mt-14 lg:mt-20 px-5">
 
-        {/* About Us Section */}
-        <SectionHeader text="About Us" />
 
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-left mt-4 mb-6">
-          Innovating Mold Making Solutions
+      <div className="flex flex-col items-center justify-center text-gray-700 mt-10 md:mt-14 lg:mt-15 px-5">
+        {/* Title Section */}
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center mt-4 mb-6">
+          Your Trusted Partner in Advanced Mold Solutions
         </h2>
-        <p className="text-sm md:text-base lg:text-lg mb-10 text-left">
-          We are at the forefront of technology, delivering high-quality molds for the footwear industry. Learn more about our journey, mission, and the values that drive us.
-        </p>
-        <div className="flex justify-center mb-12">
-          <Link href="/about" className="btn btn-primary">
-            Learn More About Us
-          </Link>
+
+        {/* Detailed Description */}
+        <div className="max-w-3xl text-left">
+          <p className="text-sm md:text-base lg:text-lg mb-10">
+            With over 25 years of expertise, we lead the industry in delivering high-performance molds that drive innovation and efficiency. From initial design to production, we focus on quality, precision, and sustainability, ensuring that our solutions are built to last.
+            Explore our journey and discover how we are shaping the future of mold manufacturing for global brands across the footwear, sportswear, automotive, and other industrial sectors.
+          </p>
+          
         </div>
+
         {/* 4-column Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <div className="text-center">
             <CalendarIcon className="w-12 h-12 mx-auto text-blue-500 mb-2" />
             <h3 className="text-xl font-bold">Started Since</h3>
             <p className="text-lg">1995</p>
+            <p className="text-sm text-gray-500">Over 25 years of innovation in mold making solutions.</p>
           </div>
+
           <div className="text-center">
             <CubeIcon className="w-12 h-12 mx-auto text-blue-500 mb-2" />
             <h3 className="text-xl font-bold">Yearly Mold Production Capacity</h3>
             <p className="text-lg">20,000 Sets</p>
+            <p className="text-sm text-gray-500">State-of-the-art facilities for global production demands.</p>
           </div>
 
           <div className="text-center">
             <GlobeAltIcon className="w-12 h-12 mx-auto text-blue-500 mb-2" />
             <h3 className="text-xl font-bold">Countries Served</h3>
             <p className="text-lg">15+ Countries</p>
+            <p className="text-sm text-gray-500">Providing solutions to leading brands worldwide.</p>
           </div>
+
           <div className="text-center">
             <UserGroupIcon className="w-12 h-12 mx-auto text-blue-500 mb-2" />
             <h3 className="text-xl font-bold">Employees</h3>
             <p className="text-lg">500+ Employees</p>
+            <p className="text-sm text-gray-500">A dedicated workforce ensuring top-tier quality and service.</p>
           </div>
         </div>
 
+        <div className="flex justify-center mb-12">
+            <Link href="/about" className="btn btn-primary">
+              Discover Our Journey
+            </Link>
+          </div>
 
 
-        {/* SLM Center Section */}
-        
 
 
 
-        <SectionHeader text="Technology and Machineries" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 mt-5">
+        <SectionHeader text="Products and Services" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 mt-5">
           {techCardData.map((card, index) => (
-            <div key={index} className="card bg-base-100 shadow-lg hover:shadow-xl transition duration-300">
-              <figure className="h-48 overflow-hidden">
-                <Image
+            <motion.div
+              key={index}
+              className="card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 w-72"
+              whileHover={{ scale: 1.02 }}
+            >
+              {/* Card Image */}
+              <figure className="relative h-54 overflow-hidden">
+                <motion.img
                   src={card.imgSrc}
                   alt={card.title}
                   width={400}
-                  height={250}
-                  className="w-full object-cover"
+                  height={300}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
               </figure>
-              <div className="card-body p-4">
-                <h3 className="text-lg font-bold mb-2">{card.title}</h3>
-                <p className="text-sm">{card.description}</p>
-                <div className="card-actions justify-end mt-4">
-                  <Link href={card.link} className="btn btn-outline btn-primary">View More</Link>
+
+              {/* Card Body */}
+              <div className="p-8">
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">{card.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">{card.description}</p>
+                <div className="text-right">
+                  <Link href={card.link} className="inline-block px-6 py-2 text-sm text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-500 transition-colors duration-300">View More</Link>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-
-        <SectionHeader text="ACMI Additive Manufacturing Center" />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Left: Scrollable Image */}
-          <div className=" w-full flex justify-center items-center mt-5">
-            <Image
-              src="/images/slm1.png"
-              alt="SLM Machine"
-              width={600}
-              height={900}
-              className="rounded-lg shadow-lg object-contain"
-            />
-          </div>
-          {/* Right: Text Box */}
-          <div className="flex flex-col justify-center">
-            <h3 className="text-2xl font-bold mb-4">Innovation in Mold Making</h3>
-            <p className="text-sm md:text-base lg:text-lg">
-              We inaugarated the first SLM technology in Indonesia.
-            </p>
-          </div>
         </div>
 
         <SectionHeader text="Partners" />

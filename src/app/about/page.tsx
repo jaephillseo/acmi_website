@@ -88,16 +88,16 @@ const AboutUs = () => {
               transition={{ delay: 0.7 }}
             >
               <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis. 
-                Duis ultricies pulvinar urna, sed tristique massa pulvinar sit amet. Ut sem enim, ornare in tortor et, varius euismod sapien. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.
+                Duis ultricies pulvinar urna, sed tristique massa pulvinar sit amet. Ut sem enim, ornare in tortor et, varius euismod sapien.
                 Suspendisse ornare, velit non dapibus ornare, lectus nibh blandit mi, fringilla porttitor tellus tortor eu felis.
               </li>
               <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis. 
-                Duis ultricies pulvinar urna, sed tristique massa pulvinar sit amet. Ut sem enim, ornare in tortor et, varius euismod sapien. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.
+                Duis ultricies pulvinar urna, sed tristique massa pulvinar sit amet. Ut sem enim, ornare in tortor et, varius euismod sapien.
                 Suspendisse ornare, velit non dapibus ornare, lectus nibh blandit mi, fringilla porttitor tellus tortor eu felis.
               </li>
-              
+
             </motion.ul>
           </blockquote>
         </motion.div>
@@ -129,8 +129,8 @@ const AboutUs = () => {
               transition={{ delay: 0.7 }}
             >
               <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis. 
-                Duis ultricies pulvinar urna, sed tristique massa pulvinar sit amet. Ut sem enim, ornare in tortor et, varius euismod sapien. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.
+                Duis ultricies pulvinar urna, sed tristique massa pulvinar sit amet. Ut sem enim, ornare in tortor et, varius euismod sapien.
                 Suspendisse ornare, velit non dapibus ornare, lectus nibh blandit mi, fringilla porttitor tellus tortor eu felis.
               </li>
             </motion.ul>
@@ -149,7 +149,7 @@ const AboutUs = () => {
           />
         </motion.div>
       </div>
-      <div className="flex text-justify justify-center bg-auto my-12 lg:my-24">
+      {/* <div className="flex text-justify justify-center bg-auto my-12 lg:my-24">
         <div className="max w-5xl px-5">
           <div className="flex justify-center text-center">
             <div>
@@ -160,7 +160,72 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
+      </div> */}
+
+<div className="flex flex-col lg:flex-row items-center justify-between bg-auto my-12 lg:my-24">
+        {/* Left Side Content */}
+        <motion.div
+          className="lg:w-1/2 w-full"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img
+            src="/images/stock/stockimage1.jpg"
+            alt="Production Capacity Image"
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </motion.div>
+        <motion.div
+          className="lg:w-1/2 w-full px-5 lg:px-12 py-8 lg:py-0 text-left"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-3xl lg:text-5xl font-bold relative inline-block mb-6 lg:mb-10">
+            Production Capacity
+            <span className="absolute -left-10 top-1/2 transform -translate-y-1/2 text-5xl lg:text-7xl text-gray-200 -z-10">
+              Capacity
+            </span>
+          </h2>
+          <p className="text-base leading-relaxed md:text-xl lg:text-2xl font-medium text-gray-900">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.
+          </p>
+          <ul className="list-disc ml-8 mt-4 text-lg md:text-xl lg:text-2xl font-light">
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.</li>
+          </ul>
+        </motion.div>
+
+        {/* Right Side Image */}
+        
       </div>
+
+      <div className="relative flex flex-col items-center bg-auto my-12 lg:my-24">
+      {/* Remove the line that passes through the title */}
+      <div className="max-w-5xl px-5">
+        <h2 className="text-3xl lg:text-5xl font-bold text-center mb-5">
+          Our Key Milestones
+        </h2>
+
+        {/* Adjust the vertical line to start below the title */}
+        <div className="relative">
+          <div className="absolute w-1 h-full bg-custom-blue left-1/2 transform -translate-x-1/2 top-0"></div>
+
+          {/* Timeline Items */}
+          {timelineData.map((item, index) => (
+            <TimelineItem
+              key={index}
+              year={item.year}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
     </>
   );
 };
