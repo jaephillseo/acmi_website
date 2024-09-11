@@ -71,12 +71,12 @@ const NavBar = () => {
               <ul className="dropdown-content absolute left-0 mt-3 p-2 shadow-lg bg-gray-800 rounded-box w-48 space-y-2">
                 <li className="hover:bg-gray-700"><Link href='/casting'>Casting Mold</Link></li>
                 <li className="hover:bg-gray-700"><Link href='/slm'>SLM</Link></li>
-                <li className="hover:bg-gray-700"><Link href='/slm'>SLA</Link></li>
-                <li className="hover:bg-gray-700"><Link href='/sla'>Prototyping Services</Link></li>
+                <li className="hover:bg-gray-700"><Link href='/sla'>SLA</Link></li>
+                <li className="hover:bg-gray-700"><Link href='/prototype'>Prototyping Services</Link></li>
                 <li className="hover:bg-gray-700"><Link href='/sla'>Customized Mold Solutions</Link></li>
               </ul>
             </li>
-            <li className="hover:text-gray-400"><Link href='/about'>Machineries</Link></li>
+            <li className="hover:text-gray-400"><Link href='/machineries'>Machineries</Link></li>
             <li className="hover:text-gray-400"><Link href='/contact-us'>Contact Us</Link></li>
           </ul>
 
