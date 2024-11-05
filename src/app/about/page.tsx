@@ -80,25 +80,12 @@ const AboutUs = () => {
             </span>
           </h2>
           <blockquote className="text-base leading-relaxed md:text-xl lg:text-2xl font-medium text-gray-900">
-            <br />
-            <motion.ul
-              className="list-disc ml-8"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-            >
-              <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.
-                Duis ultricies pulvinar urna, sed tristique massa pulvinar sit amet. Ut sem enim, ornare in tortor et, varius euismod sapien.
-                Suspendisse ornare, velit non dapibus ornare, lectus nibh blandit mi, fringilla porttitor tellus tortor eu felis.
-              </li>
-              <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.
-                Duis ultricies pulvinar urna, sed tristique massa pulvinar sit amet. Ut sem enim, ornare in tortor et, varius euismod sapien.
-                Suspendisse ornare, velit non dapibus ornare, lectus nibh blandit mi, fringilla porttitor tellus tortor eu felis.
-              </li>
-
-            </motion.ul>
+            <p>
+              At the core of our mission is a commitment to excellence, innovation, and sustainability in mold manufacturing. We aim to lead the industry by providing high-quality, precision molds that empower our clients to shape their visions with confidence. Our focus on continuous improvement and embracing new technologies enables us to deliver unmatched quality and performance.
+            </p>
+            <p className="mt-4">
+              We believe in building lasting partnerships through trust, integrity, and superior service. As we look to the future, our goal remains steadfast: to set new standards in mold production that support a more sustainable and efficient manufacturing ecosystem.
+            </p>
           </blockquote>
         </motion.div>
       </div>
@@ -162,7 +149,7 @@ const AboutUs = () => {
         </div>
       </div> */}
 
-<div className="flex flex-col lg:flex-row items-center justify-between bg-auto my-12 lg:my-24">
+      <div className="flex flex-col lg:flex-row items-center justify-between bg-auto my-12 lg:my-24">
         {/* Left Side Content */}
         <motion.div
           className="lg:w-1/2 w-full"
@@ -200,28 +187,25 @@ const AboutUs = () => {
         </motion.div>
 
         {/* Right Side Image */}
-        
-      </div>
-      <section className="py-16 bg-gray-50">
-      <h2 className="text-3xl md:text-4xl font-bold text-custom-blue text-center mb-12">Our Key Milestones</h2>
 
-      {/* Timeline Container */}
-      <div className="relative">
-        {/* Vertical Line for Large Screens */}
-        <div className="hidden md:block absolute w-1 bg-custom-blue top-0 left-1/2 transform -translate-x-1/2 h-full"></div>
-
-        {/* Timeline Items */}
-        {timelineData.map((item, index) => (
-          <TimelineItem
-            key={index}
-            year={item.year}
-            title={item.title}
-            description={item.description}
-            isRightAligned={index % 2 !== 0} // Alternate left and right alignment
-          />
-        ))}
       </div>
-    </section>
+      {/* <section className="py-16 bg-gray-50">
+        <h2 className="text-3xl md:text-4xl font-bold text-custom-blue text-center mb-12">Our Key Milestones</h2>
+
+        <div className="relative">
+          <div className="hidden md:block absolute w-1 bg-custom-blue top-0 left-1/2 transform -translate-x-1/2 h-full"></div>
+
+          {timelineData.map((item, index) => (
+            <TimelineItem
+              key={index}
+              year={item.year}
+              title={item.title}
+              description={item.description}
+              isRightAligned={index % 2 !== 0} // Alternate left and right alignment
+            />
+          ))}
+        </div>
+      </section> */}
     </>
   );
 };
