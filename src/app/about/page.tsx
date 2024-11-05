@@ -202,30 +202,26 @@ const AboutUs = () => {
         {/* Right Side Image */}
         
       </div>
+      <section className="py-16 bg-gray-50">
+      <h2 className="text-3xl md:text-4xl font-bold text-custom-blue text-center mb-12">Our Key Milestones</h2>
 
-      <div className="relative flex flex-col items-center bg-auto my-12 lg:my-24">
-      {/* Remove the line that passes through the title */}
-      <div className="max-w-5xl px-5">
-        <h2 className="text-3xl lg:text-5xl font-bold text-center mb-5">
-          Our Key Milestones
-        </h2>
+      {/* Timeline Container */}
+      <div className="relative">
+        {/* Vertical Line for Large Screens */}
+        <div className="hidden md:block absolute w-1 bg-custom-blue top-0 left-1/2 transform -translate-x-1/2 h-full"></div>
 
-        {/* Adjust the vertical line to start below the title */}
-        <div className="relative">
-          <div className="absolute w-1 h-full bg-custom-blue left-1/2 transform -translate-x-1/2 top-0"></div>
-
-          {/* Timeline Items */}
-          {timelineData.map((item, index) => (
-            <TimelineItem
-              key={index}
-              year={item.year}
-              title={item.title}
-              description={item.description}
-            />
-          ))}
-        </div>
+        {/* Timeline Items */}
+        {timelineData.map((item, index) => (
+          <TimelineItem
+            key={index}
+            year={item.year}
+            title={item.title}
+            description={item.description}
+            isRightAligned={index % 2 !== 0} // Alternate left and right alignment
+          />
+        ))}
       </div>
-    </div>
+    </section>
     </>
   );
 };
