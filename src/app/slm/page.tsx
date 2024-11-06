@@ -1,5 +1,3 @@
-
-
 'use client';
 import React, { useState } from "react";
 import { motion } from "framer-motion";
@@ -17,12 +15,12 @@ const AboutSlm = () => {
         className="hero h-[24rem] md:h-[36rem] lg:h-[36rem] relative overflow-hidden"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(/images/stock/slmstockimage.jpg)",
+            "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(/images/hero_img/slm_hero.png)",
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       >
-        <div className="hero-overlay bg-opacity-70 z-20"></div>
+        <div className="hero-overlay z-20"></div>
         <div className="hero-content text-left text-neutral-content z-30">
           <div className="max-w-3xl mx-auto">
             <motion.h1
@@ -46,7 +44,7 @@ const AboutSlm = () => {
         </div>
       </div>
 
-      
+
       {/* Section with Interactive Tabs for Production Capacity and End Goal */}
       <section id="slm-details" className="max-w-5xl mx-auto py-16 px-5">
         <motion.div
@@ -65,13 +63,13 @@ const AboutSlm = () => {
           selectedTabClassName="bg-blue-400 text-white rounded"
         >
           <TabList className="flex justify-center space-x-4">
-          <Tab className="font-bold text-lg px-4 py-2 cursor-pointer transition-colors duration-300">What is SLM</Tab>
+            <Tab className="font-bold text-lg px-4 py-2 cursor-pointer transition-colors duration-300">What is SLM</Tab>
             <Tab className="font-bold text-lg px-4 py-2 cursor-pointer transition-colors duration-300">Production Capacity</Tab>
             <Tab className="font-bold text-lg px-4 py-2 cursor-pointer transition-colors duration-300">Advantages</Tab>
           </TabList>
 
           <TabPanel>
-          <motion.div
+            <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -112,6 +110,54 @@ const AboutSlm = () => {
             </motion.div>
           </TabPanel>
         </Tabs>
+      </section>
+
+      <section className="max-w-5xl mx-auto py-16 px-5 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-3xl lg:text-5xl font-bold mb-8">Applications of SLM Technology</h2>
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-700 mb-8">
+            SLM technology is widely used in various industries, from prototyping and product design to dental, medical, and engineering applications.
+          </p>
+        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            className="bg-gray-100 p-6 rounded-lg shadow-lg"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-xl font-semibold mb-4">Footwear Mold</h3>
+            <p className="text-gray-700">
+              Create highly detailed and functional prototypes for automotive parts, helping designers and engineers streamline production.
+            </p>
+          </motion.div>
+          <motion.div
+            className="bg-gray-100 p-6 rounded-lg shadow-lg"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-xl font-semibold mb-4">Dental Applications</h3>
+            <p className="text-gray-700">
+              SLA is used to create precise dental models and prosthetics, enhancing the accuracy of dental treatments.
+            </p>
+          </motion.div>
+          <motion.div
+            className="bg-gray-100 p-6 rounded-lg shadow-lg"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-xl font-semibold mb-4">Aerospace Industry</h3>
+            <p className="text-gray-700">
+              SLA enables the production of highly accurate medical devices and models for testing, research, and development.
+            </p>
+          </motion.div>
+        </div>
       </section>
 
       {/* Product Gallery Section */}
@@ -156,7 +202,7 @@ const AboutSlm = () => {
           </motion.div>
         </div>
       </section>
-      
+
     </>
   );
 };

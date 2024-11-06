@@ -98,14 +98,14 @@ const Machineries = () => {
         </div>
       </section>
 
-      {/* Cutting-Edge Machinery Showcase */}
+      {/* Machinery Showcase */}
       <section className="max-w-5xl mx-auto py-16 px-5">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8">Cutting-Edge Machinery Showcase</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8">Machinery Gallery</h2>
         </motion.div>
 
         <motion.div
