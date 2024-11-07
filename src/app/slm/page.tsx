@@ -231,7 +231,7 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
         className="hero h-[24rem] md:h-[36rem] lg:h-[40rem] relative overflow-hidden"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(/images/factory-images/slm_hero.png)",
+            "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(/images/hero_img/slm_hero.png)",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
