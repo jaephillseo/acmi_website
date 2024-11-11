@@ -12,6 +12,9 @@ module.exports = {
       screens: {
         'xxs': '200px',
         'xs': '350px',
+      },
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
       }
     },
   },

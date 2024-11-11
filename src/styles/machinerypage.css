@@ -1,0 +1,30 @@
+.machinery-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('https://images.unsplash.com/photo-1565434275951-e2f5a442c13c?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .stat-card {
+    @apply card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 rounded-lg;
+  }
+  
+  .machine-card {
+    @apply card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-lg;
+  }
+  
+  .machine-card-header {
+    @apply card-title text-base-100 py-4 px-6;
+  }
+  
+  .machine-list {
+    @apply space-y-3 p-6;
+  }
+  
+  .machine-item {
+    @apply flex justify-between items-center text-base-content;
+  }
+  
+  .cta-section {
+    @apply bg-primary text-primary-content;
+  }

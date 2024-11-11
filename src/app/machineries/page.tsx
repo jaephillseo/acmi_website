@@ -1,163 +1,164 @@
 'use client'
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
+import MachineCategory from '@/components/machinecategory';
+import StatCard from '@/components/statcard';
+import '@/styles/machinerypage.css';
 
-const Machineries = () => {
-  // Machinery data for the table
-  const machineriesData = [
-    { machine: "IMEVA Compression Machine", units: 10 },
-    { machine: "CMEVA Compression Machine", units: 8 },
-    { machine: "SLM 3D Printer", units: 5 },
-    { machine: "SLA 3D Printer", units: 6 },
-    { machine: "Injection Molding Machine", units: 12 },
-    { machine: "Automatic Cutting Machine", units: 4 },
-    { machine: "CNC Milling Machine", units: 7 },
-    { machine: "Laser Engraving Machine", units: 3 },
-    // Add more machines as necessary
-  ];
+const machineryData = {
+  cadcam: [
+    { name: 'PLOTTER', units: '3 units' },
+    { name: '2D SCAN', units: '1 unit' },
+    { name: '3D SCANNER', units: '2 units' },
+    { name: 'CUTTING M/C', units: '2 units' },
+  ],
+  cnc: [
+    { name: 'KOREA: DOOSAN', units: '16 units' },
+    { name: 'HWACHEON', units: '9 units' },
+    { name: 'TAIWAN: VMC & Other', units: '26 units' },
+    { name: 'JAPAN: MORI SEIKI', units: '1 unit' },
+  ],
+  casting: [
+    { name: 'STEEL CASTING', units: '5 units' },
+    { name: 'CERAMIC MIXER', units: '1 unit' },
+    { name: 'DRYING FURNACE', units: '2 units' },
+    { name: 'MELTING FURNACE', units: '2 units' },
+  ],
+  assembly: [
+    { name: 'MILLING MACHINE', units: '20 units' },
+    { name: 'SHAPER MACHINE', units: '4 units' },
+    { name: 'ELECTRIC WELDER', units: '4 units' },
+    { name: 'EDM DRILLING', units: '7 units' },
+  ],
+  texturing: [
+    { name: 'ROTARY EROSIONS', units: '3 units' },
+    { name: 'SPRAY BOOTH', units: '2 units' },
+    { name: 'DRYING CHAMBER', units: '2 units' },
+  ],
+  coating: [
+    { name: 'SANDING MACHINE', units: '2 units' },
+    { name: 'BAUXITE CROSS MACHINE', units: '1 unit' },
+    { name: 'CHROME MACHINE', units: '1 unit' },
+    { name: 'NANO COATING', units: '1 unit' },
+  ],
+};
 
+export default function Machineries(){
   return (
-    <>
+    <div className="min-h-screen bg-base-200">
       {/* Hero Section */}
-      <div
-        className="hero h-[24rem] md:h-[36rem] lg:h-[36rem] relative"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url(/images/stock/machinery-bg.jpg)",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60 z-20"></div>
-        <div className="hero-content text-center text-neutral-content z-30">
+      <div className="hero min-h-[60vh] machinery-hero">
+        <div className="hero-content text-center">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="max-w-4xl"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-wide">
-              Cutting-Edge Machineries
+            <h1 className="text-5xl md:text-7xl font-bold text-base-100 mb-6">
+              Our Machineries
             </h1>
-            <p className="mt-4 text-lg md:text-2xl lg:text-3xl font-light">
-              Driving Efficiency and Precision with Advanced Technologies
+            <p className="text-xl md:text-2xl text-base-100/90">
+              State-of-the-art equipment powering precision manufacturing
             </p>
           </motion.div>
         </div>
       </div>
 
       {/* Overview Section */}
-      <section className="max-w-5xl mx-auto py-16 px-5 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-3xl lg:text-5xl font-bold mb-8">Our Machineries</h2>
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-700 mb-8">
-            We are equipped with state-of-the-art machinery to ensure the highest quality in mold making and production processes. From **SLM** and **SLA** 3D printers to high-precision CNC machines, we leverage cutting-edge technology to drive innovation and efficiency.
-          </p>
-        </motion.div>
-      </section>
+       <section className="max-w-5xl mx-auto py-16 px-5 text-center">
+         <motion.div
+           initial={{ opacity: 0, y: 50 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8 }}
+         >
+           {/* <h2 className="text-3xl lg:text-5xl font-bold mb-8">Our Machineries</h2> */}
+           <p className="text-lg md:text-xl lg:text-2xl text-gray-700 mb-8">
+             We are equipped with state-of-the-art machinery to ensure the highest quality in mold making and production processes. From SLM and SLA 3D printers to high-precision CNC machines, we leverage cutting-edge technology to drive innovation and efficiency.
+           </p>
+         </motion.div>
+       </section>
 
-      {/* Machinery Table Section */}
-      <section className="bg-gray-100 py-16">
-        <div className="max-w-5xl mx-auto px-5">
+      {/* Stats Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <StatCard title="Total Machines" value="110+" delay={0.1} />
+          <StatCard title="Categories" value="6" delay={0.2} />
+          <StatCard title="Years Experience" value="25+" delay={0.3} />
+          <StatCard title="Projects Completed" value="1000+" delay={0.4} />
+        </div>
+      </div>
+
+      {/* Categories Grid */}
+      <div className="container mx-auto px-4 py-16">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="text-4xl font-bold text-center mb-16"
+        >
+          Machine Categories
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <MachineCategory
+            title="CAD/CAM"
+            machines={machineryData.cadcam}
+            color="bg-primary"
+            delay={0.1}
+          />
+          <MachineCategory
+            title="CNC"
+            machines={machineryData.cnc}
+            color="bg-error"
+            delay={0.2}
+          />
+          <MachineCategory
+            title="CASTING"
+            machines={machineryData.casting}
+            color="bg-primary"
+            delay={0.3}
+          />
+          <MachineCategory
+            title="ASSEMBLY"
+            machines={machineryData.assembly}
+            color="bg-error"
+            delay={0.4}
+          />
+          <MachineCategory
+            title="TEXTURING"
+            machines={machineryData.texturing}
+            color="bg-primary"
+            delay={0.5}
+          />
+          <MachineCategory
+            title="COATING"
+            machines={machineryData.coating}
+            color="bg-error"
+            delay={0.6}
+          />
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="cta-section py-20 mt-20">
+        <div className="container mx-auto px-4 text-center">
           <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: -50 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl lg:text-5xl font-bold mb-8">Machinery Inventory</h2>
-          </motion.div>
-
-          {/* Machinery Table */}
-          <motion.div
-            className="overflow-x-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <table className="min-w-full table-auto bg-white shadow-lg rounded-lg">
-              <thead>
-                <tr>
-                  <th className="px-4 py-2 text-left text-lg font-semibold text-gray-700">Machine</th>
-                  <th className="px-4 py-2 text-left text-lg font-semibold text-gray-700">Number of Units</th>
-                </tr>
-              </thead>
-              <tbody>
-                {machineriesData.map((machinery, index) => (
-                  <tr key={index} className="border-t">
-                    <td className="px-4 py-2">{machinery.machine}</td>
-                    <td className="px-4 py-2">{machinery.units}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <h2 className="text-4xl font-bold mb-6">
+              Ready to Start Your Project?
+            </h2>
+            <p className="text-xl opacity-90 mb-8">
+              Let's discuss how our advanced machinery can bring your vision to life.
+            </p>
+            <button className="btn btn-secondary btn-lg">
+              Contact Us Today
+            </button>
           </motion.div>
         </div>
-      </section>
-
-      {/* Machinery Showcase */}
-      <section className="max-w-5xl mx-auto py-16 px-5">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8">Machinery Gallery</h2>
-        </motion.div>
-
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.img
-            src="/images/machines/machine1.jpg"
-            className="rounded-lg shadow-lg object-cover"
-            alt="High-Tech Machine 1"
-            whileHover={{ scale: 1.05 }}
-          />
-          <motion.img
-            src="/images/machines/machine2.jpg"
-            className="rounded-lg shadow-lg object-cover"
-            alt="High-Tech Machine 2"
-            whileHover={{ scale: 1.05 }}
-          />
-          <motion.img
-            src="/images/machines/machine3.jpg"
-            className="rounded-lg shadow-lg object-cover"
-            alt="High-Tech Machine 3"
-            whileHover={{ scale: 1.05 }}
-          />
-          {/* Add more machinery images as needed */}
-        </motion.div>
-      </section>
-
-      {/* Call to Action Section */}
-      <motion.section
-        className="bg-custom-blue text-white py-16"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="max-w-5xl mx-auto px-5 text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-8">Want to Learn More About Our Machineries?</h2>
-          <p className="text-lg md:text-xl lg:text-2xl mb-8">
-            Get in touch with us today to discuss how our cutting-edge machineries can meet your production needs.
-          </p>
-          <a
-            href="/contact"
-            className="bg-white text-custom-blue font-semibold px-8 py-4 rounded-full shadow-md hover:bg-gray-100"
-          >
-            Contact Us
-          </a>
-        </div>
-      </motion.section>
-    </>
+      </div>
+    </div>
   );
-};
+}
 
-export default Machineries;

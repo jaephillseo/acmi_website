@@ -78,7 +78,7 @@
 //             With over 25 years of expertise, we lead the industry in delivering high-performance molds that drive innovation and efficiency. From initial design to production, we focus on quality, precision, and sustainability, ensuring that our solutions are built to last.
 //             Explore our journey and discover how we are shaping the future of mold manufacturing for global brands across the footwear, sportswear, automotive, and other industrial sectors.
 //           </p>
-          
+
 //         </div>
 
 //         {/* 4-column Stats Section */}
@@ -189,10 +189,10 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { 
-  Calendar, 
-  Factory, 
-  Globe2, 
+import {
+  Calendar,
+  Factory,
+  Globe2,
   Users,
   ArrowRight,
   Lightbulb,
@@ -205,12 +205,23 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 0.6 }
   }
 };
+
+const partnerLogos = [
+  "/images/logo/nike_logo.png",
+  "/images/logo/newbalance_logo.png",
+  "/images/logo/asics-logo.png",
+  "/images/logo/adidas_logo.png",
+  "/images/logo/lecoq_logo.png",
+  "/images/logo/lacoste-logo.png",
+  "/images/logo/dow_logo.png",
+  
+]
 
 const stats = [
   {
@@ -283,7 +294,7 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[90vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/70 z-10" />
         <Image
           src="images/factory-images/acmi3.jpg"
           alt="Hero background"
@@ -292,7 +303,7 @@ export default function Home() {
           priority
         />
         <div className="relative z-20 container mx-auto h-full flex items-center">
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
@@ -391,7 +402,7 @@ export default function Home() {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -426,7 +437,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Partners Section */}
       <section className="py-20">
@@ -452,12 +463,16 @@ export default function Home() {
             className="w-full max-w-5xl mx-auto"
           >
             <CarouselContent>
-              {Array.from({ length: 10 }).map((_, index) => (
+              {partnerLogos.map((logo, index) => (
                 <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
                   <div className="p-4">
                     <div className="bg-white rounded-lg p-6 shadow-sm flex items-center justify-center h-32">
-                      {/* Replace with actual partner logos */}
-                      <div className="w-24 h-24 bg-gray-200 rounded-full" />
+                      <img
+                        src={logo}
+                        alt={`Partner Logo ${index + 1}`}
+                        className="w-24 h-24 object-contain"
+                      />
+                      {/* <div className="w-24 h-24 bg-gray-200 rounded-full" /> */}
                     </div>
                   </div>
                 </CarouselItem>
@@ -470,7 +485,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600 text-white">
+      <section className="py-20 bg-blue-800 text-white">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial="hidden"
@@ -478,8 +493,8 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="text-xl mb-8 opacity-90">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-base-100">Ready to Get Started?</h2>
+            <p className="text-xl text-base-100 mb-8 opacity-90">
               Let's discuss how we can help with your mold manufacturing needs
             </p>
             <Button size="lg" variant="default" asChild>

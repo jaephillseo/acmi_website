@@ -1,39 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
   --foreground-rgb: 17, 17, 17;
   --background-start-rgb: 235, 245, 255; /* Soft light blue */
   --background-end-rgb: 255, 255, 255; /* White */
 }
-/* body {
-  background-image: radial-gradient(ellipse, #e6f1f8 2px, transparent 2px),
-    radial-gradient(ellipse, #e6f1f8 2px, transparent 2px);
-  background-position: 0 0, 25px 25px;
-  background-size: 50px 50px, 50px 50px, cover;
-  background-color: #e6f1f8;
-  position: relative;
-  overflow-x: hidden;
-}
-
-@media (max-width: 550px) {
-  body {
-    background-image: radial-gradient(ellipse, #f7f9fc 1px, transparent 1px),
-      radial-gradient(ellipse, #f7f9fc 1px, transparent 1px);
-    background-position: 0 0, 25px 25px;
-    background-size: 50px 50px, 50px 50px, cover;
-    background-color: #ffffff;
-    position: relative;
-    overflow-x: hidden;
-  }
-} */
 
 body {
   background-color: #f7f6f2;
   background-size: cover;
   background-repeat: repeat;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -254,7 +235,3 @@ text_shadow {
   font-weight: bold;
   font-size: 14px;
 }
-
-/* .pie-chart-item:nth-child(3) .pie-content span {
-  transform:rotate(90deg);
-} */
