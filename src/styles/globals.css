@@ -72,13 +72,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #1F3A93
 }
 
 p {
-  font-family:'Poppins', sans-serif;
-  color: #333333
+  font-family:'Montserrat', sans-serif;
 }
 @keyframes fadeInUp{
   from {

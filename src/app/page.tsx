@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -73,13 +72,13 @@ const services = [
     link: "/services/mold-design"
   },
   {
-    title: "Custom Manufacturing",
+    title: "SLA Printing and Prototyping",
     description: "State-of-the-art manufacturing for various industries",
     image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=800&auto=format&fit=crop",
     link: "/services/manufacturing"
   },
   {
-    title: "Quality Assurance",
+    title: "SLM Printing and Prototyping",
     description: "Rigorous testing and quality control processes",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
     link: "/services/quality"
@@ -142,7 +141,20 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Quick Overview</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Quick Overview
+            </p>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
