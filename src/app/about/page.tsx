@@ -5,6 +5,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import CapacityTable from '@/components/capacitytable';
+import LeadtimeTable from '@/components/leadtimetable';
 import styles from "@/styles/productioncapacity.module.css"
 
 const fadeIn = {
@@ -28,7 +29,41 @@ const AboutUs = () => {
       yearlyCapacity: "6,000 sets",
     },
   ];
-  
+  const leadtimeData = [
+    {
+      moldType: "Simple Outsole Mold",
+      moldStage: "Sample Stage",
+      leadTime: "8 Days",
+    },
+    {
+      moldType: "IMEVA and Outsole Mold",
+      moldStage: "Sample Stage",
+      leadTime: "13-15 Days",
+    },
+    {
+      moldType: "TPU Mold",
+      moldStage: "Sample Stage",
+      leadTime: "15 Days",
+    },
+  ];
+  const productionLeadTimeData = [
+    {
+      moldType: "Simple Outsole Mold",
+      moldStage: "Production Stage",
+      leadTime: "21 Days",
+    },
+    {
+      moldType: "Outsole and IMEVA Mold",
+      moldStage: "Production Stage",
+      leadTime: "30-33 Days",
+    },
+    {
+      moldType: "TPU Mold",
+      moldStage: "Production Stage",
+      leadTime: "33 Days",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section - Enhanced with better overlay and animations */}
@@ -74,100 +109,8 @@ const AboutUs = () => {
         </motion.div>
       </section>
 
-      {/* Mission Section - Enhanced with better spacing and animations */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-              className="lg:w-1/2"
-            >
-              <img
-                src="/images/stock/design1.jpg"
-                alt="Mission"
-                className="rounded-2xl shadow-xl object-cover w-full aspect-square"
-              />
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-              transition={{ delay: 0.2 }}
-              className="lg:w-1/2 space-y-6"
-            >
-              <div className="relative">
-                <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">
-                  Mission
-                </h2>
-                <span className="absolute -left-4 top-1/2 transform -translate-y-1/2 text-7xl text-gray-100 -z-10">
-                  Our Mission
-                </span>
-              </div>
-              <blockquote className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
-                <p>
-                  At the core of our mission is a commitment to excellence, innovation, and sustainability in mold manufacturing. We aim to lead the industry by providing high-quality, precision molds that empower our clients to shape their visions with confidence.
-                </p>
-                <p className="mt-4">
-                  We believe in building lasting partnerships through trust, integrity, and superior service. As we look to the future, our goal remains steadfast: to set new standards in mold production that support a more sustainable and efficient manufacturing ecosystem.
-                </p>
-              </blockquote>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Vision Section - Enhanced with modern layout */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-              transition={{ delay: 0.2 }}
-              className="lg:w-1/2 space-y-6"
-            >
-              <div className="relative">
-                <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">
-                  Vision
-                </h2>
-                <span className="absolute -left-4 top-1/2 transform -translate-y-1/2 text-7xl text-gray-100 -z-10">
-                  Our Vision
-                </span>
-              </div>
-              <ul className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium space-y-4 list-disc ml-6">
-                <li>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.
-                  Duis ultricies pulvinar urna, sed tristique massa pulvinar sit amet.
-                </li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-              className="lg:w-1/2"
-            >
-              <img
-                src="/images/stock/design1.jpg"
-                alt="Vision"
-                className="rounded-2xl shadow-xl object-cover w-full aspect-square"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Production Capacity Section - Enhanced with modern cards */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+      {/* Mission Section */}
+      < section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50" >
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -178,15 +121,15 @@ const AboutUs = () => {
           >
             <div className="relative">
               <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">
-                Production Capacity
+                Our Mission
               </h2>
               <span className="absolute -left-4 top-1/2 transform -translate-y-1/2 text-7xl text-gray-100 -z-10">
-                Capacity
+                Mission
               </span>
             </div>
           </motion.div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -209,16 +152,149 @@ const AboutUs = () => {
               transition={{ delay: 0.2 }}
               className="lg:w-1/2 space-y-6"
             >
-              {/* <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.
+              <blockquote className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium lg:mt-40">
+                <p>
+                  At the core of our mission is a commitment to excellence, innovation, and sustainability in mold manufacturing. We aim to lead the industry by providing high-quality, precision molds that empower our clients to shape their visions with confidence.
+                </p>
+                <p className="mt-4">
+                  We believe in building lasting partnerships through trust, integrity, and superior service. As we look to the future, our goal remains steadfast: to set new standards in mold production that support a more sustainable and efficient manufacturing ecosystem.
+                </p>
+              </blockquote>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Section - Enhanced with modern layout */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            transition={{ delay: 0.2 }}
+            className="lg:w-1/2 space-y-6 mb-16"
+          >
+            <div className="relative">
+              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">
+                Vision
+              </h2>
+              <span className="absolute -left-4 top-1/2 transform -translate-y-1/2 text-7xl text-gray-100 -z-10">
+                Our Vision
+              </span>
+            </div>
+          </motion.div>
+
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeIn}
+              transition={{ delay: 0.2 }}
+              className="lg:w-1/2 space-y-6"
+            >
+
+              <ul className="text-lg md:text-xl lg:text-2xl text-gray-700 font-light leading-relaxed list-disc ml-6 space-y-2">
+                <li>
+                  To revolutionize mold manufacturing by incorporating advanced
+                  technologies that improve efficiency and precision.
+                </li>
+                <li>
+                  To set new industry standards for sustainability and innovation,
+                  paving the way for eco-friendly manufacturing practices.
+                </li>
+                <li>
+                  To foster long-term relationships with our clients through
+                  integrity, trust, and exceptional service.
+                </li>
+              </ul>
+
+            </motion.div>
+
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeIn}
+              className="lg:w-1/2"
+            >
+              <img
+                src="/images/stock/design1.jpg"
+                alt="Vision"
+                className="rounded-2xl shadow-xl object-cover w-full aspect-square"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Production Capacity Section - Enhanced with modern cards */}
+      < section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50" >
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="lg:w-1/2 space-y-6 mb-16"
+          >
+            <div className="relative">
+              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">
+                Production Capacity
+              </h2>
+              <span className="absolute -left-4 top-1/2 transform -translate-y-1/2 text-7xl text-gray-100 -z-10">
+                Capacity
+              </span>
+            </div>
+          </motion.div>
+
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeIn}
+              className="lg:w-1/2"
+            >
+              <img
+                src="/images/stock/stockimage1.jpg"
+                alt="Production Capacity"
+                className="rounded-2xl shadow-xl object-cover w-full aspect-square"
+              />
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeIn}
+              transition={{ delay: 0.2 }}
+              className="lg:w-1/2 space-y-6"
+            >
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
+                Total Production Capacity
               </p>
-              <ul className="space-y-4 text-lg md:text-xl font-light text-gray-600 list-disc ml-6">
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis nisl semper sagittis.</li>
-              </ul> */}
               <CapacityTable data={capacityData} />
+              <p className={styles["note-text"]}>
+                * The production capacity above is based on footwear mold
+                capacity. Capacity may differ based on product type.
+              </p>
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
+                Total Production Capacity
+              </p>
+              <LeadtimeTable data={leadtimeData} />
+              <p className={styles["note-text"]}>
+                * The production capacity above is based on footwear mold
+                capacity. Capacity may differ based on product type.
+              </p>
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
+                Total Production Capacity
+              </p>
+              <LeadtimeTable data={productionLeadTimeData} />
               <p className={styles["note-text"]}>
                 * The production capacity above is based on footwear mold
                 capacity. Capacity may differ based on product type.
@@ -227,7 +303,10 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-    </div>
+
+
+
+    </div >
   );
 };
 
