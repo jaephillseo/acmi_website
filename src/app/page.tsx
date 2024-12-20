@@ -1,5 +1,5 @@
-'use client'
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -8,14 +8,13 @@ import {
   Factory,
   Globe2,
   Users,
-  ArrowRight,
-  Lightbulb,
-  Target,
-  Shield
+  ArrowRight
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import AutoScroller from '@/components/autoscroll';
+import {
+  approvedBrands
+} from "../../constants/homeConstants";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -34,8 +33,7 @@ const partnerLogos = [
   "/images/logo/lecoq_logo.png",
   "/images/logo/lacoste-logo.png",
   "/images/logo/dow_logo.png",
-  
-]
+];
 
 const stats = [
   {
@@ -64,51 +62,50 @@ const stats = [
   }
 ];
 
-const services = [
-  {
-    title: "Precision Mold Design",
-    description: "Advanced CAD/CAM solutions for complex mold designs",
-    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=800&auto=format&fit=crop",
-    link: "/services/mold-design"
-  },
-  {
-    title: "SLA Printing and Prototyping",
-    description: "State-of-the-art manufacturing for various industries",
-    image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=800&auto=format&fit=crop",
-    link: "/services/manufacturing"
-  },
-  {
-    title: "SLM Printing and Prototyping",
-    description: "Rigorous testing and quality control processes",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
-    link: "/services/quality"
-  }
-];
-
-const values = [
-  {
-    icon: Lightbulb,
-    title: "Innovation",
-    description: "Pushing boundaries in mold technology"
-  },
-  {
-    icon: Target,
-    title: "Precision",
-    description: "Unmatched accuracy in every detail"
-  },
-  {
-    icon: Shield,
-    title: "Quality",
-    description: "Excellence in every product"
-  }
-];
-
 export default function Home() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    // Clone logos to allow seamless infinite scrolling
+    const cloneLogos = () => {
+      const logos = Array.from(carousel.children);
+      logos.forEach((logo) => {
+        const clone = logo.cloneNode(true);
+        carousel.appendChild(clone);
+      });
+    };
+
+    cloneLogos();
+
+    const scrollSpeed = 1; // Speed of scrolling
+    const totalScrollWidth = carousel.scrollWidth / 2; // Halfway point for seamless scrolling
+
+    const autoScroll = () => {
+      carousel.scrollLeft += scrollSpeed;
+
+      // Reset scroll position seamlessly
+      if (carousel.scrollLeft >= totalScrollWidth) {
+        carousel.scrollLeft = 0;
+      }
+
+      requestAnimationFrame(autoScroll);
+    };
+
+    requestAnimationFrame(autoScroll);
+
+    return () => {
+      cancelAnimationFrame(autoScroll as unknown as number);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[90vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/70 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 to-black/65 z-10" />
         <Image
           src="images/factory-images/acmi3.jpg"
           alt="Hero background"
@@ -123,25 +120,20 @@ export default function Home() {
             variants={fadeInUp}
             className="max-w-2xl text-white p-4"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-300">
               Your Trusted Partner in Advanced Mold Solutions
             </h1>
-            <p className="text-lg md:text-xl mb-8 text-gray-200">
+            <h2 className="text-2xl md:text-xl mb-8 text-gray-400 font-bold">
               With over 25 years of expertise, we lead the industry in delivering high-performance molds that drive innovation and efficiency.
-            </p>
-            <Button size="lg" asChild>
-              <Link href="/contact">
-                Get Started <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            </h2>
           </motion.div>
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Quick Overview Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-        <motion.div
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -149,12 +141,27 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Quick Overview</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Quick Overview
-            </p>
           </motion.div>
+
+          {/* Brief Information Section */}
+          <div className="container mx-auto px-4 py-6">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="bg-white border border-gray-200 shadow-sm p-6 rounded-lg"
+            >
+              <h3 className="text-xl md:text-2xl text-gray-600 leading-relaxed text-left">
+                Founded in 1995, PT. Anugrah Cipta Mould Indonesia started in Tangerang, Indonesia, with a vision to revolutionize mold manufacturing. Over the years, we've built a reputation for precision and quality, becoming a trusted partner for some of the world's leading brands.
+              </h3>
+              <h3 className="text-xl md:text-2xl text-gray-600 mt-4 leading-relaxed text-left">
+                In 2020, we proudly established Indonesia's first Selective Laser Melting (SLM) Center, showcasing our commitment to innovation. Today, we lead the industry with advanced manufacturing technologies that cater to a global clientele.
+              </h3>
+            </motion.div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -175,99 +182,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Discover our comprehensive range of mold solutions tailored to your needs
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                custom={index}
-              >
-                <Card className="overflow-hidden h-full">
-                  <div className="relative h-48">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <CardHeader>
-                    <CardTitle>{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
-                  </CardHeader>
-                  <CardFooter>
-                    <Button variant="outline" asChild className="w-full">
-                      <Link href={service.link}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values Section */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Core Values</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              The principles that guide our commitment to excellence
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                custom={index}
-                className="text-center"
-              >
-                <div className="bg-white p-8 rounded-xl shadow-lg">
-                  <value.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                  <p className="text-gray-600">{value.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* Partners Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -277,37 +193,15 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Partners</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <strong className="text-gray-600 max-w-2xl mx-auto">
               Trusted by leading brands worldwide
-            </p>
+            </strong>
           </motion.div>
 
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full max-w-5xl mx-auto"
-          >
-            <CarouselContent>
-              {partnerLogos.map((logo, index) => (
-                <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-                  <div className="p-4">
-                    <div className="bg-white rounded-lg p-6 shadow-sm flex items-center justify-center h-32">
-                      <img
-                        src={logo}
-                        alt={`Partner Logo ${index + 1}`}
-                        className="w-24 h-24 object-contain"
-                      />
-                      {/* <div className="w-24 h-24 bg-gray-200 rounded-full" /> */}
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          
+          <div className="flex items-center justify-center mt-8">
+            <AutoScroller images={approvedBrands} />
+          </div>
         </div>
       </section>
 

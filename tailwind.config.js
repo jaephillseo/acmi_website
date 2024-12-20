@@ -5,7 +5,7 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend:{
+    extend: {
       colors: {
         'custom-blue': 'rgb(27,129,155)',
       },
@@ -15,7 +15,15 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
-      }
+      },
+      // Added no-scrollbar utility
+      noScrollbar: {
+        '&::-webkit-scrollbar': {
+          display: 'none',
+        },
+        '-ms-overflow-style': 'none', // IE and Edge
+        'scrollbar-width': 'none', // Firefox
+      },
     },
   },
   plugins: [
@@ -32,4 +40,3 @@ module.exports = {
     themeRoot: ":root", // The element that receives theme color CSS variables
   },
 }
-

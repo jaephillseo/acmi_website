@@ -21,7 +21,7 @@ const MachineCategory: React.FC<MachineCategoryProps> = ({ title, machines, colo
       transition={{ duration: 0.5, delay }}
       className="w-full"
     >
-      <div className="machine-card">
+      <div className="machine-card h-52">
         <div className={`machine-card-header rounded-lg ${color}`}>
           <h3 className="text-base-100">{title}</h3>
         </div>

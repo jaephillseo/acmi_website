@@ -1,208 +1,207 @@
-"use client";
-import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
+'use client';
 
-const ContactUs = () => {
-  const form = useRef<HTMLFormElement>(null);
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [validationMessage, setValidationMessage] = React.useState("");
-
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setValidationMessage("");
-
-    const name = form.current?.["user_name"].value;
-    const email = form.current?.["user_email"].value;
-    const subject = form.current?.["subject"].value;
-    const message = form.current?.["message"].value;
-
-    if (!name || !email || !subject || !message) {
-      setValidationMessage("Please fill in all fields.");
-      return;
-    }
-
-    if (form.current) {
-      emailjs
-        .sendForm(
-          "service_k7xvyb6",
-          "template_78sm6qp",
-          form.current,
-          "-E9irREi5AoJBWsLr"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-            setIsModalOpen(true);
-            if (form.current) {
-              form.current.reset();
+  import React, { useRef } from 'react';
+  import emailjs from '@emailjs/browser';
+  import '@/styles/contact.css'
+  import { MapPin, Phone, Mail } from 'lucide-react';
+  
+  const ContactUs = () => {
+    const form = useRef<HTMLFormElement>(null);
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
+    const [validationMessage, setValidationMessage] = React.useState('');
+  
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      setValidationMessage('');
+  
+      const name = form.current?.['user_name'].value;
+      const email = form.current?.['user_email'].value;
+      const subject = form.current?.['subject'].value;
+      const message = form.current?.['message'].value;
+  
+      if (!name || !email || !subject || !message) {
+        setValidationMessage('Please fill in all fields.');
+        return;
+      }
+  
+      if (form.current) {
+        emailjs
+          .sendForm(
+            'service_k7xvyb6',
+            'template_78sm6qp',
+            form.current,
+            '-E9irREi5AoJBWsLr'
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+              setIsModalOpen(true);
+              if (form.current) {
+                form.current.reset();
+              }
+            },
+            (error) => {
+              console.log(error.text);
             }
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-    } else {
-      console.log("The form is not available.");
-    }
-  };
-
-  return (
-    <>
-      <div
-        className="hero h-[24rem] "
-        style={{ backgroundImage: "url(/images/stock/office2_comp.png)" }}
-      >
-        <div className="hero-overlay bg-opacity-50"></div>
-        <div className="hero-content text-center text-neutral-content pt-20">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-3xl md:text-5xl lg:text-7xl font-bold">
-              Contact Us
+          );
+      }
+    };
+  
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {/* Hero Section */}
+        <div
+          className="contact-hero h-[40vh] lg:h-[50vh] flex items-center justify-center"
+          style={{
+            backgroundImage: "url('/images/stock/stockimage1.jpg')"
+          }}
+        >
+          <div className="text-center text-white space-y-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+              Get in Touch
             </h1>
+            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto px-4">
+              We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            </p>
           </div>
         </div>
-      </div>
-      <div className="flex flex-row-reverse text-justify justify-center bg-auto mt-20 mb-20">
-        <div className="max-w-5xl px-5 ">
-          <div className="flex flex-row-reverse flex-wrap lg:flex-nowrap space-y-5 lg:space-y-0 justify-center">
-            <div className="flex flex-col sm:md:items-center justify-start leading-relaxed w-[20rem] md:w-[42rem] lg:w-screen lg:ml-8">
-              <div className="bg-white w-full border-solid  border-gray-400 shadow-lg p-10 rounded-3xl lg:flex-1">
-                <h2 className="text-xl lg:text-2xl font-black">Ask Us Anything</h2>
-                <form ref={form} onSubmit={sendEmail} className="mt-5">
-                  <div className="relative z-0 w-full mb-3 group lg:my-10">
-                    <label
-                      htmlFor="fullname"
-                      className="block mb-2 text-sm lg:text-base font-medium text-gray-900"
-                    >
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      name="user_name"
-                      id="fullname"
-                      className="block p-2.5 w-full text-sm lg:text-base text-gray-900 bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="First and Last Name"
-                    ></input>
+  
+        {/* Contact Section */}
+        <div className="max-w-7xl mx-auto px-4 py-16 lg:py-24">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Contact Information */}
+            <div className="lg:col-span-1 space-y-6">
+              <div className="contact-info-card p-8 rounded-2xl shadow-lg">
+                <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <MapPin className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">Our Office</p>
+                      <p className="text-gray-600">
+                        Jl. Millennium Raya 3B, Blok H1,
+                        <br />
+                        Desa Peusar, Panongan,
+                        <br />
+                        Tangerang, Banten 15710
+                      </p>
+                    </div>
                   </div>
-                  <div className="relative z-0 w-full mb-3 group lg:my-10">
-                    <label
-                      htmlFor="email"
-                      className="block mb-2 text-sm lg:text-base font-medium text-gray-900"
-                    >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="user_email"
-                      id="email"
-                      className="block p-2.5 w-full text-sm lg:text-base text-gray-900 bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="example@gmail.com"
-                    ></input>
+  
+                  <div className="flex items-center space-x-4">
+                    <Phone className="w-6 h-6 text-blue-600" />
+                    <div>
+                      <p className="font-semibold">Phone</p>
+                      <p className="text-gray-600">+62 21-2915-9080</p>
+                    </div>
                   </div>
-                  <div className="relative z-0 w-full mb-3 group lg:my-10">
-                    <label
-                      htmlFor="subject"
-                      className="block mb-2 text-sm lg:text-base font-medium text-gray-900"
-                    >
+  
+                  <div className="flex items-center space-x-4">
+                    <Mail className="w-6 h-6 text-blue-600" />
+                    <div>
+                      <p className="font-semibold">Email</p>
+                      <p className="text-gray-600">support@hsk.co.id</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            {/* Contact Form */}
+            <div className="lg:col-span-2">
+              <div className="contact-form-container p-8 rounded-2xl shadow-lg">
+                <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
+                
+                <form ref={form} onSubmit={sendEmail} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        name="user_name"
+                        className="contact-input w-full px-4 py-3 rounded-lg border border-gray-300"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        name="user_email"
+                        className="contact-input w-full px-4 py-3 rounded-lg border border-gray-300"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                  </div>
+  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Subject
                     </label>
                     <input
                       type="text"
-                      id="subject"
-                      className="block p-2.5 w-full text-sm lg:text-base text-gray-900 bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Write a subject here..."
-                    ></input>
+                      name="subject"
+                      className="contact-input w-full px-4 py-3 rounded-lg border border-gray-300"
+                      placeholder="How can we help?"
+                    />
                   </div>
-                  <div className="relative z-0 w-full mb-3 group lg:my-10">
-                    <label
-                      htmlFor="message"
-                      className="block mb-2 text-sm lg:text-base font-medium text-gray-900"
-                    >
+  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Message
                     </label>
                     <textarea
                       name="message"
-                      id="message"
-                      rows={4}
-                      className="block p-2.5 w-full text-sm lg:text-base text-gray-900 bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Write your thoughts here..."
-                    ></textarea>
+                      rows={6}
+                      className="contact-input w-full px-4 py-3 rounded-lg border border-gray-300"
+                      placeholder="Your message here..."
+                    />
                   </div>
-                  <input
+  
+                  <button
                     type="submit"
-                    value="Submit"
-                    className="text-white bg-custom-blue hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm lg:text-base w-full sm:w-auto px-5 py-2.5 text-center"
-                  />
+                    className="contact-submit-btn w-full md:w-auto px-8 py-3 text-white font-medium rounded-lg"
+                  >
+                    Send Message
+                  </button>
                 </form>
+  
                 {validationMessage && (
-                  <div className="alert alert-warning mt-4">{validationMessage}</div>
-                )}
-                {isModalOpen && (
-                  <div className="modal modal-open">
-                    <div className="modal-box">
-                      <h3 className="font-bold text-base lg:text-lg">
-                        Thank You!
-                      </h3>
-                      <p className="py-4 text-left leading relaxed">
-                        Your message has been sent successfully.
-                      </p>
-                      <div className="modal-action">
-                        <button
-                          className="btn"
-                          onClick={() => setIsModalOpen(false)}
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
+                  <div className="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-700">
+                    {validationMessage}
                   </div>
                 )}
-              </div>
-            </div>
-            <div className="flex flex-row flex-wrap lg:flex-col lg:flex-nowrap sm:md:items-center justify-center lg:space-y-5 space-x-0 md:space-x-5 lg:space-x-0 leading-relaxed">
-              <div className="bg-white h-[16rem] w-[20rem] lg:w-[24rem] lg:h-auto border-solid border-gray-400 shadow-lg p-10 my-2.5 lg:my-0 rounded-3xl text-left">
-                <h2 className="text-xl lg:text-2xl font-semibold">HSK Tangerang</h2>
-                <p className="text-sm lg:text-base mt-2">Jl. Millennium Raya 3B, Blok H1</p>
-                <p className="text-sm lg:text-base">Desa Peusar, Panongan, Tangerang</p>
-                <p className="text-sm lg:text-base"> Banten, Indonesia 15710</p>
-                <p className="text-sm lg:text-base mt-2">
-                  <span className="font-semibold">Phone:</span> +62 21-2915-9080
-                </p>
-                <p className="text-sm lg:text-base">
-                  <span className="font-semibold">Email:</span>{" "}
-                  support@hsk.co.id
-                </p>
-              </div>
-              <div className="bg-white h-[16rem] w-[20rem] lg:w-[24rem] border-solid  border-gray-400 shadow-lg p-10 my-2.5 lg:my-0 rounded-3xl text-left">
-                <h2 className="text-xl lg:text-2xl font-semibold">HSK Jepara</h2>
-                <p className="text-sm lg:text-base mt-2">Jl. Raya Mayong Pancur KM, I</p>
-                <p className="text-sm lg:text-base">Desa Singorojo, Mayong, Jepara</p>
-                <p className="text-sm lg:text-base">RT 05 / RW 03</p>
-                <p className="text-sm lg:text-base">Jawa Tengah, Indonesia</p>
-                <p className="text-sm lg:text-base mt-2">
-                  <span className="font-semibold">Phone:</span> +62 21-5010-4536
-                </p>
-                <p className="text-sm lg:text-base">
-                  <span className="font-semibold">Email:</span>{" "}
-                  support@hsk.co.id
-                </p>
-              </div>
-              <div className="bg-white h-[16rem] w-[20rem] lg:w-[24rem] border-solid  border-gray-400 shadow-lg p-10 my-2.5 lg:my-0 rounded-3xl text-left">
-                <h2 className="text-xl lg:text-2xl font-semibold">HSK Rembang</h2>
-                <p className="text-sm lg:text-base mt-2">Jl. Raya Rembang Pamotan KM. 13</p>
-                <p className="text-sm lg:text-base">Desa Japeledok, Pancur, Rembang</p>
-                <p className="text-sm lg:text-base">RT 05 / RW 01</p>
-                <p className="text-sm lg:text-base">Jawa Tengah, Indonesia</p>
-                <p className="text-sm lg:text-base mt-2">
-                  <span className="font-semibold ">Email:</span>{" "}
-                  support@hsk.co.id
-                </p>
               </div>
             </div>
           </div>
         </div>
+  
+        {/* Success Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Thank You!
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Your message has been sent successfully. We'll get back to you soon.
+              </p>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
-    </>
-  );
-};
-
-export default ContactUs;
+    );
+  };
+  
+  export default ContactUs;

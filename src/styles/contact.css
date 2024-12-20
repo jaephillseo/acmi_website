@@ -1,0 +1,60 @@
+/* Custom styles for contact page */
+    .contact-hero {
+      background-attachment: fixed;
+      background-position: center;
+      position: relative;
+      isolation: isolate;
+    }
+    
+    .contact-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.4)
+      );
+      z-index: -1;
+    }
+    
+    .contact-form-container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .contact-form-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-input {
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .contact-input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+      outline: none;
+    }
+    
+    .contact-submit-btn {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .contact-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+    
+    .contact-info-card {
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      transition: transform 0.3s ease;
+    }
+    
+    .contact-info-card:hover {
+      transform: translateY(-5px);
+    }

@@ -10,7 +10,7 @@ const AboutCasting = () => {
         className="hero h-[24rem] md:h-[36rem] lg:h-[36rem] relative"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url(/images/stock/stockcnc.jpg)",
+            "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url(/images/hero_img/CNChero1.jpg)",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -170,7 +170,7 @@ const AboutCasting = () => {
       {/* Product Gallery Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-5">
-          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-10">Product Gallery</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-10">Gallery</h2>
 
           <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
@@ -179,24 +179,41 @@ const AboutCasting = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.img
-              src="/images/gallery/casting1.jpg"
+              src="/images/stock/castingoven.png"
               className="rounded-lg shadow-lg object-cover"
               alt="Casting Mold Product 1"
               whileHover={{ scale: 1.05 }}
             />
             <motion.img
-              src="/images/gallery/casting2.jpg"
+              src="/images/stock/CNCacmi.png"
               className="rounded-lg shadow-lg object-cover"
               alt="Casting Mold Product 2"
               whileHover={{ scale: 1.05 }}
             />
             <motion.img
-              src="/images/gallery/casting3.jpg"
+              src="/images/stock/cnc2.png"
               className="rounded-lg shadow-lg object-cover"
               alt="Casting Mold Product 3"
               whileHover={{ scale: 1.05 }}
             />
-            {/* Additional product images... */}
+            <motion.img
+              src="/images/stock/casting.png"
+              className="rounded-lg shadow-lg object-cover"
+              alt="Casting Mold Product 3"
+              whileHover={{ scale: 1.05 }}
+            />
+            <motion.img
+              src="/images/stock/cnc2.png"
+              className="rounded-lg shadow-lg object-cover"
+              alt="Casting Mold Product 3"
+              whileHover={{ scale: 1.05 }}
+            />
+            <motion.img
+              src="/images/stock/cnc2.png"
+              className="rounded-lg shadow-lg object-cover"
+              alt="Casting Mold Product 3"
+              whileHover={{ scale: 1.05 }}
+            />
           </motion.div>
         </div>
       </section>

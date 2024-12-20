@@ -1,6 +1,5 @@
 .machinery-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('https://images.unsplash.com/photo-1565434275951-e2f5a442c13c?auto=format&fit=crop&q=80');
+    
     background-size: cover;
     background-position: center;
   }

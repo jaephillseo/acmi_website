@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
 import MachineCategory from '@/components/machinecategory';
@@ -43,44 +43,59 @@ const machineryData = {
   ],
 };
 
-export default function Machineries(){
+export default function Machineries() {
   return (
     <div className="min-h-screen bg-base-200">
-      {/* Hero Section */}
-      <div className="hero min-h-[60vh] machinery-hero">
-        <div className="hero-content text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold text-base-100 mb-6">
+      {/* Hero Image Section */}
+      <div className="relative h-[60vh] overflow-hidden">
+        <motion.div
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <img
+            src="images/hero_img/machinery_hero.jpg" // Replace with the actual path to your hero image
+            alt="Machinery Hero"
+            className="object-cover w-full h-full"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </motion.div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white px-6">
+            <motion.h1
+              className="text-5xl md:text-7xl font-bold mb-6 text-white"
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               Our Machineries
-            </h1>
-            <p className="text-xl md:text-2xl text-base-100/90">
+            </motion.h1>
+            <motion.p
+              className="text-xl md:text-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               State-of-the-art equipment powering precision manufacturing
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </div>
       </div>
 
       {/* Overview Section */}
-       <section className="max-w-5xl mx-auto py-16 px-5 text-center">
-         <motion.div
-           initial={{ opacity: 0, y: 50 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.8 }}
-         >
-           {/* <h2 className="text-3xl lg:text-5xl font-bold mb-8">Our Machineries</h2> */}
-           <p className="text-lg md:text-xl lg:text-2xl text-gray-700 mb-8">
-             We are equipped with state-of-the-art machinery to ensure the highest quality in mold making and production processes. From SLM and SLA 3D printers to high-precision CNC machines, we leverage cutting-edge technology to drive innovation and efficiency.
-           </p>
-         </motion.div>
-       </section>
+      <section className="max-w-5xl mx-auto py-16 px-5 text-center">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="text-4xl font-bold text-center mb-16"
+        >
+          Summary
+        </motion.h2>
+      </section>
 
       {/* Stats Section */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <StatCard title="Total Machines" value="110+" delay={0.1} />
           <StatCard title="Categories" value="6" delay={0.2} />
@@ -146,13 +161,13 @@ export default function Machineries(){
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 text-blue-200">
               Ready to Start Your Project?
             </h2>
             <p className="text-xl opacity-90 mb-8">
               Let's discuss how our advanced machinery can bring your vision to life.
             </p>
-            <button className="btn btn-secondary btn-lg">
+            <button className="btn btn-lg">
               Contact Us Today
             </button>
           </motion.div>
@@ -161,4 +176,3 @@ export default function Machineries(){
     </div>
   );
 }
-

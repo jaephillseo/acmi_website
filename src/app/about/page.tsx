@@ -138,7 +138,7 @@ const AboutUs = () => {
               className="lg:w-1/2"
             >
               <img
-                src="/images/stock/stockimage1.jpg"
+                src="/images/stock/ACMIstock1.png"
                 alt="Production Capacity"
                 className="rounded-2xl shadow-xl object-cover w-full aspect-square"
               />
@@ -222,7 +222,7 @@ const AboutUs = () => {
               className="lg:w-1/2"
             >
               <img
-                src="/images/stock/design1.jpg"
+                src="/images/stock/ACMIstock2.png"
                 alt="Vision"
                 className="rounded-2xl shadow-xl object-cover w-full aspect-square"
               />
