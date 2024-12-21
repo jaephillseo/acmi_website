@@ -15,17 +15,17 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
 
   const galleryImages = [
     {
-      src: "https://images.unsplash.com/photo-1615874959210-3a3082b1d611?q=80&w=800&auto=format&fit=crop",
+      src: 'images/stock/slaprocess.jpg',
       alt: "Midsole Mockup",
       caption: "High-precision midsole mockups for footwear design"
     },
     {
-      src: "https://images.unsplash.com/photo-1615874958768-f8122dc48e4c?q=80&w=800&auto=format&fit=crop",
+      src: 'images/stock/slaprocess.jpg',
       alt: "Industrial Prototype",
       caption: "Detailed SLA prototypes for industrial applications"
     },
     {
-      src: "https://images.unsplash.com/photo-1615874958183-ef5ae36e0d78?q=80&w=800&auto=format&fit=crop",
+      src: 'images/stock/slaprocess.jpg',
       alt: "Finished Product",
       caption: "Finished SLA products with premium surface quality"
     }

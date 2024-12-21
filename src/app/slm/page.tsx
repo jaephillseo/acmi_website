@@ -99,9 +99,7 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
             SLM Technology: Shaping the Future
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Discover how our advanced SLM technology is revolutionizing mold manufacturing
-          </p>
+          
         </motion.div>
 
         <Tabs

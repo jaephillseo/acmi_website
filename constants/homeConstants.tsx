@@ -35,38 +35,24 @@ const servicesData: servicesData[] = [
   }
 ]
 
-const partnersData: string[] = [
-  '/images/logo/diamond_group_logo.png',
-  '/images/logo/mpi_logo.png',
-  '/images/logo/pouchen_logo.png',
-  '/images/logo/parkland_logo_blue.png',
-  '/images/logo/hwi_logo.png',
-  '/images/logo/ssh_logo.png',
-  '/images/logo/Panarub_logo.png'
-]
-
 const approvedBrands: string[] = [
+  '/images/logo/nike_logo.png',
   '/images/logo/adidas_logo.png',
+  '/images/logo/satisfylogo.png',
   '/images/logo/newbalance_logo.png',
   '/images/logo/lacoste-logo.png',
   '/images/logo/lecoq_logo.png',
   '/images/logo/mizuno_logo.png',
-  '/images/logo/asics-logo.png'
+  '/images/logo/asics-logo.png',
+  '/images/logo/underarmourlogo2.png',
+  '/images/logo/yonexlogo.png',
+  '/images/logo/Logo-compass.svg',
+
 ]
 
-const materialPartners: string[] = [
-  '/images/logo/dow_logo.png',
-  '/images/logo/hanhwa_total_logo.png',
-  '/images/logo/Hanwha_Solutions_Logo.svg',
-  '/images/logo/Lotte_Chemical_Logo.svg',
-  '/images/logo/Mitsui_Chemicals_logo.svg',
-  '/images/logo/braskem_logo.svg'
-]
 
 export { 
   locationsData, 
   servicesData, 
-  partnersData, 
   approvedBrands, 
-  materialPartners 
 }

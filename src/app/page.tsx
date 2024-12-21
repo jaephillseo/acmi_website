@@ -15,6 +15,9 @@ import AutoScroller from '@/components/autoscroll';
 import {
   approvedBrands
 } from "../../constants/homeConstants";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -25,15 +28,7 @@ const fadeInUp = {
   }
 };
 
-const partnerLogos = [
-  "/images/logo/nike_logo.png",
-  "/images/logo/newbalance_logo.png",
-  "/images/logo/asics-logo.png",
-  "/images/logo/adidas_logo.png",
-  "/images/logo/lecoq_logo.png",
-  "/images/logo/lacoste-logo.png",
-  "/images/logo/dow_logo.png",
-];
+
 
 const stats = [
   {
@@ -61,6 +56,28 @@ const stats = [
     description: "A dedicated workforce ensuring top-tier quality."
   }
 ];
+
+const services = [
+  {
+    title: "Casting Mold",
+    description: "Advanced solutions for casting molds",
+    image: "images/stock/castingoven.png",
+    link: "/services/mold-design"
+  },
+  {
+    title: "SLA Printing and Prototyping",
+    description: "SLA manufacturing and solutions for various industries",
+    image: "images/stock/slamachine.png",
+    link: "/services/manufacturing"
+  },
+  {
+    title: "SLM Printing and Prototyping",
+    description: "State-of-the-art SLM Center",
+    image: "images/stock/SLM2.png",
+    link: "/services/quality"
+  }
+];
+
 
 export default function Home() {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -182,6 +199,57 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section className="py-20 bg-gray-200">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                custom={index}
+              >
+                <Card className="overflow-hidden h-[500px] w-full">
+                  <div className="relative h-64">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle>{service.title}</CardTitle>
+                    <CardDescription>{service.description}</CardDescription>
+                  </CardHeader>
+                  <CardFooter>
+                    <Button variant="outline" asChild className="w-full">
+                      <Link href={service.link}>
+                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       {/* Partners Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -229,3 +297,5 @@ export default function Home() {
     </div>
   );
 }
+
+
