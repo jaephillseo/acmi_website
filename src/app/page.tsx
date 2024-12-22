@@ -8,7 +8,11 @@ import {
   Factory,
   Globe2,
   Users,
-  ArrowRight
+  ArrowRight,
+  Award,
+  TrendingUp,
+  ShieldCheck,
+  Wrench
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import AutoScroller from '@/components/autoscroll';
@@ -33,31 +37,73 @@ const fadeInUp = {
 const stats = [
   {
     icon: Calendar,
-    title: "Started Since",
+    title: "Founded",
     value: "1995",
-    description: "Over 25 years of innovation in mold making solutions."
+    description: "Over 25 years of dedication to high-quality mold making."
   },
   {
     icon: Factory,
-    title: "Yearly Mold Production",
+    title: "Yearly Production",
     value: "20,000 Sets",
-    description: "State-of-the-art facilities for global production demands."
+    description: "Meeting global demands with state-of-the-art facilities."
   },
   {
     icon: Globe2,
-    title: "Countries Served",
+    title: "Global Reach",
     value: "15+ Countries",
-    description: "Providing solutions to leading brands worldwide."
+    description: "Trusted by leading brands worldwide."
   },
   {
     icon: Users,
-    title: "Team Size",
-    value: "500+ Employees",
-    description: "A dedicated workforce ensuring top-tier quality."
+    title: "Team",
+    value: "500+ Professionals",
+    description: "Driven by innovation and expertise."
+  },
+  {
+    icon: Award,
+    title: "SLM Innovation",
+    value: "First in Indonesia",
+    description: "Pioneering 3D metal printing for molds."
+  },
+  {
+    icon: TrendingUp,
+    title: "Capacity",
+    value: "14,400 Sets Annually",
+    description: "Ensuring rapid and efficient production timelines."
+  },
+  {
+    icon: Award,
+    title: "SLM Innovation",
+    value: "First in Indonesia",
+    description: "Pioneering 3D metal printing for molds."
+  },
+  {
+    icon: TrendingUp,
+    title: "Capacity",
+    value: "14,400 Sets Annually",
+    description: "Ensuring rapid and efficient production timelines."
   }
 ];
 
 const services = [
+  {
+    title: "Casting Mold",
+    description: "Advanced solutions for casting molds",
+    image: "images/stock/castingoven.png",
+    link: "/services/mold-design"
+  },
+  {
+    title: "SLA Printing and Prototyping",
+    description: "SLA manufacturing and solutions for various industries",
+    image: "images/stock/slamachine.png",
+    link: "/services/manufacturing"
+  },
+  {
+    title: "SLM Printing and Prototyping",
+    description: "State-of-the-art SLM Center",
+    image: "images/stock/SLM2.png",
+    link: "/services/quality"
+  },
   {
     title: "Casting Mold",
     description: "Advanced solutions for casting molds",
@@ -149,6 +195,7 @@ export default function Home() {
 
       {/* Quick Overview Section */}
       <section className="py-20 bg-gray-50">
+        
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -167,14 +214,25 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="bg-white border border-gray-200 shadow-sm p-6 rounded-lg"
+              className="bg-white/30 backdrop-blur-md shadow-lg p-8 rounded-2xl relative overflow-hidden"
             >
-              <h3 className="text-xl md:text-2xl text-gray-600 leading-relaxed text-left">
-                Founded in 1995, PT. Anugrah Cipta Mould Indonesia started in Tangerang, Indonesia, with a vision to revolutionize mold manufacturing. Over the years, we've built a reputation for precision and quality, becoming a trusted partner for some of the world's leading brands.
-              </h3>
-              <h3 className="text-xl md:text-2xl text-gray-600 mt-4 leading-relaxed text-left">
-                In 2020, we proudly established Indonesia's first Selective Laser Melting (SLM) Center, showcasing our commitment to innovation. Today, we lead the industry with advanced manufacturing technologies that cater to a global clientele.
-              </h3>
+              <div className="absolute top-0 right-0 h-full w-full flex justify-end items-center opacity-10">
+                <Image
+                  src="images/stock/innovation.png"
+                  alt="Innovation graphic"
+                  width={200}
+                  height={200}
+                  className="rounded-full"
+                />
+              </div>
+              <div className="relative z-10">
+                <h3 className="text-2xl md:text-3xl text-gray-700 font-bold leading-relaxed text-left">
+                  Founded in 1995, PT. Anugrah Cipta Mould Indonesia started in Tangerang, Indonesia, with a vision to revolutionize mold manufacturing. Over the years, we've built a reputation for precision and quality, becoming a trusted partner for some of the world's leading brands.
+                </h3>
+                <h3 className="text-xl md:text-2xl text-gray-600 mt-6 leading-relaxed text-left">
+                  In 2020, we proudly established Indonesia's first Selective Laser Melting (SLM) Center, showcasing our commitment to innovation. Today, we lead the industry with advanced manufacturing technologies that cater to a global clientele.
+                </h3>
+              </div>
             </motion.div>
           </div>
 
@@ -245,6 +303,48 @@ export default function Home() {
                 </Card>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+       {/* Technology Section */}
+       <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Cutting-Edge Technology</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              At ACMI, we leverage advanced technologies like SLM, SLA, and precision casting to deliver top-notch mold solutions. Our investment in innovation ensures efficiency and unparalleled quality for our clients.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <Wrench className="h-12 w-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">SLM Technology</h3>
+              <p className="text-gray-600">
+                The first in Indonesia, our SLM (Selective Laser Melting) technology ensures precision and sustainability in mold production.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <ShieldCheck className="h-12 w-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Quality Assurance</h3>
+              <p className="text-gray-600">
+                Comprehensive in-house testing for mold durability, ensuring superior quality and performance.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <Factory className="h-12 w-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Advanced Facilities</h3>
+              <p className="text-gray-600">
+                Our state-of-the-art facilities feature over 100 units of advanced machinery to meet global demands.
+              </p>
+            </div>
           </div>
         </div>
       </section>
