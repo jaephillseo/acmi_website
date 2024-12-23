@@ -4,70 +4,49 @@ import React, { useState } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import { ArrowRight, Zap, Shield, Target } from "lucide-react";
+import { ArrowRight, Gears, Precision, Efficiency } from "lucide-react";
 
-interface AboutSlmProps {}
+interface AboutCNCProps {}
 
-const AboutSlm: React.FC<AboutSlmProps> = () => {
+const AboutCNC: React.FC<AboutCNCProps> = () => {
   const [tabIndex, setTabIndex] = useState<number>(0);
-  const { scrollY } = useViewportScroll();
-  const yOffset = useTransform(scrollY, [0, 300], ["0%", "-20%"]);
 
-  const applications = [
-    {
-      title: "Footwear Mold Manufacturing",
-      description: "Creating intricate mold designs with exceptional detail and durability for footwear production, enabling innovative shoe designs and improved comfort.",
-      icon: <Target className="w-8 h-8 mb-4 text-blue-500" />
-    },
-    {
-      title: "Industrial Applications",
-      description: "Producing complex industrial components with high precision and strength, perfect for manufacturing tools and specialized equipment.",
-      icon: <Zap className="w-8 h-8 mb-4 text-blue-500" />
-    },
-    {
-      title: "Aerospace Components",
-      description: "Developing lightweight yet strong parts for aerospace applications, meeting strict industry standards while reducing material waste.",
-      icon: <Shield className="w-8 h-8 mb-4 text-blue-500" />
-    }
-  ];
 
   const galleryImages = [
     {
-      src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
-      alt: "Precision Mold Component",
-      caption: "High-precision SLM manufactured component"
+      src: "https://via.placeholder.com/600x400",
+      alt: "CNC Precision",
+      caption: "Precision machining for industrial applications",
     },
     {
-      src: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=800&auto=format&fit=crop",
-      alt: "Industrial Application",
-      caption: "Industrial-grade SLM product"
+      src: "https://via.placeholder.com/600x400",
+      alt: "CNC Components",
+      caption: "Complex components made with CNC accuracy",
     },
     {
-      src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=800&auto=format&fit=crop",
-      alt: "Advanced Manufacturing",
-      caption: "Next-generation manufacturing solution"
-    }
+      src: "https://via.placeholder.com/600x400",
+      alt: "CNC Manufacturing",
+      caption: "Efficient production with CNC technology",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Hero Section with Enhanced Parallax */}
+      {/* Hero Section */}
       <div className="relative h-[24rem] md:h-[36rem] lg:h-[40rem] overflow-hidden">
-        <motion.div 
+        <motion.div
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.5 }}
           className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"
-          style={{ y: yOffset }}
         >
           <div className="absolute inset-0 bg-black/30" />
           <img
-            src="images/hero_img/slm_hero.png"
-            alt="SLM Technology"
+            src='images/hero_img/CNChero1.jpg'
+            alt="CNC Machining"
             className="object-cover w-full h-full"
           />
         </motion.div>
-        
         <div className="relative h-full flex items-center justify-center">
           <div className="max-w-4xl mx-auto text-center px-6">
             <motion.h1
@@ -76,7 +55,7 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              Selective Laser Melting (SLM)
+              CNC Machining
             </motion.h1>
             <motion.p
               className="text-gray-200 text-lg md:text-2xl lg:text-3xl font-light"
@@ -84,13 +63,13 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              Revolutionary precision manufacturing for the future of mold production
+              Precision and Efficiency for Modern Manufacturing
             </motion.p>
           </div>
         </div>
       </div>
 
-      {/* Enhanced Tabs Section */}
+      {/* Tabs Section */}
       <section className="max-w-6xl mx-auto py-20 px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -100,9 +79,11 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
-            SLM Technology: Shaping the Future
+            The Power of CNC Machining
           </h2>
-          
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            Unlock unparalleled accuracy and efficiency with CNC machining for various industries.
+          </p>
         </motion.div>
 
         <Tabs
@@ -111,7 +92,7 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
           className="shadow-xl rounded-xl bg-white p-8"
         >
           <TabList className="flex flex-wrap justify-center gap-4 mb-8 border-b border-gray-200 pb-4">
-            {["Technology Overview", "Production Capacity", "Key Advantages"].map((title, index) => (
+            {["Precision", "Efficiency", "Innovation"].map((title, index) => (
               <Tab
                 key={index}
                 className="px-6 py-3 font-semibold rounded-lg transition-all cursor-pointer hover:bg-blue-50"
@@ -122,6 +103,7 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
             ))}
           </TabList>
 
+          {/* Precision Tab */}
           <TabPanel>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -130,110 +112,72 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
               className="space-y-6 text-gray-700"
             >
               <p className="text-lg leading-relaxed">
-                SLM technology represents the pinnacle of additive manufacturing, using high-powered lasers to create complex metal components with unprecedented precision. 
-                Our advanced systems can produce intricate geometries that traditional manufacturing methods simply cannot achieve.
+                CNC machining delivers unmatched precision, enabling the creation of complex parts with tight tolerances for critical applications.
               </p>
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Process Excellence</h4>
-                  <p>Layer-by-layer construction with micron-level precision, ensuring exceptional quality in every component.</p>
+                  <h4 className="font-semibold text-xl mb-3">Automotive Parts</h4>
+                  <p>Create detailed engine components with superior accuracy.</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Material Innovation</h4>
-                  <p>Compatible with a wide range of metal powders, enabling versatile applications across industries.</p>
+                  <h4 className="font-semibold text-xl mb-3">Aerospace Components</h4>
+                  <p>Precision machining for safety-critical aerospace applications.</p>
                 </div>
               </div>
             </motion.div>
           </TabPanel>
 
+          {/* Efficiency Tab */}
           <TabPanel>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              className="space-y-6 text-gray-700"
             >
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="text-center p-6 bg-blue-50 rounded-xl">
-                  <h4 className="text-2xl font-bold text-blue-600 mb-2">500+</h4>
-                  <p className="text-gray-700">Monthly Mold Capacity</p>
+              <p className="text-lg leading-relaxed">
+                CNC technology maximizes efficiency by automating complex processes and minimizing waste.
+              </p>
+              <div className="grid md:grid-cols-2 gap-8 mt-8">
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-xl mb-3">Automation</h4>
+                  <p>Automate repetitive tasks for faster production cycles.</p>
                 </div>
-                <div className="text-center p-6 bg-blue-50 rounded-xl">
-                  <h4 className="text-2xl font-bold text-blue-600 mb-2">3</h4>
-                  <p className="text-gray-700">Advanced SLM Machines</p>
-                </div>
-                <div className="text-center p-6 bg-blue-50 rounded-xl">
-                  <h4 className="text-2xl font-bold text-blue-600 mb-2">99.9%</h4>
-                  <p className="text-gray-700">Production Accuracy</p>
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-xl mb-3">Cost-Effective</h4>
+                  <p>Reduce manufacturing costs with optimized CNC processes.</p>
                 </div>
               </div>
             </motion.div>
           </TabPanel>
 
+          {/* Innovation Tab */}
           <TabPanel>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="space-y-6"
+              className="space-y-6 text-gray-700"
             >
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[
-                  { title: "Precision", desc: "Achieve tolerances as tight as ±0.1mm" },
-                  { title: "Efficiency", desc: "Reduce production time by up to 50%" },
-                  { title: "Sustainability", desc: "Minimize material waste by 30%" },
-                  { title: "Complexity", desc: "Create intricate internal structures" },
-                  { title: "Customization", desc: "Easily modify designs without tooling" },
-                  { title: "Quality", desc: "Consistent results across production runs" }
-                ].map((item, index) => (
-                  <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="font-semibold text-xl mb-3">{item.title}</h4>
-                    <p className="text-gray-600">{item.desc}</p>
-                  </div>
-                ))}
+              <p className="text-lg leading-relaxed">
+                CNC machining drives innovation with capabilities to prototype and manufacture advanced designs.
+              </p>
+              <div className="grid md:grid-cols-2 gap-8 mt-8">
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-xl mb-3">Prototyping</h4>
+                  <p>Quickly iterate designs with CNC-precise prototypes.</p>
+                </div>
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <h4 className="font-semibold text-xl mb-3">Complex Designs</h4>
+                  <p>Create intricate geometries that traditional methods can't achieve.</p>
+                </div>
               </div>
             </motion.div>
           </TabPanel>
         </Tabs>
       </section>
 
-      {/* Enhanced Applications Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Industry Applications</h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Transforming manufacturing across multiple sectors with precision and innovation
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {applications.map((app, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="flex flex-col items-center text-center">
-                  {app.icon}
-                  <h3 className="text-xl font-semibold mb-4">{app.title}</h3>
-                  <p className="text-gray-600">{app.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Enhanced Gallery Section */}
+      {/* Gallery Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -245,7 +189,7 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Product Gallery</h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Explore our portfolio of precision-engineered components
+              Explore the possibilities of CNC machining through our product gallery.
             </p>
           </motion.div>
 
@@ -285,10 +229,10 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Manufacturing Process?
+              Ready to Transform Your Manufacturing?
             </h2>
             <p className="text-blue-100 text-lg mb-8">
-              Let's discuss how our SLM technology can revolutionize your production
+              Discover how CNC machining can optimize your production and enhance quality.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -304,4 +248,4 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
   );
 };
 
-export default AboutSlm;
+export default AboutCNC;

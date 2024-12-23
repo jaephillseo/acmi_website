@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import MachineCategory from '@/components/machinecategory';
 import StatCard from '@/components/statcard';
 import '@/styles/machinerypage.css';
+import Link from 'next/link';
 
 const machineryData = {
   cadcam: [
@@ -50,9 +51,9 @@ export default function Machineries() {
       <div className="relative h-[60vh] overflow-hidden">
         <motion.div
           className="absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5 }}
         >
           <img
             src="images/hero_img/machinery_hero.jpg" // Replace with the actual path to your hero image
@@ -167,9 +168,12 @@ export default function Machineries() {
             <p className="text-xl opacity-90 mb-8">
               Let's discuss how our advanced machinery can bring your vision to life.
             </p>
-            <button className="btn btn-lg">
-              Contact Us Today
-            </button>
+            <Link href='/contact-us'>
+              <button className="btn btn-lg">
+                Contact Us Today
+              </button>
+            </Link>
+
           </motion.div>
         </div>
       </div>

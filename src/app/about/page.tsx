@@ -66,7 +66,7 @@ const AboutUs = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Enhanced with better overlay and animations */}
+      
       <section className="relative h-[24rem] md:h-[36rem] lg:h-[36rem]">
         <motion.div
           initial={{ scale: 1.1 }}
@@ -344,7 +344,7 @@ const AboutUs = () => {
       </section>
 
 {/* Meet Our Team Section */}
-      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+      {/* <section className="py-16 bg-gradient-to-b from-white to-gray-50">
   <div className="container mx-auto px-4 text-center">
     <motion.div
       initial="hidden"
@@ -379,7 +379,7 @@ const AboutUs = () => {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
 
 

@@ -6,7 +6,7 @@ import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { ArrowRight, Zap, Shield, Target } from "lucide-react";
 
-interface AboutSlaProps {}
+interface AboutSlaProps { }
 
 const AboutSla: React.FC<AboutSlaProps> = () => {
   const [tabIndex, setTabIndex] = useState<number>(0);
@@ -36,6 +36,9 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
       {/* Hero Section */}
       <div className="relative h-[24rem] md:h-[36rem] lg:h-[40rem] overflow-hidden">
         <motion.div
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5 }}
           className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"
           style={{ y: yOffset }}
         >

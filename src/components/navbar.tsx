@@ -58,6 +58,7 @@ const NavBar = () => {
                 <li onClick={() => setIsDropdownOpen(false)} className="hover:bg-gray-700"><Link href='/casting'>Casting Mold</Link></li>
                 <li onClick={() => setIsDropdownOpen(false)} className="hover:bg-gray-700"><Link href='/slm'>SLM</Link></li>
                 <li onClick={() => setIsDropdownOpen(false)} className="hover:bg-gray-700"><Link href='/sla'>SLA</Link></li>
+                <li onClick={() => setIsDropdownOpen(false)} className="hover:bg-gray-700"><Link href='/cnc'>CNC</Link></li>
                 {/* <li onClick={() => setIsDropdownOpen(false)} className="hover:bg-gray-700"><Link href='/prototype'>Prototyping Services</Link></li>
                 <li onClick={() => setIsDropdownOpen(false)} className="hover:bg-gray-700"><Link href='/sla'>Customized Mold Solutions</Link></li> */}
               </ul>

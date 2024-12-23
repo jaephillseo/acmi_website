@@ -12,7 +12,8 @@ import {
   Award,
   TrendingUp,
   ShieldCheck,
-  Wrench
+  Wrench,
+  ChevronDown
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import AutoScroller from '@/components/autoscroll';
@@ -59,30 +60,7 @@ const stats = [
     value: "500+ Professionals",
     description: "Driven by innovation and expertise."
   },
-  {
-    icon: Award,
-    title: "SLM Innovation",
-    value: "First in Indonesia",
-    description: "Pioneering 3D metal printing for molds."
-  },
-  {
-    icon: TrendingUp,
-    title: "Capacity",
-    value: "14,400 Sets Annually",
-    description: "Ensuring rapid and efficient production timelines."
-  },
-  {
-    icon: Award,
-    title: "SLM Innovation",
-    value: "First in Indonesia",
-    description: "Pioneering 3D metal printing for molds."
-  },
-  {
-    icon: TrendingUp,
-    title: "Capacity",
-    value: "14,400 Sets Annually",
-    description: "Ensuring rapid and efficient production timelines."
-  }
+
 ];
 
 const services = [
@@ -105,19 +83,19 @@ const services = [
     link: "/services/quality"
   },
   {
-    title: "Casting Mold",
-    description: "Advanced solutions for casting molds",
-    image: "images/stock/castingoven.png",
+    title: "CNC Machining",
+    description: "Advanced solutions using CNC",
+    image: "images/stock/CNCacmi.png",
     link: "/services/mold-design"
   },
   {
-    title: "SLA Printing and Prototyping",
+    title: "Mold Testing",
     description: "SLA manufacturing and solutions for various industries",
     image: "images/stock/slamachine.png",
     link: "/services/manufacturing"
   },
   {
-    title: "SLM Printing and Prototyping",
+    title: "Polishing/Finetuning",
     description: "State-of-the-art SLM Center",
     image: "images/stock/SLM2.png",
     link: "/services/quality"
@@ -176,30 +154,100 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[90vh] w-full overflow-hidden">
+        {/* Background Image Animation */}
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1.5,
+            ease: "easeOut",
+          }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="images/factory-images/acmi3.jpg"
+            alt="Hero background"
+            fill
+            className="object-cover"
+            priority
+          />
+        </motion.div>
+
+        {/* Background Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 to-black/65 z-10" />
-        <Image
-          src="images/factory-images/acmi3.jpg"
-          alt="Hero background"
-          fill
-          className="object-cover"
-          priority
-        />
+
+        {/* Hero Content */}
         <div className="relative z-20 container mx-auto h-full flex items-center">
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              duration: 1.2,
+              ease: "easeOut",
+            }}
             className="max-w-2xl text-white p-4"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-300">
+            <motion.h1
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.3,
+                duration: 1,
+                ease: "easeOut",
+              }}
+              className="text-4xl md:text-6xl font-bold mb-6 text-gray-300"
+            >
               Your Trusted Partner in Advanced Mold Solutions
-            </h1>
-            <h2 className="text-2xl md:text-xl mb-8 text-gray-400 font-bold">
-              With over 25 years of expertise, we lead the industry in delivering high-performance molds that drive innovation and efficiency.
-            </h2>
+            </motion.h1>
+            <motion.h2
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                delay: 0.6,
+                duration: 1,
+                ease: "easeOut",
+              }}
+              className="text-2xl md:text-xl mb-8 text-gray-400 font-bold"
+            >
+              With over 25 years of expertise, we lead the industry in delivering
+              high-performance molds that drive innovation and efficiency.
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 1,
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+            >
+              <Button
+                size="lg"
+                variant="default"
+                asChild
+                className="bg-blue-600 hover:bg-blue-700 transition-all"
+              >
+                <Link href="/services">Explore Our Services</Link>
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
+
+        {/* Bouncing Chevron */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 1.5,
+            duration: 0.8,
+            ease: "easeOut",
+          }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <ChevronDown className="w-8 h-8 text-white animate-bounce" />
+        </motion.div>
       </section>
+
 
       {/* Quick Overview Section */}
       <section className="py-20 bg-gray-50">
@@ -266,7 +314,7 @@ export default function Home() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -278,7 +326,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">Our Journey</h2>
           </motion.div>
           <div className="relative">
-            {/* Vertical Line */}
+
             <div className="absolute h-full border-l-4 border-blue-600 left-1/2 transform -translate-x-1/2 hidden md:block" />
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
@@ -287,7 +335,7 @@ export default function Home() {
                   className={`relative flex flex-col ${index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
                     }`}
                 >
-                  {/* Content Block */}
+
                   <div className="w-full md:w-1/2 text-center md:text-left px-4 md:px-8">
                     <div className="p-4 bg-white shadow-lg rounded-lg">
                       <h3 className="text-xl font-semibold text-blue-600 mb-2">{milestone.year}</h3>
@@ -295,12 +343,11 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Connector Dot */}
                   <div className="w-full md:w-1/12 flex justify-center items-center">
                     <div className="w-8 h-8 bg-blue-600 rounded-full border-4 border-white" />
                   </div>
 
-                  {/* Placeholder for Alternation */}
+
                   <div className="w-full md:w-1/2 text-center md:text-right px-4 md:px-8 hidden md:block">
                     <div className="p-4 bg-transparent" />
                   </div>
@@ -309,60 +356,60 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Unique Selling Points Section */}
       <section className="py-20 bg-gray-100 relative">
-  <div className="container mx-auto px-4">
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeInUp}
-      className="text-center mb-12"
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">What Sets Us Apart</h2>
-    </motion.div>
-    
-    {/* Diagonal Layout */}
-    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <div className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6">
-        <div className="flex items-center">
-          <ShieldCheck className="h-12 w-12 text-white mr-4" />
-          <h3 className="text-xl font-semibold">Largest Mold Manufacturer</h3>
-        </div>
-        <p className="mt-2 text-sm">We are the largest mold manufacturer in Indonesia, trusted by top global brands.</p>
-      </div>
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">What Sets Us Apart</h2>
+          </motion.div>
 
-      <div className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6">
-        <div className="flex items-center">
-          <Award className="h-12 w-12 text-blue-600 mr-4" />
-          <h3 className="text-xl font-semibold text-blue-600">SLM Innovation</h3>
-        </div>
-        <p className="mt-2 text-sm">First and largest SLM Center in Indonesia, revolutionizing mold production.</p>
-      </div>
+          {/* Diagonal Layout */}
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6">
+              <div className="flex items-center">
+                <ShieldCheck className="h-12 w-12 text-white mr-4" />
+                <h3 className="text-xl font-semibold">Largest Mold Manufacturer</h3>
+              </div>
+              <p className="mt-2 text-sm">We are the largest mold manufacturer in Indonesia, trusted by top global brands.</p>
+            </div>
 
-      <div className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6">
-        <div className="flex items-center">
-          <TrendingUp className="h-12 w-12 text-white mr-4" />
-          <h3 className="text-xl font-semibold">Sustainability</h3>
-        </div>
-        <p className="mt-2 text-sm">Environmentally friendly processes that reduce manpower and waste.</p>
-      </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6">
+              <div className="flex items-center">
+                <Award className="h-12 w-12 text-blue-600 mr-4" />
+                <h3 className="text-xl font-semibold text-blue-600">SLM Innovation</h3>
+              </div>
+              <p className="mt-2 text-sm">First and largest SLM Center in Indonesia, revolutionizing mold production.</p>
+            </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6">
-        <div className="flex items-center">
-          <Globe2 className="h-12 w-12 text-blue-600 mr-4" />
-          <h3 className="text-xl font-semibold text-blue-600">Global Reach</h3>
-        </div>
-        <p className="mt-2 text-sm">Trusted by over 15 countries worldwide for high-quality molds.</p>
-      </div>
-    </div>
+            <div className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6">
+              <div className="flex items-center">
+                <TrendingUp className="h-12 w-12 text-white mr-4" />
+                <h3 className="text-xl font-semibold">Sustainability</h3>
+              </div>
+              <p className="mt-2 text-sm">Environmentally friendly processes that reduce manpower and waste.</p>
+            </div>
 
-    {/* Background Shapes */}
-    <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-20 pointer-events-none"></div>
-  </div>
-</section>
+            <div className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6">
+              <div className="flex items-center">
+                <Globe2 className="h-12 w-12 text-blue-600 mr-4" />
+                <h3 className="text-xl font-semibold text-blue-600">Global Reach</h3>
+              </div>
+              <p className="mt-2 text-sm">Trusted by over 15 countries worldwide for high-quality molds.</p>
+            </div>
+          </div>
+
+          {/* Background Shapes */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-20 pointer-events-none"></div>
+        </div>
+      </section>
 
       {/* Services Section */}
       <section className="py-20 bg-gray-200">
@@ -387,7 +434,7 @@ export default function Home() {
                 variants={fadeInUp}
                 custom={index}
               >
-                <Card className="overflow-hidden h-[500px] w-full">
+                <Card className="bg-white overflow-hidden h-[450px] w-full rounded-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105">
                   <div className="relative h-64">
                     <Image
                       src={service.image}
@@ -401,7 +448,7 @@ export default function Home() {
                     <CardDescription>{service.description}</CardDescription>
                   </CardHeader>
                   <CardFooter>
-                    <Button variant="outline" asChild className="w-full">
+                    <Button variant="outline" asChild className="w-full bg-blue-500 hover:bg-blue-700 transition-colors">
                       <Link href={service.link}>
                         Learn More <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
