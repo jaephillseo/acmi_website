@@ -109,6 +109,42 @@ const AboutUs = () => {
         </motion.div>
       </section>
 
+      <section className="py-16 bg-gray-100">
+  <div className="container mx-auto px-4 text-center">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className="mb-12"
+    >
+      <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">Our Core Values</h2>
+      <p className="text-lg text-gray-600">What drives our passion for excellence</p>
+    </motion.div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="p-6 bg-white shadow-lg rounded-lg">
+        <img src="https://via.placeholder.com/150" alt="Innovation" className="h-12 w-12 mx-auto mb-4" />
+        <h3 className="text-xl font-semibold">Innovation</h3>
+        <p className="text-gray-600 mt-2">We embrace cutting-edge technology to lead the mold-making industry.</p>
+      </div>
+      <div className="p-6 bg-white shadow-lg rounded-lg">
+        <img src="https://via.placeholder.com/150" alt="Sustainability" className="h-12 w-12 mx-auto mb-4" />
+        <h3 className="text-xl font-semibold">Sustainability</h3>
+        <p className="text-gray-600 mt-2">Our processes focus on eco-friendly and sustainable manufacturing.</p>
+      </div>
+      <div className="p-6 bg-white shadow-lg rounded-lg">
+        <img src="https://via.placeholder.com/150" alt="Quality" className="h-12 w-12 mx-auto mb-4" />
+        <h3 className="text-xl font-semibold">Quality</h3>
+        <p className="text-gray-600 mt-2">Delivering superior molds with precision and reliability.</p>
+      </div>
+      <div className="p-6 bg-white shadow-lg rounded-lg">
+        <img src="https://via.placeholder.com/150" alt="Collaboration" className="h-12 w-12 mx-auto mb-4" />
+        <h3 className="text-xl font-semibold">Collaboration</h3>
+        <p className="text-gray-600 mt-2">Partnering with clients to build solutions that exceed expectations.</p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* Mission Section */}
       < section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50" >
         <div className="container mx-auto px-4">
@@ -152,7 +188,7 @@ const AboutUs = () => {
               transition={{ delay: 0.2 }}
               className="lg:w-1/2 space-y-6"
             >
-              <blockquote className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium lg:mt-40">
+              <blockquote className="text-lg md:text-xl lg:text-2xl text-gray-700 font-light leading-relaxed lg:mt-40">
                 <p>
                   At the core of our mission is a commitment to excellence, innovation, and sustainability in mold manufacturing. We aim to lead the industry by providing high-quality, precision molds that empower our clients to shape their visions with confidence.
                 </p>
@@ -164,6 +200,9 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
+      
+
 
       {/* Vision Section - Enhanced with modern layout */}
       <section className="py-16 md:py-24">
@@ -303,6 +342,45 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
+{/* Meet Our Team Section */}
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+  <div className="container mx-auto px-4 text-center">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className="mb-12"
+    >
+      <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">Meet Our Team</h2>
+      <p className="text-lg text-gray-600">The people behind our success</p>
+    </motion.div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="bg-white shadow-lg rounded-lg p-6">
+        <img src="/images/team/member1.jpg" alt="Team Member" className="rounded-full mx-auto w-24 h-24 mb-4" />
+        <h3 className="text-xl font-semibold">John Doe</h3>
+        <p className="text-gray-600">CEO</p>
+      </div>
+      <div className="bg-white shadow-lg rounded-lg p-6">
+        <img src="/images/team/member2.jpg" alt="Team Member" className="rounded-full mx-auto w-24 h-24 mb-4" />
+        <h3 className="text-xl font-semibold">Jane Smith</h3>
+        <p className="text-gray-600">COO</p>
+      </div>
+      <div className="bg-white shadow-lg rounded-lg p-6">
+        <img src="/images/team/member3.jpg" alt="Team Member" className="rounded-full mx-auto w-24 h-24 mb-4" />
+        <h3 className="text-xl font-semibold">Alex Lee</h3>
+        <p className="text-gray-600">Head of R&D</p>
+      </div>
+      <div className="bg-white shadow-lg rounded-lg p-6">
+        <img src="/images/team/member4.jpg" alt="Team Member" className="rounded-full mx-auto w-24 h-24 mb-4" />
+        <h3 className="text-xl font-semibold">Emily Chen</h3>
+        <p className="text-gray-600">Marketing Director</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
