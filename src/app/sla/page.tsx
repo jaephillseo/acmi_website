@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import { ArrowRight, Zap, Shield, Target } from "lucide-react";
+
+import { ArrowRight, Zap, Shield, Target, CheckCircle2, Clock, Sparkles, ChevronRight, Award, Users, BarChart } from "lucide-react";
 
 interface AboutSlaProps { }
 
@@ -29,6 +30,13 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
       alt: "Finished Product",
       caption: "Finished SLA products with premium surface quality"
     }
+  ];
+
+    const features = [
+    { icon: <Clock className="w-8 h-8" />, title: "Rapid Prototyping", description: "Quick turnaround for design iterations" },
+    { icon: <Shield className="w-8 h-8" />, title: "Precision Engineering", description: "Accuracy down to 0.1mm" },
+    { icon: <Sparkles className="w-8 h-8" />, title: "Superior Finish", description: "Smooth surface quality" },
+    { icon: <CheckCircle2 className="w-8 h-8" />, title: "Quality Assured", description: "Consistent results every time" }
   ];
 
   return (
@@ -179,6 +187,41 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
         </Tabs>
       </section>
 
+      {/* Features Grid */}
+      <section className="py-20 bg-gray-50">
+         <div className="max-w-6xl mx-auto px-6">
+           <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Key Features</h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              Discover the advantages that make our SLA technology stand out.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div className="text-blue-600 mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Gallery Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
@@ -221,6 +264,8 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
         </div>
       </section>
 
+      
+
       {/* Call to Action Section */}
       <section className="py-20 bg-blue-600">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -251,3 +296,278 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
 };
 
 export default AboutSla;
+
+// 'use client';
+
+// import React, { useState, useEffect } from "react";
+// import { motion, useScroll, useTransform } from "framer-motion";
+// import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
+// import "react-tabs/style/react-tabs.css";
+// import { ArrowRight, Zap, Shield, Target, CheckCircle2, Clock, Tool, Sparkles, ChevronRight, Award, Users, BarChart } from "lucide-react";
+
+// interface AboutSlaProps {}
+
+// const AboutSla: React.FC<AboutSlaProps> = () => {
+//   const [tabIndex, setTabIndex] = useState<number>(0);
+//   const { scrollY } = useScroll();
+//   const yOffset = useTransform(scrollY, [0, 300], ["0%", "-20%"]);
+//   const [isVisible, setIsVisible] = useState(false);
+
+//   useEffect(() => {
+//     setIsVisible(true);
+//   }, []);
+
+//   const galleryImages = [
+//     {
+//       src: 'images/stock/slaprocess.jpg',
+//       alt: "Midsole Mockup",
+//       caption: "High-precision midsole mockups for footwear design"
+//     },
+//     {
+//       src: 'images/stock/slaprocess.jpg',
+//       alt: "Industrial Prototype",
+//       caption: "Detailed SLA prototypes for industrial applications"
+//     },
+//     {
+//       src: 'images/stock/slaprocess.jpg',
+//       alt: "Finished Product",
+//       caption: "Finished SLA products with premium surface quality"
+//     }
+//   ];
+
+//   const features = [
+//     { icon: <Clock className="w-8 h-8" />, title: "Rapid Prototyping", description: "Quick turnaround for design iterations" },
+//     { icon: <Tool className="w-8 h-8" />, title: "Precision Engineering", description: "Accuracy down to 0.1mm" },
+//     { icon: <Sparkles className="w-8 h-8" />, title: "Superior Finish", description: "Smooth surface quality" },
+//     { icon: <CheckCircle2 className="w-8 h-8" />, title: "Quality Assured", description: "Consistent results every time" }
+//   ];
+
+//   const stats = [
+//     { value: "99.9%", label: "Accuracy Rate" },
+//     { value: "50%", label: "Faster Production" },
+//     { value: "30%", label: "Material Savings" },
+//     { value: "24/7", label: "Support Available" }
+//   ];
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+//       {/* Enhanced Hero Section */}
+//       <div className="relative h-[28rem] md:h-[40rem] lg:h-[48rem] overflow-hidden">
+//         <motion.div
+//           initial={{ scale: 1.1 }}
+//           animate={{ scale: 1 }}
+//           transition={{ duration: 2 }}
+//           className="absolute inset-0"
+//           style={{ y: yOffset }}
+//         >
+//           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+//           <img
+//             src="images/hero_img/sla_hero.jpg"
+//             alt="SLA Technology"
+//             className="object-cover w-full h-full"
+//           />
+//         </motion.div>
+//         <div className="relative h-full flex items-center">
+//           <div className="max-w-5xl mx-auto px-6 w-full">
+//             <motion.div
+//               initial={{ opacity: 0, y: 30 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 1, delay: 0.5 }}
+//               className="space-y-8"
+//             >
+//               <h1 className="text-white text-4xl md:text-7xl lg:text-8xl font-bold tracking-tighter">
+//                 Stereolithography
+//                 <span className="block text-blue-400">(SLA)</span>
+//               </h1>
+//               <p className="text-gray-200 text-xl md:text-2xl font-light max-w-2xl">
+//                 Revolutionary precision prototyping technology that transforms your ideas into reality with unmatched accuracy and speed.
+//               </p>
+//               <motion.button
+//                 whileHover={{ scale: 1.05 }}
+//                 whileTap={{ scale: 0.95 }}
+//                 className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold inline-flex items-center gap-2 transition-all shadow-lg hover:shadow-xl"
+//               >
+//                 Explore Technology <ChevronRight className="w-5 h-5" />
+//               </motion.button>
+//             </motion.div>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Stats Section */}
+//       <section className="py-16 bg-white">
+//         <div className="max-w-7xl mx-auto px-6">
+//           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+//             {stats.map((stat, index) => (
+//               <motion.div
+//                 key={index}
+//                 initial={{ opacity: 0, y: 20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 viewport={{ once: true }}
+//                 transition={{ duration: 0.5, delay: index * 0.1 }}
+//                 className="text-center"
+//               >
+//                 <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">{stat.value}</div>
+//                 <div className="text-gray-600">{stat.label}</div>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Enhanced Tabs Section */}
+//       <section className="max-w-6xl mx-auto py-24 px-6">
+//         <motion.div
+//           initial={{ opacity: 0, y: 30 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ duration: 0.8 }}
+//           className="text-center mb-16"
+//         >
+//           <h2 className="text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
+//             SLA Technology Excellence
+//           </h2>
+//           <p className="text-gray-600 text-xl max-w-3xl mx-auto">
+//             Experience the future of manufacturing with our state-of-the-art SLA technology.
+//           </p>
+//         </motion.div>
+
+//         <Tabs
+//           selectedIndex={tabIndex}
+//           onSelect={(index) => setTabIndex(index)}
+//           className="shadow-2xl rounded-2xl bg-white p-10"
+//         >
+//           <TabList className="flex flex-wrap justify-center gap-4 mb-12 border-b border-gray-200 pb-4">
+//             {["Precision", "Versatility", "Impact"].map((title, index) => (
+//               <Tab
+//                 key={index}
+//                 className="px-8 py-4 font-semibold rounded-xl transition-all cursor-pointer hover:bg-blue-50 text-lg"
+//                 selectedClassName="bg-blue-600 text-white hover:bg-blue-700"
+//               >
+//                 {title}
+//               </Tab>
+//             ))}
+//           </TabList>
+
+//           {/* Enhanced Tab Panels */}
+//           {/* ... (previous tab panel content remains the same, just wrapped in enhanced styling) ... */}
+//         </Tabs>
+//       </section>
+
+//       {/* Features Grid */}
+//       <section className="py-20 bg-gray-50">
+//         <div className="max-w-6xl mx-auto px-6">
+//           <motion.div
+//             initial={{ opacity: 0, y: 30 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             viewport={{ once: true }}
+//             transition={{ duration: 0.8 }}
+//             className="text-center mb-16"
+//           >
+//             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Key Features</h2>
+//             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+//               Discover the advantages that make our SLA technology stand out.
+//             </p>
+//           </motion.div>
+
+//           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+//             {features.map((feature, index) => (
+//               <motion.div
+//                 key={index}
+//                 initial={{ opacity: 0, y: 20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 viewport={{ once: true }}
+//                 transition={{ duration: 0.5, delay: index * 0.1 }}
+//                 className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+//               >
+//                 <div className="text-blue-600 mb-4">{feature.icon}</div>
+//                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+//                 <p className="text-gray-600">{feature.description}</p>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Enhanced Gallery Section */}
+//       <section className="py-24 bg-white">
+//         <div className="max-w-6xl mx-auto px-6">
+//           <motion.div
+//             initial={{ opacity: 0, y: 30 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             viewport={{ once: true }}
+//             transition={{ duration: 0.8 }}
+//             className="text-center mb-16"
+//           >
+//             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Product Showcase</h2>
+//             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+//               See the incredible results achieved with our SLA technology.
+//             </p>
+//           </motion.div>
+
+//           <div className="grid md:grid-cols-3 gap-10">
+//             {galleryImages.map((image, index) => (
+//               <motion.div
+//                 key={index}
+//                 initial={{ opacity: 0, scale: 0.9 }}
+//                 whileInView={{ opacity: 1, scale: 1 }}
+//                 viewport={{ once: true }}
+//                 transition={{ duration: 0.5, delay: index * 0.1 }}
+//                 className="group relative overflow-hidden rounded-2xl shadow-xl"
+//               >
+//                 <img
+//                   src={image.src}
+//                   alt={image.alt}
+//                   className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+//                 />
+//                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+//                   <div className="absolute bottom-0 left-0 right-0 p-8">
+//                     <p className="text-white text-lg font-medium">{image.caption}</p>
+//                   </div>
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Enhanced Call to Action Section */}
+//       <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-800">
+//         <div className="max-w-4xl mx-auto px-6 text-center">
+//           <motion.div
+//             initial={{ opacity: 0, y: 30 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             viewport={{ once: true }}
+//             transition={{ duration: 0.8 }}
+//             className="space-y-8"
+//           >
+//             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+//               Ready to Transform Your Manufacturing?
+//             </h2>
+//             <p className="text-blue-100 text-xl mb-8">
+//               Join the future of prototyping with our advanced SLA technology.
+//             </p>
+//             <div className="flex flex-wrap gap-4 justify-center">
+//               <motion.button
+//                 whileHover={{ scale: 1.05 }}
+//                 whileTap={{ scale: 0.95 }}
+//                 className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-blue-50 transition-all shadow-lg"
+//               >
+//                 Get Started <ArrowRight className="w-5 h-5" />
+//               </motion.button>
+//               <motion.button
+//                 whileHover={{ scale: 1.05 }}
+//                 whileTap={{ scale: 0.95 }}
+//                 className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-white/10 transition-all"
+//               >
+//                 Learn More <ChevronRight className="w-5 h-5" />
+//               </motion.button>
+//             </div>
+//           </motion.div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// };
+
+// export default AboutSla;

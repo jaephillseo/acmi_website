@@ -314,25 +314,25 @@ const AboutUs = () => {
               transition={{ delay: 0.2 }}
               className="lg:w-1/2 space-y-6"
             >
-              <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
+              {/* <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
                 Total Production Capacity
-              </p>
+              </p> */}
               <CapacityTable data={capacityData} />
               <p className={styles["note-text"]}>
                 * The production capacity above is based on footwear mold
                 capacity. Capacity may differ based on product type.
               </p>
-              <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
+              {/* <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
                 Total Production Capacity
-              </p>
+              </p> */}
               <LeadtimeTable data={leadtimeData} />
               <p className={styles["note-text"]}>
                 * The production capacity above is based on footwear mold
                 capacity. Capacity may differ based on product type.
               </p>
-              <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
+              {/* <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
                 Total Production Capacity
-              </p>
+              </p> */}
               <LeadtimeTable data={productionLeadTimeData} />
               <p className={styles["note-text"]}>
                 * The production capacity above is based on footwear mold
@@ -342,48 +342,6 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-
-{/* Meet Our Team Section */}
-      {/* <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-  <div className="container mx-auto px-4 text-center">
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeIn}
-      className="mb-12"
-    >
-      <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">Meet Our Team</h2>
-      <p className="text-lg text-gray-600">The people behind our success</p>
-    </motion.div>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div className="bg-white shadow-lg rounded-lg p-6">
-        <img src="/images/team/member1.jpg" alt="Team Member" className="rounded-full mx-auto w-24 h-24 mb-4" />
-        <h3 className="text-xl font-semibold">John Doe</h3>
-        <p className="text-gray-600">CEO</p>
-      </div>
-      <div className="bg-white shadow-lg rounded-lg p-6">
-        <img src="/images/team/member2.jpg" alt="Team Member" className="rounded-full mx-auto w-24 h-24 mb-4" />
-        <h3 className="text-xl font-semibold">Jane Smith</h3>
-        <p className="text-gray-600">COO</p>
-      </div>
-      <div className="bg-white shadow-lg rounded-lg p-6">
-        <img src="/images/team/member3.jpg" alt="Team Member" className="rounded-full mx-auto w-24 h-24 mb-4" />
-        <h3 className="text-xl font-semibold">Alex Lee</h3>
-        <p className="text-gray-600">Head of R&D</p>
-      </div>
-      <div className="bg-white shadow-lg rounded-lg p-6">
-        <img src="/images/team/member4.jpg" alt="Team Member" className="rounded-full mx-auto w-24 h-24 mb-4" />
-        <h3 className="text-xl font-semibold">Emily Chen</h3>
-        <p className="text-gray-600">Marketing Director</p>
-      </div>
-    </div>
-  </div>
-</section> */}
-
-
-
-
     </div >
   );
 };

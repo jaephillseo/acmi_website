@@ -376,7 +376,7 @@ export default function Home() {
             <div className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6">
               <div className="flex items-center">
                 <ShieldCheck className="h-12 w-12 text-white mr-4" />
-                <h3 className="text-xl font-semibold">Largest Mold Manufacturer</h3>
+                <h3 className="text-xl font-semibold text-white">Largest Mold Manufacturer</h3>
               </div>
               <p className="mt-2 text-sm">We are the largest mold manufacturer in Indonesia, trusted by top global brands.</p>
             </div>
@@ -392,7 +392,7 @@ export default function Home() {
             <div className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6">
               <div className="flex items-center">
                 <TrendingUp className="h-12 w-12 text-white mr-4" />
-                <h3 className="text-xl font-semibold">Sustainability</h3>
+                <h3 className="text-xl font-semibold text-white">Sustainability</h3>
               </div>
               <p className="mt-2 text-sm">Environmentally friendly processes that reduce manpower and waste.</p>
             </div>
