@@ -5,10 +5,18 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { ArrowRight, Zap, Shield, Target } from "lucide-react";
+import Table from "@/components/tables";
 
 interface AboutSlmProps {}
 
+interface TableRow {
+  feature:string;
+  value:string;
+}
+
 const AboutSlm: React.FC<AboutSlmProps> = () => {
+  const [enhancedTabIndex, setEnhancedTabIndex] = useState<number>(0);
+  const [slmTabIndex, setSlmTabIndex] = useState<number>(0);
   const [tabIndex, setTabIndex] = useState<number>(0);
   const { scrollY } = useViewportScroll();
   const yOffset = useTransform(scrollY, [0, 300], ["0%", "-20%"]);
@@ -47,6 +55,31 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
       alt: "Advanced Manufacturing",
       caption: "Next-generation manufacturing solution"
     }
+  ];
+
+  const machines = [
+    {
+      brand: "Farsoon",
+      image: "images/slm/slm1.png",
+      logo: "images/slm/farsoonlogo2.png",
+      specs: [
+        { feature: "Model", value: "SLM 350" },
+        { feature: "Quantity", value: "3 Units" },
+        { feature: "Laser Type", value: "4 Head Laser" },
+        { feature: "Material", value: "316L Steel, AlSi 10mg" },
+      ],
+    },
+    {
+      brand: "Uniontech",
+      image: "images/slm/uniontechmuees.png",
+      logo: "images/slm/uniontechlogo.png",
+      specs: [
+        { feature: "Model", value: "Muees 430" },
+        { feature: "Quantity", value: "1 Unit" },
+        { feature: "Technology", value: "Stereolithography" },
+        { feature: "Material", value: "High-Resin Polymers" },
+      ],
+    },
   ];
 
   return (
@@ -106,8 +139,8 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
         </motion.div>
 
         <Tabs
-          selectedIndex={tabIndex}
-          onSelect={(index) => setTabIndex(index)}
+          selectedIndex={enhancedTabIndex}
+          onSelect={(index) => setEnhancedTabIndex(index)}
           className="shadow-xl rounded-xl bg-white p-8"
         >
           <TabList className="flex flex-wrap justify-center gap-4 mb-8 border-b border-gray-200 pb-4">
@@ -194,6 +227,91 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
             </motion.div>
           </TabPanel>
         </Tabs>
+      </section>
+
+      {/* SLM Machine Section */}
+      <section className="py-20 bg-gray-200">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
+              Our SLM Machines
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              Discover the advanced equipment driving our precision manufacturing.
+            </p>
+          </motion.div>
+
+          <Tabs
+            selectedIndex={slmTabIndex}
+            onSelect={(index) => setSlmTabIndex(index)}
+            className="shadow-xl rounded-xl bg-white p-8"
+          >
+            <TabList className="flex flex-wrap justify-center gap-4 mb-8 border-b border-gray-200 pb-4">
+              {machines.map((machine, index) => (
+                <Tab
+                  key={index}
+                  className="px-6 py-3 font-semibold rounded-lg transition-all cursor-pointer hover:bg-blue-50"
+                  selectedClassName="bg-blue-500 text-white hover:bg-blue-600"
+                >
+                  {machine.brand}
+                </Tab>
+              ))}
+            </TabList>
+
+            {machines.map((machine, index) => (
+              <TabPanel key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="flex flex-col lg:flex-row items-center gap-8"
+                >
+                  <div className="w-full lg:w-1/2">
+                    <img
+                      src={machine.image}
+                      alt={`${machine.brand} Machine`}
+                      className="rounded-xl shadow-lg w-full h-auto"
+                    />
+                  </div>
+                  <div className="w-full lg:w-1/2">
+                    <div className="flex justify-center mb-6">
+                      <img
+                        src={machine.logo}
+                        alt={`${machine.brand} Logo`}
+                        className="h-46 object-contain"
+                      />
+                    </div>
+                    <table className="table-auto w-full bg-gray-50 rounded-lg shadow-md">
+                      <thead>
+                        <tr className="bg-blue-100">
+                          <th className="p-3 text-left">Feature</th>
+                          <th className="p-3 text-left">Details</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {machine.specs.map((spec, specIndex) => (
+                          <tr
+                            key={specIndex}
+                            className="border-t border-gray-200 hover:bg-blue-50"
+                          >
+                            <td className="p-3 font-semibold">{spec.feature}</td>
+                            <td className="p-3">{spec.value}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </motion.div>
+              </TabPanel>
+            ))}
+          </Tabs>
+        </div>
       </section>
 
       {/* Enhanced Applications Section */}

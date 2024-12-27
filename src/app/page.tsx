@@ -91,13 +91,13 @@ const services = [
   {
     title: "Mold Testing",
     description: "SLA manufacturing and solutions for various industries",
-    image: "images/stock/slamachine.png",
+    image: "images/stock/moldtesting.png",
     link: "/services/manufacturing"
   },
   {
     title: "Polishing/Finetuning",
     description: "State-of-the-art SLM Center",
-    image: "images/stock/SLM2.png",
+    image: "images/stock/finetuning.jpg",
     link: "/services/quality"
   }
 ];
