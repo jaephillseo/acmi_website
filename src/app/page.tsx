@@ -109,6 +109,14 @@ const milestones = [
   { year: "2025", event: "Planned expansion to 11 SLM machines." }
 ];
 
+const fadeInUpStagger = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.6 },
+  }),
+};
 
 
 export default function Home() {
@@ -250,167 +258,168 @@ export default function Home() {
 
 
       {/* Quick Overview Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+  <div className="container mx-auto px-4">
+    {/* Section Header */}
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+      }}
+      className="text-center mb-12"
+    >
+      <h2 className="text-4xl font-bold text-gray-800">Quick Overview</h2>
+      <motion.p
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0, transition: { delay: 0.3, duration: 0.6 } },
+        }}
+        className="text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed text-lg"
+      >
+        Since our founding in 1995 in Tangerang, Indonesia, PT. Anugrah Cipta Mould Indonesia has been dedicated to revolutionizing mold manufacturing. With over 25 years of excellence, we are recognized for precision, quality, and innovation, serving some of the world’s most renowned brands.
+      </motion.p>
+    </motion.div>
 
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">Quick Overview</h2>
-          </motion.div>
-
-          {/* Brief Information Section */}
-          <div className="container mx-auto px-4 py-6">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="bg-white/30 backdrop-blur-md shadow-lg p-8 rounded-2xl relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 h-full w-full flex justify-end items-center opacity-10">
-                <Image
-                  src="images/stock/innovation.png"
-                  alt="Innovation graphic"
-                  width={200}
-                  height={200}
-                  className="rounded-full"
-                />
-              </div>
-              <div className="relative z-10">
-                <h3 className="text-2xl md:text-3xl text-gray-700 font-bold leading-relaxed text-left">
-                  Founded in 1995, PT. Anugrah Cipta Mould Indonesia started in Tangerang, Indonesia, with a vision to revolutionize mold manufacturing. Over the years, we've built a reputation for precision and quality, becoming a trusted partner for some of the world's leading brands.
-                </h3>
-                <h3 className="text-xl md:text-2xl text-gray-600 mt-6 leading-relaxed text-left">
-                  In 2020, we proudly established Indonesia's first Selective Laser Melting (SLM) Center, showcasing our commitment to innovation. Today, we lead the industry with advanced manufacturing technologies that cater to a global clientele.
-                </h3>
-              </div>
-            </motion.div>
+    {/* Stats Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+      {stats.map((stat, index) => (
+        <motion.div
+          key={index}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: (i) => ({
+              opacity: 1,
+              y: 0,
+              transition: { delay: i * 0.2, duration: 0.6 },
+            }),
+          }}
+          custom={index}
+          className="bg-glass bg-white/70 backdrop-blur-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg transform hover:-translate-y-2"
+        >
+          <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-blue-100">
+            <stat.icon className="text-blue-600 w-8 h-8" />
           </div>
+          <h3 className="text-xl font-semibold text-gray-800 mb-2">
+            {stat.title}
+          </h3>
+          <p className="text-3xl font-bold text-blue-600 mb-2">{stat.value}</p>
+          <p className="text-gray-600 text-sm">{stat.description}</p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+{/* Unique Selling Points Section */}
+<section className="py-20 bg-gradient-to-b from-gray-50 to-white relative">
+  <div className="container mx-auto px-4">
+    {/* Section Header */}
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+      }}
+      className="text-center mb-12"
+    >
+      <h2 className="text-4xl font-bold text-gray-800">What Sets Us Apart</h2>
+      <motion.p
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0, transition: { delay: 0.3, duration: 0.6 } },
+        }}
+        className="text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed text-lg"
+      >
+        Discover our key differentiators that have established us as a leader in the industry. From innovation to sustainability, we excel at delivering excellence.
+      </motion.p>
+    </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                custom={index}
-                className="bg-white p-6 rounded-xl shadow-lg"
-              >
-                <stat.icon className="h-12 w-12 text-blue-600 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{stat.title}</h3>
-                <p className="text-3xl font-bold text-blue-600 mb-2">{stat.value}</p>
-                <p className="text-gray-600">{stat.description}</p>
-              </motion.div>
-            ))}
-          </div>
+    {/* Diagonal Layout Cards */}
+    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.6 } },
+        }}
+        className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6 hover:-translate-y-2 transition-transform duration-300"
+      >
+        <div className="flex items-center">
+          <ShieldCheck className="h-12 w-12 text-white mr-4" />
+          <h3 className="text-xl font-semibold text-white">Largest Mold Manufacturer</h3>
         </div>
-      </section>
+        <p className="mt-2 text-sm">We are the largest mold manufacturer in Indonesia, trusted by top global brands.</p>
+      </motion.div>
 
-      {/* Timeline Section */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">Our Journey</h2>
-          </motion.div>
-          <div className="relative">
-
-            <div className="absolute h-full border-l-4 border-blue-600 left-1/2 transform -translate-x-1/2 hidden md:block" />
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`relative flex flex-col ${index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
-                    }`}
-                >
-
-                  <div className="w-full md:w-1/2 text-center md:text-left px-4 md:px-8">
-                    <div className="p-4 bg-white shadow-lg rounded-lg">
-                      <h3 className="text-xl font-semibold text-blue-600 mb-2">{milestone.year}</h3>
-                      <p className="text-gray-600">{milestone.event}</p>
-                    </div>
-                  </div>
-
-                  <div className="w-full md:w-1/12 flex justify-center items-center">
-                    <div className="w-8 h-8 bg-blue-600 rounded-full border-4 border-white" />
-                  </div>
-
-
-                  <div className="w-full md:w-1/2 text-center md:text-right px-4 md:px-8 hidden md:block">
-                    <div className="p-4 bg-transparent" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.6 } },
+        }}
+        className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6 hover:-translate-y-2 transition-transform duration-300"
+      >
+        <div className="flex items-center">
+          <Award className="h-12 w-12 text-blue-600 mr-4" />
+          <h3 className="text-xl font-semibold text-blue-600">SLM Innovation</h3>
         </div>
-      </section> */}
+        <p className="mt-2 text-sm">First and largest SLM Center in Indonesia, revolutionizing mold production.</p>
+      </motion.div>
 
-      {/* Unique Selling Points Section */}
-      <section className="py-20 bg-gray-100 relative">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">What Sets Us Apart</h2>
-          </motion.div>
-
-          {/* Diagonal Layout */}
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6">
-              <div className="flex items-center">
-                <ShieldCheck className="h-12 w-12 text-white mr-4" />
-                <h3 className="text-xl font-semibold text-white">Largest Mold Manufacturer</h3>
-              </div>
-              <p className="mt-2 text-sm">We are the largest mold manufacturer in Indonesia, trusted by top global brands.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6">
-              <div className="flex items-center">
-                <Award className="h-12 w-12 text-blue-600 mr-4" />
-                <h3 className="text-xl font-semibold text-blue-600">SLM Innovation</h3>
-              </div>
-              <p className="mt-2 text-sm">First and largest SLM Center in Indonesia, revolutionizing mold production.</p>
-            </div>
-
-            <div className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6">
-              <div className="flex items-center">
-                <TrendingUp className="h-12 w-12 text-white mr-4" />
-                <h3 className="text-xl font-semibold text-white">Sustainability</h3>
-              </div>
-              <p className="mt-2 text-sm">Environmentally friendly processes that reduce manpower and waste.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6">
-              <div className="flex items-center">
-                <Globe2 className="h-12 w-12 text-blue-600 mr-4" />
-                <h3 className="text-xl font-semibold text-blue-600">Global Reach</h3>
-              </div>
-              <p className="mt-2 text-sm">Trusted by over 15 countries worldwide for high-quality molds.</p>
-            </div>
-          </div>
-
-          {/* Background Shapes */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-20 pointer-events-none"></div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.6 } },
+        }}
+        className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6 hover:-translate-y-2 transition-transform duration-300"
+      >
+        <div className="flex items-center">
+          <TrendingUp className="h-12 w-12 text-white mr-4" />
+          <h3 className="text-xl font-semibold text-white">Sustainability</h3>
         </div>
-      </section>
+        <p className="mt-2 text-sm">Environmentally friendly processes that reduce manpower and waste.</p>
+      </motion.div>
 
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.6 } },
+        }}
+        className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6 hover:-translate-y-2 transition-transform duration-300"
+      >
+        <div className="flex items-center">
+          <Globe2 className="h-12 w-12 text-blue-600 mr-4" />
+          <h3 className="text-xl font-semibold text-blue-600">Global Reach</h3>
+        </div>
+        <p className="mt-2 text-sm">Trusted by over 15 countries worldwide for high-quality molds.</p>
+      </motion.div>
+    </div>
+
+    {/* Background Shapes */}
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-20 pointer-events-none"></div>
+  </div>
+</section>
       {/* Services Section */}
       <section className="py-20 bg-gray-200">
         <div className="container mx-auto px-4">
