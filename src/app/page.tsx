@@ -1,8 +1,8 @@
-'use client';
-import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+"use client";
+import React, { useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import {
   Calendar,
   Factory,
@@ -13,54 +13,55 @@ import {
   TrendingUp,
   ShieldCheck,
   Wrench,
-  ChevronDown
-} from 'lucide-react';
+  ChevronDown,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import AutoScroller from '@/components/autoscroll';
+import AutoScroller from "@/components/autoscroll";
+import { approvedBrands } from "../../constants/homeConstants";
 import {
-  approvedBrands
-} from "../../constants/homeConstants";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import CTASection from "@/components/ctasection";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6 }
-  }
+    transition: { duration: 0.6 },
+  },
 };
-
-
 
 const stats = [
   {
     icon: Calendar,
     title: "Founded",
     value: "1995",
-    description: "Over 25 years of dedication to high-quality mold making."
+    description: "Over 25 years of dedication to high-quality mold making.",
   },
   {
     icon: Factory,
     title: "Yearly Production",
     value: "20,000 Sets",
-    description: "Meeting global demands with state-of-the-art facilities."
+    description: "Meeting global demands with state-of-the-art facilities.",
   },
   {
     icon: Globe2,
     title: "Global Reach",
     value: "15+ Countries",
-    description: "Trusted by leading brands worldwide."
+    description: "Trusted by leading brands worldwide.",
   },
   {
     icon: Users,
     title: "Team",
     value: "500+ Professionals",
-    description: "Driven by innovation and expertise."
+    description: "Driven by innovation and expertise.",
   },
-
 ];
 
 const services = [
@@ -68,45 +69,45 @@ const services = [
     title: "Casting Mold",
     description: "Advanced solutions for casting molds",
     image: "images/stock/castingoven.png",
-    link: "/services/mold-design"
+    link: "/services/mold-design",
   },
   {
     title: "SLA Printing and Prototyping",
     description: "SLA manufacturing and solutions for various industries",
     image: "images/stock/slamachine.png",
-    link: "/services/manufacturing"
+    link: "/services/manufacturing",
   },
   {
     title: "SLM Printing and Prototyping",
     description: "State-of-the-art SLM Center",
     image: "images/stock/SLM2.png",
-    link: "/services/quality"
+    link: "/services/quality",
   },
   {
     title: "CNC Machining",
     description: "Advanced solutions using CNC",
     image: "images/stock/CNCacmi.png",
-    link: "/services/mold-design"
+    link: "/services/mold-design",
   },
   {
     title: "Mold Testing",
     description: "SLA manufacturing and solutions for various industries",
     image: "images/stock/moldtesting.png",
-    link: "/services/manufacturing"
+    link: "/services/manufacturing",
   },
   {
     title: "Polishing/Finetuning",
     description: "State-of-the-art SLM Center",
     image: "images/stock/finetuning.jpg",
-    link: "/services/quality"
-  }
+    link: "/services/quality",
+  },
 ];
 
 const milestones = [
   { year: "1995", event: "Company founded in Tangerang, Indonesia." },
   { year: "2020", event: "Established Indonesia's first SLM Center." },
   { year: "2021", event: "Introduced 3D metal printing for molds." },
-  { year: "2025", event: "Planned expansion to 11 SLM machines." }
+  { year: "2025", event: "Planned expansion to 11 SLM machines." },
 ];
 
 const fadeInUpStagger = {
@@ -117,7 +118,6 @@ const fadeInUpStagger = {
     transition: { delay: i * 0.2, duration: 0.6 },
   }),
 };
-
 
 export default function Home() {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -217,8 +217,9 @@ export default function Home() {
               }}
               className="text-2xl md:text-xl mb-8 text-gray-400 font-bold"
             >
-              With over 25 years of expertise, we lead the industry in delivering
-              high-performance molds that drive innovation and efficiency.
+              With over 25 years of expertise, we lead the industry in
+              delivering high-performance molds that drive innovation and
+              efficiency.
             </motion.h2>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -255,171 +256,222 @@ export default function Home() {
           <ChevronDown className="w-8 h-8 text-white animate-bounce" />
         </motion.div>
       </section>
-
-
       {/* Quick Overview Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-  <div className="container mx-auto px-4">
-    {/* Section Header */}
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-      }}
-      className="text-center mb-12"
-    >
-      <h2 className="text-4xl font-bold text-gray-800">Quick Overview</h2>
-      <motion.p
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0, x: -50 },
-          visible: { opacity: 1, x: 0, transition: { delay: 0.3, duration: 0.6 } },
-        }}
-        className="text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed text-lg"
-      >
-        Since our founding in 1995 in Tangerang, Indonesia, PT. Anugrah Cipta Mould Indonesia has been dedicated to revolutionizing mold manufacturing. With over 25 years of excellence, we are recognized for precision, quality, and innovation, serving some of the world’s most renowned brands.
-      </motion.p>
-    </motion.div>
+        <div className="container mx-auto px-4">
+          {/* Section Header */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+            }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-800">Quick Overview</h2>
+            <motion.p
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0, x: -50 },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  transition: { delay: 0.3, duration: 0.6 },
+                },
+              }}
+              className="text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed text-lg"
+            >
+              Since our founding in 1995 in Tangerang, Indonesia, PT. Anugrah
+              Cipta Mould Indonesia has been dedicated to revolutionizing mold
+              manufacturing. With over 25 years of excellence, we are recognized
+              for precision, quality, and innovation, serving some of the
+              world’s most renowned brands.
+            </motion.p>
+          </motion.div>
 
-    {/* Stats Cards */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-      {stats.map((stat, index) => (
-        <motion.div
-          key={index}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: (i) => ({
-              opacity: 1,
-              y: 0,
-              transition: { delay: i * 0.2, duration: 0.6 },
-            }),
-          }}
-          custom={index}
-          className="bg-glass bg-white/70 backdrop-blur-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg transform hover:-translate-y-2"
-        >
-          <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-blue-100">
-            <stat.icon className="text-blue-600 w-8 h-8" />
+          {/* Stats Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: (i) => ({
+                    opacity: 1,
+                    y: 0,
+                    transition: { delay: i * 0.2, duration: 0.6 },
+                  }),
+                }}
+                custom={index}
+                className="bg-glass bg-white/70 backdrop-blur-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg transform hover:-translate-y-2"
+              >
+                <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-blue-100">
+                  <stat.icon className="text-blue-600 w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {stat.title}
+                </h3>
+                <p className="text-3xl font-bold text-blue-600 mb-2">
+                  {stat.value}
+                </p>
+                <p className="text-gray-600 text-sm">{stat.description}</p>
+              </motion.div>
+            ))}
           </div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">
-            {stat.title}
-          </h3>
-          <p className="text-3xl font-bold text-blue-600 mb-2">{stat.value}</p>
-          <p className="text-gray-600 text-sm">{stat.description}</p>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
-{/* Unique Selling Points Section */}
-<section className="py-20 bg-gradient-to-b from-gray-50 to-white relative">
-  <div className="container mx-auto px-4">
-    {/* Section Header */}
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-      }}
-      className="text-center mb-12"
-    >
-      <h2 className="text-4xl font-bold text-gray-800">What Sets Us Apart</h2>
-      <motion.p
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0, x: -50 },
-          visible: { opacity: 1, x: 0, transition: { delay: 0.3, duration: 0.6 } },
-        }}
-        className="text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed text-lg"
-      >
-        Discover our key differentiators that have established us as a leader in the industry. From innovation to sustainability, we excel at delivering excellence.
-      </motion.p>
-    </motion.div>
-
-    {/* Diagonal Layout Cards */}
-    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.6 } },
-        }}
-        className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6 hover:-translate-y-2 transition-transform duration-300"
-      >
-        <div className="flex items-center">
-          <ShieldCheck className="h-12 w-12 text-white mr-4" />
-          <h3 className="text-xl font-semibold text-white">Largest Mold Manufacturer</h3>
         </div>
-        <p className="mt-2 text-sm">We are the largest mold manufacturer in Indonesia, trusted by top global brands.</p>
-      </motion.div>
+      </section>
+      {/* Unique Selling Points Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative">
+        <div className="container mx-auto px-4">
+          {/* Section Header */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+            }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-800">
+              What Sets Us Apart
+            </h2>
+            <motion.p
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0, x: -50 },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  transition: { delay: 0.3, duration: 0.6 },
+                },
+              }}
+              className="text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed text-lg"
+            >
+              Discover our key differentiators that have established us as a
+              leader in the industry. From innovation to sustainability, we
+              excel at delivering excellence.
+            </motion.p>
+          </motion.div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.6 } },
-        }}
-        className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6 hover:-translate-y-2 transition-transform duration-300"
-      >
-        <div className="flex items-center">
-          <Award className="h-12 w-12 text-blue-600 mr-4" />
-          <h3 className="text-xl font-semibold text-blue-600">SLM Innovation</h3>
+          {/* Diagonal Layout Cards */}
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 0.2, duration: 0.6 },
+                },
+              }}
+              className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6 hover:-translate-y-2 transition-transform duration-300"
+            >
+              <div className="flex items-center">
+                <ShieldCheck className="h-12 w-12 text-white mr-4" />
+                <h3 className="text-xl font-semibold text-white">
+                  Largest Mold Manufacturer
+                </h3>
+              </div>
+              <p className="mt-2 text-sm">
+                We are the largest mold manufacturer in Indonesia, trusted by
+                top global brands.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 0.4, duration: 0.6 },
+                },
+              }}
+              className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6 hover:-translate-y-2 transition-transform duration-300"
+            >
+              <div className="flex items-center">
+                <Award className="h-12 w-12 text-blue-600 mr-4" />
+                <h3 className="text-xl font-semibold text-blue-600">
+                  SLM Innovation
+                </h3>
+              </div>
+              <p className="mt-2 text-sm">
+                First and largest SLM Center in Indonesia, revolutionizing mold
+                production.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 0.6, duration: 0.6 },
+                },
+              }}
+              className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6 hover:-translate-y-2 transition-transform duration-300"
+            >
+              <div className="flex items-center">
+                <TrendingUp className="h-12 w-12 text-white mr-4" />
+                <h3 className="text-xl font-semibold text-white">
+                  Sustainability
+                </h3>
+              </div>
+              <p className="mt-2 text-sm">
+                Environmentally friendly processes that reduce manpower and
+                waste.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { delay: 0.8, duration: 0.6 },
+                },
+              }}
+              className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6 hover:-translate-y-2 transition-transform duration-300"
+            >
+              <div className="flex items-center">
+                <Globe2 className="h-12 w-12 text-blue-600 mr-4" />
+                <h3 className="text-xl font-semibold text-blue-600">
+                  Global Reach
+                </h3>
+              </div>
+              <p className="mt-2 text-sm">
+                Trusted by over 15 countries worldwide for high-quality molds.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Background Shapes */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-20 pointer-events-none"></div>
         </div>
-        <p className="mt-2 text-sm">First and largest SLM Center in Indonesia, revolutionizing mold production.</p>
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.6 } },
-        }}
-        className="bg-blue-600 text-white p-6 rounded-lg shadow-lg relative z-10 transform md:translate-y-6 hover:-translate-y-2 transition-transform duration-300"
-      >
-        <div className="flex items-center">
-          <TrendingUp className="h-12 w-12 text-white mr-4" />
-          <h3 className="text-xl font-semibold text-white">Sustainability</h3>
-        </div>
-        <p className="mt-2 text-sm">Environmentally friendly processes that reduce manpower and waste.</p>
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.6 } },
-        }}
-        className="bg-white p-6 rounded-lg shadow-lg relative z-20 transform md:-translate-y-6 hover:-translate-y-2 transition-transform duration-300"
-      >
-        <div className="flex items-center">
-          <Globe2 className="h-12 w-12 text-blue-600 mr-4" />
-          <h3 className="text-xl font-semibold text-blue-600">Global Reach</h3>
-        </div>
-        <p className="mt-2 text-sm">Trusted by over 15 countries worldwide for high-quality molds.</p>
-      </motion.div>
-    </div>
-
-    {/* Background Shapes */}
-    <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-20 pointer-events-none"></div>
-  </div>
-</section>
+      </section>
       {/* Services Section */}
       <section className="py-20 bg-gray-200">
         <div className="container mx-auto px-4">
@@ -430,7 +482,9 @@ export default function Home() {
             variants={fadeInUp}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">Our Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">
+              Our Services
+            </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -457,7 +511,11 @@ export default function Home() {
                     <CardDescription>{service.description}</CardDescription>
                   </CardHeader>
                   <CardFooter>
-                    <Button variant="outline" asChild className="w-full bg-blue-500 hover:bg-blue-700 transition-colors">
+                    <Button
+                      variant="outline"
+                      asChild
+                      className="w-full bg-blue-500 hover:bg-blue-700 transition-colors"
+                    >
                       <Link href={service.link}>
                         Learn More <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
@@ -469,7 +527,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Technology Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -480,9 +537,14 @@ export default function Home() {
             variants={fadeInUp}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">Our Cutting-Edge Technology</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">
+              Our Cutting-Edge Technology
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              At ACMI, we leverage advanced technologies like SLM, SLA, and precision casting to deliver top-notch mold solutions. Our investment in innovation ensures efficiency and unparalleled quality for our clients.
+              At ACMI, we leverage advanced technologies like SLM, SLA, and
+              precision casting to deliver top-notch mold solutions. Our
+              investment in innovation ensures efficiency and unparalleled
+              quality for our clients.
             </p>
           </motion.div>
 
@@ -491,60 +553,32 @@ export default function Home() {
               <Wrench className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">SLM Technology</h3>
               <p className="text-gray-600">
-                The first in Indonesia, our SLM (Selective Laser Melting) technology ensures precision and sustainability in mold production.
+                The first in Indonesia, our SLM (Selective Laser Melting)
+                technology ensures precision and sustainability in mold
+                production.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <ShieldCheck className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Quality Assurance</h3>
               <p className="text-gray-600">
-                Comprehensive in-house testing for mold durability, ensuring superior quality and performance.
+                Comprehensive in-house testing for mold durability, ensuring
+                superior quality and performance.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <Factory className="h-12 w-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Advanced Facilities</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Advanced Facilities
+              </h3>
               <p className="text-gray-600">
-                Our state-of-the-art facilities feature over 100 units of advanced machinery to meet global demands.
+                Our state-of-the-art facilities feature over 100 units of
+                advanced machinery to meet global demands.
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Interactive Comparison Section */}
-      {/* <section className="py-20 bg-gray-200">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">Before & After SLM</h2>
-            <p className="text-gray-600">See the transformative power of our SLM technology in action.</p>
-          </motion.div>
-          <div className="flex justify-center items-center">
-            <div className="relative w-96 h-96">
-              <Image
-                src="images/stock/cnc2.png"
-                alt="Before SLM"
-                fill
-                className="object-cover opacity-100 hover:opacity-0 transition-opacity duration-500"
-              />
-              <Image
-                src="images/stock/slm2.png"
-                alt="After SLM"
-                fill
-                className="object-cover absolute top-0 left-0"
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-
       {/* Partners Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -555,42 +589,27 @@ export default function Home() {
             variants={fadeInUp}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">Our Partners</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 underline">
+              Our Partners
+            </h2>
             <strong className="text-gray-600 max-w-2xl mx-auto">
               Trusted by leading brands worldwide
             </strong>
           </motion.div>
-
 
           <div className="flex items-center justify-center mt-8">
             <AutoScroller images={approvedBrands} />
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
-      <section className="py-20 bg-blue-800 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-base-100">Ready to Get Started?</h2>
-            <p className="text-xl text-base-100 mb-8 opacity-90">
-              Let's discuss how we can help with your mold manufacturing needs
-            </p>
-            <Button size="lg" variant="default" asChild>
-              <Link href="/contact">
-                Contact Us <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+      <CTASection
+        title="Let’s Build Together"
+        description="Explore how our innovative solutions can elevate your manufacturing process."
+        buttonText="Get in Touch"
+        buttonLink="/get-started"
+      />
+      
     </div>
   );
 }
-
-
