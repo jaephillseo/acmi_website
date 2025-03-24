@@ -75,7 +75,7 @@ const AboutCasting = () => {
             </div>
             <div className="rounded-lg shadow-lg overflow-hidden">
               <img
-                src="/images/stock/casting.png"
+                src="/images/stock/casting2.jpg"
                 alt="Precision Engineered"
                 className="object-cover h-48 w-full"
               />

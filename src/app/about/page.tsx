@@ -123,22 +123,22 @@ const AboutUs = () => {
     </motion.div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div className="p-6 bg-white shadow-lg rounded-lg">
-        <img src="https://via.placeholder.com/150" alt="Innovation" className="h-12 w-12 mx-auto mb-4" />
+        {/* <img src="https://via.placeholder.com/150" alt="Innovation" className="h-12 w-12 mx-auto mb-4" /> */}
         <h3 className="text-xl font-semibold">Innovation</h3>
         <p className="text-gray-600 mt-2">We embrace cutting-edge technology to lead the mold-making industry.</p>
       </div>
       <div className="p-6 bg-white shadow-lg rounded-lg">
-        <img src="https://via.placeholder.com/150" alt="Sustainability" className="h-12 w-12 mx-auto mb-4" />
+        {/* <img src="https://via.placeholder.com/150" alt="Sustainability" className="h-12 w-12 mx-auto mb-4" /> */}
         <h3 className="text-xl font-semibold">Sustainability</h3>
         <p className="text-gray-600 mt-2">Our processes focus on eco-friendly and sustainable manufacturing.</p>
       </div>
       <div className="p-6 bg-white shadow-lg rounded-lg">
-        <img src="https://via.placeholder.com/150" alt="Quality" className="h-12 w-12 mx-auto mb-4" />
+        {/* <img src="https://via.placeholder.com/150" alt="Quality" className="h-12 w-12 mx-auto mb-4" /> */}
         <h3 className="text-xl font-semibold">Quality</h3>
         <p className="text-gray-600 mt-2">Delivering superior molds with precision and reliability.</p>
       </div>
       <div className="p-6 bg-white shadow-lg rounded-lg">
-        <img src="https://via.placeholder.com/150" alt="Collaboration" className="h-12 w-12 mx-auto mb-4" />
+        {/* <img src="https://via.placeholder.com/150" alt="Collaboration" className="h-12 w-12 mx-auto mb-4" /> */}
         <h3 className="text-xl font-semibold">Collaboration</h3>
         <p className="text-gray-600 mt-2">Partnering with clients to build solutions that exceed expectations.</p>
       </div>
@@ -174,9 +174,9 @@ const AboutUs = () => {
               className="lg:w-1/2"
             >
               <img
-                src="/images/stock/ACMIstock1.png"
+                src="/images/stock/casting.png"
                 alt="Production Capacity"
-                className="rounded-2xl shadow-xl object-cover w-full aspect-square"
+                className="rounded-2xl shadow-xl object-cover w-full aspect-square transition-transform duration-500 hover:scale-105"
               />
             </motion.div>
 
@@ -188,14 +188,14 @@ const AboutUs = () => {
               transition={{ delay: 0.2 }}
               className="lg:w-1/2 space-y-6"
             >
-              <blockquote className="text-lg md:text-xl lg:text-2xl text-gray-700 font-light leading-relaxed lg:mt-40">
+              <div className="text-lg md:text-xl lg:text-2xl text-gray-700 font-light leading-relaxed lg:mt-40 space-y-4">
                 <p>
-                  At the core of our mission is a commitment to excellence, innovation, and sustainability in mold manufacturing. We aim to lead the industry by providing high-quality, precision molds that empower our clients to shape their visions with confidence.
+                  <span className="font-semibold text-gray-800">At the core of our mission</span> is a commitment to excellence, innovation, and sustainability in mold manufacturing. We aim to lead the industry by providing high-quality, precision molds that empower our clients to shape their visions with confidence.
                 </p>
-                <p className="mt-4">
+                <p>
                   We believe in building lasting partnerships through trust, integrity, and superior service. As we look to the future, our goal remains steadfast: to set new standards in mold production that support a more sustainable and efficient manufacturing ecosystem.
                 </p>
-              </blockquote>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -261,9 +261,9 @@ const AboutUs = () => {
               className="lg:w-1/2"
             >
               <img
-                src="/images/stock/ACMIstock2.png"
+                src="/images/stock/finetuning2.jpg"
                 alt="Vision"
-                className="rounded-2xl shadow-xl object-cover w-full aspect-square"
+                className="rounded-2xl shadow-xl object-cover w-full aspect-square transition-transform duration-500 hover:scale-105"
               />
             </motion.div>
           </div>

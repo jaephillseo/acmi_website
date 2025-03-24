@@ -69,38 +69,38 @@ const services = [
     title: "Casting Mold",
     description: "Advanced solutions for casting molds",
     image: "images/stock/castingoven.png",
-    link: "/services/mold-design",
+    link: "/casting",
   },
   {
     title: "SLA Printing and Prototyping",
     description: "SLA manufacturing and solutions for various industries",
     image: "images/stock/slamachine.png",
-    link: "/services/manufacturing",
+    link: "/sla",
   },
   {
     title: "SLM Printing and Prototyping",
     description: "State-of-the-art SLM Center",
     image: "images/stock/SLM2.png",
-    link: "/services/quality",
+    link: "/slm",
   },
   {
     title: "CNC Machining",
     description: "Advanced solutions using CNC",
     image: "images/stock/CNCacmi.png",
-    link: "/services/mold-design",
+    link: "/cnc",
   },
   {
     title: "Mold Testing",
     description: "SLA manufacturing and solutions for various industries",
     image: "images/stock/moldtesting.png",
-    link: "/services/manufacturing",
+    link: "/moldtesting",
   },
-  {
-    title: "Polishing/Finetuning",
-    description: "State-of-the-art SLM Center",
-    image: "images/stock/finetuning.jpg",
-    link: "/services/quality",
-  },
+  // {
+  //   title: "Polishing/Finetuning",
+  //   description: "State-of-the-art SLM Center",
+  //   image: "images/stock/finetuning.jpg",
+  //   link: "/services/quality",
+  // },
 ];
 
 const milestones = [
