@@ -95,12 +95,12 @@ const services = [
     image: "images/stock/moldtesting.png",
     link: "/moldtesting",
   },
-  // {
-  //   title: "Polishing/Finetuning",
-  //   description: "State-of-the-art SLM Center",
-  //   image: "images/stock/finetuning.jpg",
-  //   link: "/services/quality",
-  // },
+  {
+    title: "2D and 3D Modeling",
+    description: "Personalized 2D and 3D Modeling",
+    image: "images/stock/ACMIstock1.png",
+    link: "/services/quality",
+  },
 ];
 
 const milestones = [

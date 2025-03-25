@@ -41,19 +41,16 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
 
   const galleryImages = [
     {
-      src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop",
+      src: "images/stock/slmcenter.jpg",
       alt: "Precision Mold Component",
-      caption: "High-precision SLM manufactured component"
     },
     {
-      src: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=800&auto=format&fit=crop",
+      src: "images/stock/slmtest.jpg",
       alt: "Industrial Application",
-      caption: "Industrial-grade SLM product"
     },
     {
-      src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=800&auto=format&fit=crop",
+      src: "images/stock/SLM2.png",
       alt: "Advanced Manufacturing",
-      caption: "Next-generation manufacturing solution"
     }
   ];
 
@@ -380,11 +377,10 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-white text-sm">{image.caption}</p>
                   </div>
                 </div>
               </motion.div>

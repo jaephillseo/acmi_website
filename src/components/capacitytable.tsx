@@ -15,17 +15,17 @@ const CapacityTable: React.FC<CapacityTableProps> = ({ data }) => {
       <table className={styles["custom-table"]}>
         <thead>
           <tr>
-            <th>Mold Type</th>
-            <th>Monthly Capacity</th>
-            <th>Yearly Capacity</th>
+            <th className="text-xl md:text-2xl font-bold text-gray-800">Mold Type</th>
+            <th className="text-xl md:text-2xl font-bold text-gray-800">Monthly Capacity</th>
+            <th className="text-xl md:text-2xl font-bold text-gray-800">Yearly Capacity</th>
           </tr>
         </thead>
         <tbody>
           {data.map((row, index) => (
             <tr key={index}>
-              <td>{row.moldType}</td>
-              <td>{row.monthlyCapacity}</td>
-              <td>{row.yearlyCapacity}</td>
+              <td className="text-lg md:text-xl font-semibold text-gray-800">{row.moldType}</td>
+              <td className="text-lg md:text-xl font-semibold text-gray-800">{row.monthlyCapacity}</td>
+              <td className="text-lg md:text-xl font-semibold text-gray-800">{row.yearlyCapacity}</td>
             </tr>
           ))}
         </tbody>

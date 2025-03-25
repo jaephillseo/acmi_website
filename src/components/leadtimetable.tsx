@@ -15,17 +15,17 @@ const LeadtimeTable: React.FC<LeadtimeTableProps> = ({ data }) => {
       <table className={styles["custom-table"]}>
         <thead>
           <tr>
-            <th>Mold Type</th>
-            <th>Stage</th>
-            <th>Lead Time</th>
+            <th className="text-lg md:text-2xl font-bold text-gray-800">Mold Type</th>
+            <th className="text-lg md:text-2xl font-bold text-gray-800">Stage</th>
+            <th className="text-lg md:text-2xl font-bold text-gray-800">Lead Time</th>
           </tr>
         </thead>
         <tbody>
           {data.map((row, index) => (
             <tr key={index}>
-              <td>{row.moldType}</td>
-              <td>{row.moldStage}</td>
-              <td>{row.leadTime}</td>
+              <td className="text-lg md:text-xl font-semibold text-gray-800">{row.moldType}</td>
+              <td className="text-lg md:text-xl font-semibold text-gray-800">{row.moldStage}</td>
+              <td className="text-lg md:text-xl font-semibold text-gray-800">{row.leadTime}</td>
             </tr>
           ))}
         </tbody>

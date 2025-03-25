@@ -14,19 +14,19 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
 
   const galleryImages = [
     {
-      src: "https://via.placeholder.com/600x400",
+      src: "images/stock/cnc2.png",
       alt: "CNC Precision",
-      caption: "Precision machining for industrial applications",
+ 
     },
     {
-      src: "https://via.placeholder.com/600x400",
+      src: "images/stock/cnc123.jpg",
       alt: "CNC Components",
-      caption: "Complex components made with CNC accuracy",
+
     },
     {
-      src: "https://via.placeholder.com/600x400",
+      src: "images/stock/cnc_2.jpg",
       alt: "CNC Manufacturing",
-      caption: "Efficient production with CNC technology",
+
     },
   ];
 
@@ -206,11 +206,10 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-white text-sm">{image.caption}</p>
                   </div>
                 </div>
               </motion.div>

@@ -18,17 +18,14 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
     {
       src: 'images/stock/slaprocess.jpg',
       alt: "Midsole Mockup",
-      caption: "High-precision midsole mockups for footwear design"
     },
     {
       src: 'images/stock/sla(4).jpg',
       alt: "Industrial Prototype",
-      caption: "Detailed SLA prototypes for industrial applications"
     },
     {
-      src: 'images/stock/slaprocess.jpg',
+      src: 'images/stock/sla_1.jpg',
       alt: "Finished Product",
-      caption: "Finished SLA products with premium surface quality"
     }
   ];
 
@@ -251,7 +248,7 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6">

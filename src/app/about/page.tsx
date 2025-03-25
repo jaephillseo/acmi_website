@@ -174,7 +174,7 @@ const AboutUs = () => {
               className="lg:w-1/2"
             >
               <img
-                src="/images/stock/casting.png"
+                src="/images/stock/acmi_prod2.jpg"
                 alt="Production Capacity"
                 className="rounded-2xl shadow-xl object-cover w-full aspect-square transition-transform duration-500 hover:scale-105"
               />
@@ -302,7 +302,7 @@ const AboutUs = () => {
               <img
                 src="/images/stock/stockimage1.jpg"
                 alt="Production Capacity"
-                className="rounded-2xl shadow-xl object-cover w-full aspect-square"
+                className="rounded-2xl shadow-xl object-cover w-full aspect-square transition-transform duration-500 hover:scale-105"
               />
             </motion.div>
 
@@ -314,25 +314,16 @@ const AboutUs = () => {
               transition={{ delay: 0.2 }}
               className="lg:w-1/2 space-y-6"
             >
-              {/* <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
-                Total Production Capacity
-              </p> */}
               <CapacityTable data={capacityData} />
               <p className={styles["note-text"]}>
                 * The production capacity above is based on footwear mold
                 capacity. Capacity may differ based on product type.
               </p>
-              {/* <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
-                Total Production Capacity
-              </p> */}
               <LeadtimeTable data={leadtimeData} />
               <p className={styles["note-text"]}>
                 * The production capacity above is based on footwear mold
                 capacity. Capacity may differ based on product type.
               </p>
-              {/* <p className="text-lg md:text-xl lg:text-2xl text-gray-700 font-medium">
-                Total Production Capacity
-              </p> */}
               <LeadtimeTable data={productionLeadTimeData} />
               <p className={styles["note-text"]}>
                 * The production capacity above is based on footwear mold
