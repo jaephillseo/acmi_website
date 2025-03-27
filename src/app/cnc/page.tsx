@@ -5,6 +5,7 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { ArrowRight, Gears, Precision, Efficiency } from "lucide-react";
+import Link from "next/link";
 
 interface AboutCNCProps {}
 
@@ -233,13 +234,15 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
             <p className="text-blue-100 text-lg mb-8">
               Discover how CNC machining can optimize your production and enhance quality.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors"
-            >
-              Contact Us <ArrowRight className="w-5 h-5" />
-            </motion.button>
+            <Link href="/contact-us">
+                <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors"
+                >
+                Contact Us <ArrowRight className="w-5 h-5" />
+                </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>

@@ -80,7 +80,7 @@ const services = [
   {
     title: "SLM Printing and Prototyping",
     description: "State-of-the-art SLM Center",
-    image: "images/stock/SLM2.png",
+    image: "images/stock/slmcenter.jpg",
     link: "/slm",
   },
   {
@@ -96,10 +96,10 @@ const services = [
     link: "/moldtesting",
   },
   {
-    title: "2D and 3D Modeling",
+    title: "CAD/CAM",
     description: "Personalized 2D and 3D Modeling",
     image: "images/stock/ACMIstock1.png",
-    link: "/services/quality",
+    link: "/cadcam",
   },
 ];
 

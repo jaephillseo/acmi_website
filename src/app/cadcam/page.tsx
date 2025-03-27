@@ -1,39 +1,30 @@
 'use client';
 
 import React, { useState } from "react";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
-import { ArrowRight, Zap, Shield, Target, CheckCircle2, Clock, Sparkles, ChevronRight, Award, Users, BarChart } from "lucide-react";
+interface AboutCADProps {}
 
-interface AboutSlaProps { }
-
-const AboutSla: React.FC<AboutSlaProps> = () => {
+const AboutCAD: React.FC<AboutCADProps> = () => {
   const [tabIndex, setTabIndex] = useState<number>(0);
-  const { scrollY } = useViewportScroll();
-  const yOffset = useTransform(scrollY, [0, 300], ["0%", "-20%"]);
 
   const galleryImages = [
     {
-      src: 'images/stock/slaprocess.jpg',
-      alt: "Midsole Mockup",
+      src: "images/stock/cnc2.png",
+      alt: "CNC Precision",
     },
     {
-      src: 'images/stock/sla(4).jpg',
-      alt: "Industrial Prototype",
+      src: "images/stock/cnc123.jpg",
+      alt: "CNC Components",
     },
     {
-      src: 'images/stock/sla_1.jpg',
-      alt: "Finished Product",
-    }
-  ];
-
-    const features = [
-    { icon: <Clock className="w-8 h-8" />, title: "Rapid Prototyping", description: "Quick turnaround for design iterations" },
-    { icon: <Shield className="w-8 h-8" />, title: "Precision Engineering", description: "Accuracy down to 0.1mm" },
-    { icon: <Sparkles className="w-8 h-8" />, title: "Superior Finish", description: "Smooth surface quality" },
-    { icon: <CheckCircle2 className="w-8 h-8" />, title: "Quality Assured", description: "Consistent results every time" }
+      src: "images/stock/cnc_2.jpg",
+      alt: "CNC Manufacturing",
+    },
   ];
 
   return (
@@ -45,12 +36,11 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 1.5 }}
           className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"
-          style={{ y: yOffset }}
         >
           <div className="absolute inset-0 bg-black/30" />
           <img
-            src="images/hero_img/sla_hero.jpg"
-            alt="SLA Technology"
+            src="images/hero_img/CNChero1.jpg"
+            alt="CNC Machining"
             className="object-cover w-full h-full"
           />
         </motion.div>
@@ -62,7 +52,7 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              Stereolithography (SLA)
+              <b>CAD / CAM Modeling</b>
             </motion.h1>
             <motion.p
               className="text-gray-200 text-lg md:text-2xl lg:text-3xl font-light"
@@ -70,7 +60,7 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              Precision Prototyping for Every Industry
+              <b>2D & 3D Modeling for Precision Mold Development</b>
             </motion.p>
           </div>
         </div>
@@ -86,10 +76,10 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
-            SLA Technology: Transforming Ideas into Reality
+            <b>The Core of CAD/CAM at ACMI</b>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Experience the speed and precision of SLA for footwear mockups, industrial prototypes, and finished products.
+            Our integrated 2D and 3D CAD/CAM workflows allow us to prototype, simulate, and manufacture highly precise molds across all footwear types.
           </p>
         </motion.div>
 
@@ -99,7 +89,7 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
           className="shadow-xl rounded-xl bg-white p-8"
         >
           <TabList className="flex flex-wrap justify-center gap-4 mb-8 border-b border-gray-200 pb-4">
-            {["Precision", "Versatility", "Impact"].map((title, index) => (
+            {["2D Modeling", "3D Modeling", "Simulation & CAM"].map((title, index) => (
               <Tab
                 key={index}
                 className="px-6 py-3 font-semibold rounded-lg transition-all cursor-pointer hover:bg-blue-50"
@@ -110,7 +100,7 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
             ))}
           </TabList>
 
-          {/* Precision Tab */}
+          {/* 2D Modeling */}
           <TabPanel>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -119,22 +109,22 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
               className="space-y-6 text-gray-700"
             >
               <p className="text-lg leading-relaxed">
-                SLA technology enables unmatched precision, delivering detailed mockups and finished products with superior surface quality. Ideal for applications requiring accuracy and consistency.
+                <b>Our 2D CAD process forms the backbone of early-stage mold development. From outsole sketches to precise technical drawings, our team ensures clarity and speed for rapid prototyping.</b>
               </p>
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Footwear Mockups</h4>
-                  <p>Create detailed midsole prototypes to streamline design and production cycles.</p>
+                  <h4 className="font-semibold text-xl mb-3">Outsole Sketching</h4>
+                  <p>Accurate 2D drawings using tools like AutoCAD and Rhino 5.0.</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Material Excellence</h4>
-                  <p>Utilize advanced resins for versatile prototyping across multiple industries.</p>
+                  <h4 className="font-semibold text-xl mb-3">Lead Time</h4>
+                  <p>Fast turnaround: Only 2 working days.</p>
                 </div>
               </div>
             </motion.div>
           </TabPanel>
 
-          {/* Versatility Tab */}
+          {/* 3D Modeling */}
           <TabPanel>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -143,22 +133,22 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
               className="space-y-6 text-gray-700"
             >
               <p className="text-lg leading-relaxed">
-                From footwear mockups to industrial components, SLA's versatility shines in its ability to adapt to diverse manufacturing needs. Whether for prototyping or final-use products, SLA ensures quality and efficiency at every step.
+                <b>We leverage advanced software like Rhino 7/8, Unigraphics, and Materialise 3-Matic to create intricate 3D models that capture design intent, enabling faster design approval and prototyping.</b>
               </p>
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Broad Applications</h4>
-                  <p>Perfect for industries like footwear, automotive, aerospace, and medical, offering reliable solutions for each unique requirement.</p>
+                  <h4 className="font-semibold text-xl mb-3">High-Detail Modeling</h4>
+                  <p>Design breathable molds, vent systems, and more using 3D CAD.</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Customizable Designs</h4>
-                  <p>Easily modify prototypes and production models without the need for expensive tooling or rework.</p>
+                  <h4 className="font-semibold text-xl mb-3">Software Tools</h4>
+                  <p>Materialise 3-Matic, Rhino 8.0, ShoeMagic, and more.</p>
                 </div>
               </div>
             </motion.div>
           </TabPanel>
 
-          {/* Impact Tab */}
+          {/* Simulation & CAM */}
           <TabPanel>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -167,56 +157,21 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
               className="space-y-6 text-gray-700"
             >
               <p className="text-lg leading-relaxed">
-                SLA technology delivers measurable impact by reducing waste, accelerating production, and ensuring sustainability. Its advanced capabilities align with modern manufacturing demands while maintaining exceptional results.
+                <b>Our CAM process ensures perfect translation from digital models to real-world molds using PowerMill, MoldMagic, and 3D scanning for verification and simulation.</b>
               </p>
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Sustainability</h4>
-                  <p>Reduce material waste by up to 30% with precision layer-by-layer construction.</p>
+                  <h4 className="font-semibold text-xl mb-3">CAM Simulation</h4>
+                  <p>Verify and simulate mold cuts before actual machining.</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Efficiency</h4>
-                  <p>Accelerate production cycles, cutting lead times by up to 50% for faster market delivery.</p>
+                  <h4 className="font-semibold text-xl mb-3">End-to-End Integration</h4>
+                  <p>Seamless flow from CAD to CAM with in-house quality control.</p>
                 </div>
               </div>
             </motion.div>
           </TabPanel>
         </Tabs>
-      </section>
-
-      {/* Features Grid */}
-      <section className="py-20 bg-gray-50">
-         <div className="max-w-6xl mx-auto px-6">
-           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Key Features</h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Discover the advantages that make our SLA technology stand out.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="text-blue-600 mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* Gallery Section */}
@@ -231,7 +186,7 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Product Gallery</h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Explore how SLA technology enables groundbreaking prototypes and final-use products.
+              Explore the possibilities of CAD/CAM modeling through our product showcase.
             </p>
           </motion.div>
 
@@ -251,16 +206,13 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
                   className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6"></div>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-
-      
 
       {/* Call to Action Section */}
       <section className="py-20 bg-blue-600">
@@ -272,18 +224,21 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-              Ready to Elevate Your Prototyping Process?
+              <b>Ready to Digitize Your Mold Development?</b>
             </h2>
             <p className="text-blue-100 text-lg mb-8">
-              Discover how our SLA technology can revolutionize your production journey.
+              Discover how our CAD/CAM solutions drive accuracy, speed, and innovation.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors"
-            >
-              Contact Us <ArrowRight className="w-5 h-5" />
-            </motion.button>
+            <Link href="/contact-us">
+                <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors"
+                >
+                Contact Us <ArrowRight className="w-5 h-5" />
+                </motion.button>
+            </Link>
+            
           </motion.div>
         </div>
       </section>
@@ -291,5 +246,4 @@ const AboutSla: React.FC<AboutSlaProps> = () => {
   );
 };
 
-export default AboutSla;
-
+export default AboutCAD;

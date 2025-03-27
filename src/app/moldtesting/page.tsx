@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface MoldTestingProps {}
 
@@ -126,14 +127,16 @@ const MoldTesting: React.FC<MoldTestingProps> = () => {
             <p className="text-blue-100 text-lg mb-8">
               Discover how our in-house testing capabilities can save time and deliver exceptional results for your molds.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors"
-            >
-              Contact Us <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          </motion.div>
+            <Link href="/contact-us">
+                <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors"
+                >
+                Contact Us <ArrowRight className="w-5 h-5" />
+                </motion.button>
+            </Link>
+            </motion.div>
         </div>
       </section>
     </div>
