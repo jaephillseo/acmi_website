@@ -203,7 +203,7 @@ export default function Home() {
                 duration: 1,
                 ease: "easeOut",
               }}
-              className="text-4xl md:text-6xl font-bold mb-6 text-gray-300"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-300"
             >
               Your Trusted Partner in Advanced Mold Solutions
             </motion.h1>
@@ -215,7 +215,7 @@ export default function Home() {
                 duration: 1,
                 ease: "easeOut",
               }}
-              className="text-2xl md:text-xl mb-8 text-gray-400 font-bold"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-gray-400"
             >
               With over 25 years of expertise, we lead the industry in
               delivering high-performance molds that drive innovation and
