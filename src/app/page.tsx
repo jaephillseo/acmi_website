@@ -282,7 +282,7 @@ export default function Home() {
                   transition: { delay: 0.3, duration: 0.6 },
                 },
               }}
-              className="text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed text-lg"
+              className="text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed text-xl"
             >
               Since our founding in 1995 in Tangerang, Indonesia, PT. Anugrah
               Cipta Mould Indonesia has been dedicated to revolutionizing mold

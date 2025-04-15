@@ -1,34 +1,19 @@
 'use client';
 
 import React, { useState } from "react";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import { ArrowRight, Gears, Precision, Efficiency } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-interface AboutCNCProps {}
-
-const AboutCNC: React.FC<AboutCNCProps> = () => {
+const AboutCNC: React.FC = () => {
   const [tabIndex, setTabIndex] = useState<number>(0);
 
-
   const galleryImages = [
-    {
-      src: "images/stock/cnc2.png",
-      alt: "CNC Precision",
- 
-    },
-    {
-      src: "images/stock/cnc123.jpg",
-      alt: "CNC Components",
-
-    },
-    {
-      src: "images/stock/cnc_2.jpg",
-      alt: "CNC Manufacturing",
-
-    },
+    { src: "images/stock/cnc2.png", alt: "CNC Precision" },
+    { src: "images/stock/cnc123.jpg", alt: "CNC Components" },
+    { src: "images/stock/cnc_2.jpg", alt: "CNC Manufacturing" },
   ];
 
   return (
@@ -43,7 +28,7 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
         >
           <div className="absolute inset-0 bg-black/30" />
           <img
-            src='images/hero_img/CNChero1.jpg'
+            src="images/hero_img/CNChero1.jpg"
             alt="CNC Machining"
             className="object-cover w-full h-full"
           />
@@ -64,11 +49,44 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              Precision and Efficiency for Modern Manufacturing
+              Precision and Efficiency for Modern Mold Manufacturing
             </motion.p>
           </div>
         </div>
       </div>
+
+      {/* Why ACMI CNC Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <motion.h2
+            className="text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            Why ACMI CNC?
+          </motion.h2>
+          <p className="text-gray-600 text-lg max-w-4xl mx-auto mb-10">
+            ACMI operates one of the most complete CNC departments in Indonesia’s mold industry. With over 50 CNC machines from Korea, Japan, and Taiwan, our capabilities support mass production of precise, high-performance molds with minimal tolerances.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+            <div className="bg-gray-50 p-6 rounded-xl shadow">
+              <h4 className="text-xl font-semibold mb-2">Local & International Brands</h4>
+              <p>Featuring DOOSAN, HWACHEON, VMC Taiwan, and MORI SEIKI Japan for global-class machining standards.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl shadow">
+              <h4 className="text-xl font-semibold mb-2">Large-Volume Output</h4>
+              <p>Serving up to 20,000 molds annually, CNC machining ensures speed without sacrificing accuracy.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl shadow">
+              <h4 className="text-xl font-semibold mb-2">In-House Integration</h4>
+              <p>Every CNC operation is in-house, fully integrated with our CAD/CAM, SLM, and testing teams.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Tabs Section */}
       <section className="max-w-6xl mx-auto py-20 px-6">
@@ -83,15 +101,11 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
             The Power of CNC Machining
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Unlock unparalleled accuracy and efficiency with CNC machining for various industries.
+            Unlock unparalleled accuracy and efficiency with CNC machining for various mold components.
           </p>
         </motion.div>
 
-        <Tabs
-          selectedIndex={tabIndex}
-          onSelect={(index) => setTabIndex(index)}
-          className="shadow-xl rounded-xl bg-white p-8"
-        >
+        <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)} className="shadow-xl rounded-xl bg-white p-8">
           <TabList className="flex flex-wrap justify-center gap-4 mb-8 border-b border-gray-200 pb-4">
             {["Precision", "Efficiency", "Innovation"].map((title, index) => (
               <Tab
@@ -104,7 +118,7 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
             ))}
           </TabList>
 
-          {/* Precision Tab */}
+          {/* Precision */}
           <TabPanel>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -113,22 +127,22 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
               className="space-y-6 text-gray-700"
             >
               <p className="text-lg leading-relaxed">
-                CNC machining delivers unmatched precision, enabling the creation of complex parts with tight tolerances for critical applications.
+                CNC machining delivers unmatched precision, enabling the creation of complex molds with tight tolerances. This ensures perfect part fit, finish, and function every time.
               </p>
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Automotive Parts</h4>
-                  <p>Create detailed engine components with superior accuracy.</p>
+                  <h4 className="font-semibold text-xl mb-3">Automotive Molds</h4>
+                  <p>Critical precision for engine & rubber components.</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Aerospace Components</h4>
-                  <p>Precision machining for safety-critical aerospace applications.</p>
+                  <h4 className="font-semibold text-xl mb-3">Footwear Outsoles</h4>
+                  <p>Detailed sole patterning with consistency at scale.</p>
                 </div>
               </div>
             </motion.div>
           </TabPanel>
 
-          {/* Efficiency Tab */}
+          {/* Efficiency */}
           <TabPanel>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -137,22 +151,22 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
               className="space-y-6 text-gray-700"
             >
               <p className="text-lg leading-relaxed">
-                CNC technology maximizes efficiency by automating complex processes and minimizing waste.
+                ACMI leverages CNC automation to reduce lead time, cut down manual processes, and improve batch consistency. That’s how we stay efficient — and competitive.
               </p>
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Automation</h4>
-                  <p>Automate repetitive tasks for faster production cycles.</p>
+                  <h4 className="font-semibold text-xl mb-3">Automated Toolpaths</h4>
+                  <p>Using PowerMill + CAM software to reduce runtime errors.</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Cost-Effective</h4>
-                  <p>Reduce manufacturing costs with optimized CNC processes.</p>
+                  <h4 className="font-semibold text-xl mb-3">Reduced Downtime</h4>
+                  <p>All machines are maintained and monitored daily.</p>
                 </div>
               </div>
             </motion.div>
           </TabPanel>
 
-          {/* Innovation Tab */}
+          {/* Innovation */}
           <TabPanel>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -161,16 +175,16 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
               className="space-y-6 text-gray-700"
             >
               <p className="text-lg leading-relaxed">
-                CNC machining drives innovation with capabilities to prototype and manufacture advanced designs.
+                We don't just cut metal. We innovate in design, tooling, and SLM integration — CNC supports rapid prototyping, experimental venting systems, and smart textures for high-performance molds.
               </p>
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <h4 className="font-semibold text-xl mb-3">Prototyping</h4>
-                  <p>Quickly iterate designs with CNC-precise prototypes.</p>
+                  <p>Bridge design and production for fast mold trials.</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="font-semibold text-xl mb-3">Complex Designs</h4>
-                  <p>Create intricate geometries that traditional methods can't achieve.</p>
+                  <h4 className="font-semibold text-xl mb-3">Texturing & Vents</h4>
+                  <p>Combine CNC with SLM to create breathable, grippy, or custom flow-control surfaces.</p>
                 </div>
               </div>
             </motion.div>
@@ -178,7 +192,39 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
         </Tabs>
       </section>
 
-      {/* Gallery Section */}
+      {/* Machines Table */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-8">CNC Machine Lineup</h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white rounded-xl overflow-hidden shadow-md">
+              <thead className="bg-blue-600 text-white">
+                <tr>
+                  <th className="py-4 px-6 text-left">Country</th>
+                  <th className="py-4 px-6 text-left">Brand</th>
+                  <th className="py-4 px-6 text-left">Units</th>
+                </tr>
+              </thead>
+              <tbody className="text-gray-800">
+                {[
+                  ["Korea", "DOOSAN", "16"],
+                  ["Korea", "HWACHEON", "9"],
+                  ["Taiwan", "VMC & Others", "26"],
+                  ["Japan", "MORI SEIKI", "1"],
+                ].map(([country, brand, units], i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                    <td className="py-4 px-6 font-medium">{country}</td>
+                    <td className="py-4 px-6">{brand}</td>
+                    <td className="py-4 px-6">{units} Units</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -190,7 +236,7 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Product Gallery</h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Explore the possibilities of CNC machining through our product gallery.
+              Explore the possibilities of CNC machining through our production showcase.
             </p>
           </motion.div>
 
@@ -209,17 +255,13 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
                   alt={image.alt}
                   className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                  </div>
-                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
+      {/* CTA */}
       <section className="py-20 bg-blue-600">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
@@ -232,16 +274,16 @@ const AboutCNC: React.FC<AboutCNCProps> = () => {
               Ready to Transform Your Manufacturing?
             </h2>
             <p className="text-blue-100 text-lg mb-8">
-              Discover how CNC machining can optimize your production and enhance quality.
+              Discover how CNC machining at ACMI drives precision, speed, and innovation.
             </p>
             <Link href="/contact-us">
-                <motion.button
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors"
-                >
+              >
                 Contact Us <ArrowRight className="w-5 h-5" />
-                </motion.button>
+              </motion.button>
             </Link>
           </motion.div>
         </div>

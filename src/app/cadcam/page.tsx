@@ -7,9 +7,7 @@ import "react-tabs/style/react-tabs.css";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-interface AboutCADProps {}
-
-const AboutCAD: React.FC<AboutCADProps> = () => {
+const AboutCAD: React.FC = () => {
   const [tabIndex, setTabIndex] = useState<number>(0);
 
   const galleryImages = [
@@ -174,8 +172,62 @@ const AboutCAD: React.FC<AboutCADProps> = () => {
         </Tabs>
       </section>
 
+      {/* Software Table */}
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl font-bold mb-4">
+            <b>Software Ecosystem at ACMI</b>
+          </h2>
+          <p className="text-gray-600 max-w-3xl mx-auto">
+            Our design and manufacturing teams are equipped with over a dozen CAD/CAM tools to handle complex tasks with speed and precision.
+          </p>
+        </motion.div>
+
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-white rounded-xl overflow-hidden shadow-md">
+            <thead className="bg-blue-600 text-white">
+              <tr>
+                <th className="text-left py-4 px-6">Software</th>
+                <th className="text-left py-4 px-6">Units</th>
+                <th className="text-left py-4 px-6">Function</th>
+              </tr>
+            </thead>
+            <tbody className="text-gray-800">
+              {[
+                ["Materialise 3-Matic", "15", "3D model editing & mesh repair"],
+                ["Rhino 5.0", "71", "2D & 3D CAD"],
+                ["Rhino 7.0", "15", "Advanced 3D design"],
+                ["Rhino 8.0", "10", "Next-gen modeling features"],
+                ["Unigraphics", "2", "High-end product design"],
+                ["PowerShape", "3", "Geometry prep for CAM"],
+                ["AutoCAD", "4", "2D drafting"],
+                ["PowerMill", "38", "CNC programming"],
+                ["FFCAM", "5", "Toolpath creation"],
+                ["Mold Magic", "10", "Mold-specific CAD"],
+                ["Shoe Wizard", "10", "Footwear CAD"],
+                ["EVA Magic", "10", "EVA mold CAD"],
+                ["Shoe Magic", "10", "Shoe-specific design"],
+                ["Magic RP", "10", "Rapid prototyping"]
+              ].map(([name, units, use], i) => (
+                <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                  <td className="py-4 px-6 font-medium">{name}</td>
+                  <td className="py-4 px-6">{units}</td>
+                  <td className="py-4 px-6">{use}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* Gallery Section */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -205,16 +257,13 @@ const AboutCAD: React.FC<AboutCADProps> = () => {
                   alt={image.alt}
                   className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-6"></div>
-                </div>
               </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Call to Action Section */}
+      {/* CTA Section */}
       <section className="py-20 bg-blue-600">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
@@ -230,15 +279,14 @@ const AboutCAD: React.FC<AboutCADProps> = () => {
               Discover how our CAD/CAM solutions drive accuracy, speed, and innovation.
             </p>
             <Link href="/contact-us">
-                <motion.button
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors"
-                >
+              >
                 Contact Us <ArrowRight className="w-5 h-5" />
-                </motion.button>
+              </motion.button>
             </Link>
-            
           </motion.div>
         </div>
       </section>
