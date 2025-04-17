@@ -4,7 +4,7 @@ import Image from 'next/image';
 import '../styles/carouselhero.css';
 // Swiper Components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper';
+import { Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
