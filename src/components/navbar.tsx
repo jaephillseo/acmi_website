@@ -64,6 +64,7 @@ const NavBar = () => {
                 </ul>
               )}
             </li>
+            <li className="hover:text-gray-400"><Link href="/machineries">SLM</Link></li>
             <li className="hover:text-gray-400"><Link href="/machineries">Machineries</Link></li>
             <li className="hover:text-gray-400"><Link href="/contact-us">Contact Us</Link></li>
           </ul>
