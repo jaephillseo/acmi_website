@@ -56,25 +56,47 @@ const AboutSlm: React.FC<AboutSlmProps> = () => {
 
   const machines = [
     {
-      brand: "Farsoon",
+      brand: "Farsoon (2-Laser)",
       image: "images/slm/slm1.png",
       logo: "images/slm/farsoonlogo2.png",
       specs: [
-        { feature: "Model", value: "SLM 350" },
+        { feature: "Model", value: "FS200 M" },
+        { feature: "Quantity", value: "1 Unit" },
+        { feature: "Laser Type", value: "2 Head Laser" },
+        { feature: "Material", value: "316L Steel, AlSi 10mg" },
+      ],
+    },
+    {
+      brand: "Farsoon (4-Lasers)",
+      image: "images/slm/slm1.png",
+      logo: "images/slm/farsoonlogo2.png",
+      specs: [
+        { feature: "Model", value: "FS350M" },
         { feature: "Quantity", value: "3 Units" },
         { feature: "Laser Type", value: "4 Head Laser" },
         { feature: "Material", value: "316L Steel, AlSi 10mg" },
       ],
     },
     {
-      brand: "Uniontech",
+      brand: "Uniontech (2-Lasers)",
       image: "images/slm/uniontechmuees.png",
       logo: "images/slm/uniontechlogo.png",
       specs: [
         { feature: "Model", value: "Muees 430" },
         { feature: "Quantity", value: "1 Unit" },
-        { feature: "Technology", value: "Stereolithography" },
-        { feature: "Material", value: "High-Resin Polymers" },
+        { feature: "Technology", value: "2 Head Laser" },
+        { feature: "Material", value: "316L Steel, AlSi 10mg" },
+      ],
+    },
+    {
+      brand: "Uniontech (4-Lasers)",
+      image: "images/slm/uniontechmuees.png",
+      logo: "images/slm/uniontechlogo.png",
+      specs: [
+        { feature: "Model", value: "Fuees 430" },
+        { feature: "Quantity", value: "3 Units" },
+        { feature: "Technology", value: "4 Head Laser" },
+        { feature: "Material", value: "316L Steel, AlSi 10mg" },
       ],
     },
   ];

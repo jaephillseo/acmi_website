@@ -1,22 +1,44 @@
+/* ----------------------------------------------------------
+   globals.css
+   ---------------------------------------------------------- */
+
+/* Tailwind directives must come first */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+/* Base layer for global variables and resets */
+@layer base {
+  :root {
+    --foreground-rgb: 17 17 17;
+    --background-start-rgb: 235 245 255; /* Soft light blue */
+    --background-end-rgb: 255 255 255;   /* White */
+  }
 
-:root {
-  --foreground-rgb: 17, 17, 17;
-  --background-start-rgb: 235, 245, 255; /* Soft light blue */
-  --background-end-rgb: 255, 255, 255; /* White */
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background-color: #f7f6f2;
+    background-size: cover;
+    background-repeat: repeat;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #1F3A93;
+  }
+
+  p {
+    font-family: 'Montserrat', sans-serif;
+  }
 }
 
-body {
-  background-color: #f7f6f2;
-  background-size: cover;
-  background-repeat: repeat;
-  font-family: 'Montserrat', sans-serif;
-}
-
+/* ----------------------------------------------------------
+   Custom utility & component styles
+   ---------------------------------------------------------- */
 
 .myHero {
   position: relative;
@@ -26,13 +48,13 @@ body {
 }
 
 .myLogo {
-  width:95px;
+  width: 95px;
   height: 50px;
 }
 
 @media (max-width: 550px) {
   .myLogo {
-    width:80px;
+    width: 80px;
     height: auto;
   }
 }
@@ -43,23 +65,16 @@ body {
 }
 
 @keyframes swipe {
-  0% {
-    transform: translate(0);
-  }
-
-  100% {
-    transform: translate(-100%);
-  }
+  0% { transform: translate(0); }
+  100% { transform: translate(-100%); }
 }
 
 .custom-card-shadow {
-  box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 1023px) and (orientation: landscape) {
-  .hide-in-landscape {
-    display: none;
-  }
+  .hide-in-landscape { display: none; }
   .show-in-landscape {
     display: flex;
     flex-wrap: wrap;
@@ -71,43 +86,22 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6{
-  font-family: 'Montserrat', sans-serif;
-  color: #1F3A93
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translate3d(0, 40px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out;
 }
 
-p {
-  font-family:'Montserrat', sans-serif;
-}
-@keyframes fadeInUp{
-  from {
-    opacity: 0;
-    transform: translate3d(0,40px,0);
+.animation-delay-1 { animation-delay: 0.5s; }
+.animation-delay-2 { animation-delay: 1s; }
 
-  }
-  to {
-    opacity:1;
-    transform: translate3d(0,0,0);
-  }
-
-}
-.animate-fadeInUp{
-  animation: fadeInUp is ease-out;
+.text_shadow {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-.animation-delay-1 {
-  animation-delay: 0.5s;
-}
-
-.animation-delay-2 {
-  animation-delay:1s;
-}
-
-
-text_shadow {
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-}
-
+/* ---------- Core Values Section ---------- */
 .core-values-section {
   position: relative;
   background-color: #f3f4f6;
@@ -164,55 +158,23 @@ text_shadow {
   color: #6b7280;
 }
 
-/* Container for the pie chart */
+/* ---------- Pie Chart Section ---------- */
 .pie-chart-container {
   position: relative;
-  width: 600px; /* Set the size */
+  width: 600px;
   height: 600px;
   margin: 0 auto;
-  border-radius: 50%; /* Make it a circle */
+  border-radius: 50%;
   background: conic-gradient(
-    #f43f5e 0deg 90deg, /* Red */
-    #2563eb 90deg 180deg, /* Blue */
-    #4ade80 180deg 270deg, /* Green */
-    #f97316 270deg 360deg /* Orange */
+    #f43f5e 0deg 90deg,
+    #2563eb 90deg 180deg,
+    #4ade80 180deg 270deg,
+    #f97316 270deg 360deg
   );
   overflow: hidden;
   transition: background-color 0.3s ease;
 }
 
-/* Each pie slice item */
-.pie-chart-item {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  
-  transform-origin: 100% 100%;
-  top: 0;
-  left: 0;
-  text-align: center;
-  color: white;
-}
-
-/* Text styling */
-.pie-content span {
-  font-size: 20px; /* Adjust text size */
-  font-weight: bold;
-}
-
-/* Container for the entire component */
-.core-values-container {
-  text-align: center;
-  margin-top: 40px;
-}
-
-/* Header text and description for the active value */
-.core-value-header {
-  margin-bottom: 20px;
-}
-
-
-/* Each pie slice item */
 .pie-chart-item {
   position: absolute;
   width: 50%;
@@ -221,9 +183,10 @@ text_shadow {
   left: 0;
   transform-origin: 100% 100%;
   transition: transform 0.3s ease-in-out;
+  text-align: center;
+  color: white;
 }
 
-/* Content inside each pie slice (text) */
 .pie-content {
   position: absolute;
   bottom: 20px;
@@ -235,11 +198,16 @@ text_shadow {
   font-size: 14px;
 }
 
-.no-scrollbar {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+.pie-content span {
+  font-size: 20px;
+  font-weight: bold;
 }
 
+/* ---------- Utilities ---------- */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE10+ */
+  scrollbar-width: none;     /* Firefox */
+}
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
 }
@@ -247,6 +215,6 @@ text_shadow {
 .bg-glass {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
